@@ -12,22 +12,20 @@ class ManeerinCode(models.Model):
 
 class ManeerinCodeBuyer(models.Model):
     _name = 'maneerincode.buyer'
-
+    
     maneerincode_id = fields.Many2one(comodel_name='maneerincode.code', string="Maneerin Code")
-    partner_id = fields.Many2one(comodel_name='res.partner', string="ผู้ซื้อ", required=True)  # ต้องมีการเลือกผู้ซื้อ
-    title = fields.Many2one(related='partner_id.title', string='คำนำหน้าชื่อ', readonly=True)
-    age = fields.Integer(related='partner_id.age', string='Age', readonly=True)
-    nation = fields.Char(related='partner_id.nationality', string='Nation', readonly=True)  # ตรวจสอบว่าใช้ 'nationality' ในโมเดล res.partner
-    street = fields.Char(related='partner_id.street', string='Street', readonly=True)
-    phone = fields.Char(related='partner_id.phone', string='Phone', readonly=True)
+    partner_id = fields.Many2one(comodel_name='res.partner', string="ผู้ซื้อ")  # เปลี่ยนเป็น Many2one เพื่อเลือกจาก res.partner
+    age = fields.Integer(string="Age", related='partner_id.age', readonly=True)  # ใช้ related
+    nation = fields.Char(string="Nation", related='partner_id.nationality', readonly=True)  # ใช้ related
+    street = fields.Char(string="Street", related='partner_id.street', readonly=True)  # ใช้ related
+    phone = fields.Char(string="Phone", related='partner_id.phone', readonly=True)  # ใช้ related
 
 class ManeerinCodeBeneficiary(models.Model):
     _name = 'maneerincode.beneficiary'
     
     maneerincode_id = fields.Many2one(comodel_name='maneerincode.code', string="Maneerin Code")
-    partner_id = fields.Many2one(comodel_name='res.partner', string="ผู้รับสิทธิ์", required=True)  # ต้องมีการเลือกผู้รับสิทธิ์
-    title = fields.Many2one(related='partner_id.title', string='คำนำหน้าชื่อ', readonly=True)
-    age = fields.Integer(related='partner_id.age', string='Age', readonly=True)
-    nation = fields.Char(related='partner_id.nationality', string='Nation', readonly=True)  # ตรวจสอบว่าใช้ 'nationality' ในโมเดล res.partner
-    street = fields.Char(related='partner_id.street', string='Street', readonly=True)
-    phone = fields.Char(related='partner_id.phone', string='Phone', readonly=True)
+    partner_id = fields.Many2one(comodel_name='res.partner', string="ผู้รับสิทธิ์")  # เปลี่ยนเป็น Many2one เพื่อเลือกจาก res.partner
+    age = fields.Integer(string="Age", related='partner_id.age', readonly=True)  # ใช้ related
+    nation = fields.Char(string="Nation", related='partner_id.nationality', readonly=True)  # ใช้ related
+    street = fields.Char(string="Street", related='partner_id.street', readonly=True)  # ใช้ related
+    phone = fields.Char(string="Phone", related='partner_id.phone', readonly=True)  # ใช้ related
