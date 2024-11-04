@@ -11,8 +11,7 @@
                 <field name="thai_id" string="เลขประจำตัวประชาชน"/>
             </xpath>
             <xpath expr="//field[@name='name']" position="before">
-                <field name="title" placeholder="กรุณาเลือกคำนำหน้าชื่อ" 
-                        invisible="company_type == 'company'"/>
+                <field name="title" placeholder="กรุณาเลือกคำนำหน้าชื่อ" invisible="company_type == 'company'"/>
             </xpath>
         </field>
     </record>
