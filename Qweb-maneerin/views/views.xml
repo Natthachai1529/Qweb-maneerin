@@ -9,12 +9,13 @@
                         <group>
                             <field name="contract_no" string="เลขที่สัญญา"/>
                             <field name="contact_date" string="Contact Date"/>
-                            <field name="seller" string="ผู้จะขาย"/>
+                            <field name="seller_id" string="ผู้จะขาย"/>
                         </group>
 
                         <label for="buyer_ids" string="ผู้จะซื้อ"/>
                         <field name="buyer_ids" widget="one2many_list">
                             <tree>
+                                <field name="buyer_id" string="ผู้ซื้อ"/>  <!-- เพิ่มฟิลด์ผู้ซื้อ -->
                                 <field name="name" string="Name"/>
                                 <field name="age" string="Age"/>
                                 <field name="nation" string="Nation"/>
@@ -46,7 +47,7 @@
             <tree string="maneerincode List">
                 <field name="contract_no" string="เลขที่สัญญา"/>
                 <field name="contact_date" string="Contact Date"/>
-                <field name="seller" string="ผู้จะขาย"/>
+                <field name="seller_id" string="ผู้จะขาย"/>
             </tree>
         </field>
     </record>
