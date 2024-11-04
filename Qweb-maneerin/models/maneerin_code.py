@@ -4,7 +4,7 @@ class ManeerinCode(models.Model):
     _name = 'maneerincode.code'
 
     contract_no = fields.Char(string="เลขที่สัญญา")
-    contact_date = fields.Date(string='Contact Date', default=fields.Date.today) 
+    contact_date = fields.Date(string='Contact Date', default=fields.Date.today)
     seller = fields.Char(string="ผู้จะขาย")
     buyer_ids = fields.One2many('buyer.info', 'maneerin_code_id', string="ผู้จะซื้อ")
     beneficiary_ids = fields.One2many('beneficiary.info', 'maneerin_code_id', string="ผู้รับสิทธิ์โอน")
