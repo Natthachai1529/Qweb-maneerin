@@ -12,6 +12,7 @@
                             <field name="seller" string="ผู้จะขาย"/>
                         </group>
 
+                        <label for="buyer_ids" string="ผู้จะซื้อ"/>
                         <field name="buyer_ids" widget="one2many_list">
                             <tree>
                                 <field name="name" string="Name"/>
@@ -22,6 +23,7 @@
                             </tree>
                         </field>
 
+                        <label for="beneficiary_ids" string="ผู้รับสิทธิ์โอน"/>
                         <field name="beneficiary_ids" widget="one2many_list">
                             <tree>
                                 <field name="name" string="Name"/>
