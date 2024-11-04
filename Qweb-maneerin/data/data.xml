@@ -1,16 +1,8 @@
-<odoo>
-    <record id="action_print_contract" model="ir.actions.server">
-        <field name="name">Print Contract</field>
-        <field name="model_id" ref="your_module_name.model_contract"/> <!-- แก้ไขเป็น External ID ที่ถูกต้อง -->
-        <field name="binding_model_id" ref="your_module_name.model_contract"/> <!-- แก้ไขเป็น External ID ที่ถูกต้อง -->
-        <field name="binding_view_types">form,list</field>
-        <field name="state">code</field>
-        <field name="code">action = records.action_print_contract()</field>
-    </record>
-
-    <record id="menu_print_contract" model="ir.ui.menu">
-        <field name="name">Print Contract</field>
-        <field name="parent_id" ref="menu_maneerincode_root"/>  <!-- เปลี่ยนเป็น parent menu ที่ต้องการ -->
-        <field name="action" ref="action_print_contract"/>
-    </record>
-</odoo>
+<record id="action_print_contract" model="ir.actions.server">
+    <field name="name">Print Contract</field>
+    <field name="model_id" ref="your_module_name.model_contract"/> <!-- ตรวจสอบ External ID -->
+    <field name="binding_model_id" ref="your_module_name.model_contract"/> <!-- ตรวจสอบ External ID -->
+    <field name="binding_view_types">form,list</field>
+    <field name="state">code</field>
+    <field name="code">action = records.action_print_contract()</field>
+</record>
