@@ -1,60 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="report_maneerincode">
-        <t t-call="web.basic_layout">
-            <div class="page">
-                <h2>Contract Details</h2>
-                <p><strong>เลขที่สัญญา:</strong> <t t-esc="doc.contract_no"/></p>
-                <p><strong>วันที่ติดต่อ:</strong> <t t-esc="doc.contact_date"/></p>
-                <p><strong>ผู้จะขาย:</strong> <t t-esc="doc.seller.name"/></p>
+    <record id="paperformat_contract_report" model="report.paperformat">
+        <field name="name">Contract A4 Format</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">25</field>
+        <field name="margin_left">15</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
 
-                <h3>ผู้จะซื้อ</h3>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>ชื่อ</th>
-                            <th>อายุ</th>
-                            <th>สัญชาติ</th>
-                            <th>ถนน</th>
-                            <th>โทรศัพท์</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <t t-foreach="doc.buyer_ids" t-as="buyer">
-                            <tr>
-                                <td><t t-esc="buyer.partner_id.name"/></td>
-                                <td><t t-esc="buyer.age"/></td>
-                                <td><t t-esc="buyer.nation"/></td>
-                                <td><t t-esc="buyer.street"/></td>
-                                <td><t t-esc="buyer.phone"/></td>
-                            </tr>
-                        </t>
-                    </tbody>
-                </table>
+    <template id="report_contract_custom">
+        <t t-foreach="docs" t-as="doc">
+            <t t-call="web.html_container">
+                <t t-call="web.basic_layout">
+                    <style>
+                        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&amp;family=IBM+Plex+Sans+Thai:wght@400;700&amp;display=swap');
+                        .page {
+                            font-family: 'Sarabun', 'IBM Plex Sans Thai', sans-serif;
+                        }
+                        .footer {
+                            font-family: 'Sarabun', 'IBM Plex Sans Thai', sans-serif;
+                        }
+                        .header {
+                            font-family: 'Sarabun', 'IBM Plex Sans Thai', sans-serif;
+                        }
+                        * {
+                            font-family: 'Sarabun', 'IBM Plex Sans Thai', sans-serif;
+                        }
+                        .date-space {
+                            display: inline-block;
+                            width: 50ch;
+                            text-align: center;
+                            margin: 0 10px;
+                        }
+                    </style>
+                    <div class="page">
+                        <main>
+                            <div style="text-align: right;">
+                                <span class="text-muted" style="margin-right: 10px;">(การโอนสิทธิ์)</span>
+                                <span>ต้นฉบับ</span>
+                            </div>
+                            <div style="text-align: center; margin: 20px 0;">
+                                <strong>
+                                    <p>
+                                        บันทึกข้อตกลงแนบท้ายสัญญาจะซื้อจะขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างโครงการ 
+                                        <span t-field="doc.project_name"/>
+                                    </p>
+                                </strong>
+                                <strong style="margin-top: 5px;">
+                                    สัญญาเลขที่ <span t-field="doc.name"/> 
+                                    ลงวันที่ <span t-esc="doc.get_thai_date(doc.contract_date)"/>
+                                </strong>
+                            </div>
 
-                <h3>ผู้รับสิทธิ์โอน</h3>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>ชื่อ</th>
-                            <th>อายุ</th>
-                            <th>สัญชาติ</th>
-                            <th>ถนน</th>
-                            <th>โทรศัพท์</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <t t-foreach="doc.beneficiary_ids" t-as="beneficiary">
-                            <tr>
-                                <td><t t-esc="beneficiary.partner_id.name"/></td>
-                                <td><t t-esc="beneficiary.age"/></td>
-                                <td><t t-esc="beneficiary.nation"/></td>
-                                <td><t t-esc="beneficiary.street"/></td>
-                                <td><t t-esc="beneficiary.phone"/></td>
-                            </tr>
-                        </t>
-                    </tbody>
-                </table>
-            </div>
+                            <div style="text-align: right;">
+                                <div style="display: inline-block; text-align: left;">
+                                    <p style="margin: 0;">ทำที่ บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด</p>
+                                    <p style="margin: 0;">219 หมู่ 2 ตำบลบางพระ อำเภอศรีราชา จังหวัดชลบุรี 20110</p>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 30px;">
+                                <p>บันทึกข้อตกลงฉบับนี้ทำขึ้นเมื่อวันที่<span class="date-space"><span t-esc="doc.get_thai_date(doc.contract_date)"/></span>ระหว่าง</p>
+                                <p style="margin-top:30px;">
+                                    1. บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จํากัด สํานักงานตั้งอยู่เลขที่ 219 หมู่ 2 &#x200B;
+                                    ตําบลบางพระ อําเภอศรีราชา จังหวัดชลบุรี 20110 โดย <span t-field="doc.seller_id.title.name"/><span t-field="doc.seller_id.name"/> ผู้มีอำนาจลงนามผูกพันบริษัท &#x200B;
+                                    ซึ่งต่อไปในสัญญานี้จะเรียกว่า "ผู้จะขาย" ฝ่ายหนึ่งกับ
+                                </p>
+
+                                <!-- Buyer Section -->
+                                <t t-foreach="doc.buyer_ids.filtered(lambda r: r.active)" t-as="buyer">
+                                    <p style="margin-top: 20px; ">
+                                        <t t-if="buyer_index == 0">2.</t> 
+                                        <span t-field="buyer.title.name"/><span t-field="buyer.partner_id.name"/>
+                                        อายุ <span t-field="buyer.age"/> ปี สัญชาติ <span t-field="buyer.nation"/>
+                                        เลขประจำตัวประชาชน <span t-field="buyer.partner_id.thai_id"/>
+                                        ที่อยู่ <span t-field="buyer.street"/> ตำบล<span t-field="buyer.partner_id.street2"/> อำเภอ<span t-field="buyer.partner_id.city"/> 
+                                        จังหวัด<span t-field="buyer.partner_id.state_id.name"/> <span t-field="buyer.partner_id.zip"/><br/>
+                                        หมายเลขโทรศัพท์ <span t-field="buyer.partner_id.phone"/> 
+                                        <t t-if="buyer_index != len(doc.buyer_ids.filtered(lambda r: r.active)) - 1">และ</t>
+                                        <t t-if="buyer_index == len(doc.buyer_ids.filtered(lambda r: r.active)) - 1">ซึ่งต่อไปในสัญญานี้จะเรียกว่า "ผู้จะซื้อ" ฝ่ายหนึ่งกับ</t>
+                                    </p>
+                                </t>
+
+                                <!-- Transferee Section -->
+                                <t t-foreach="doc.transferee_ids.filtered(lambda r: r.active)" t-as="transferee">
+                                    <p style="margin-top: 20px; ">
+                                        <t t-if="transferee_index == 0">3.</t> 
+                                        <span t-field="transferee.title.name"/><span t-field="transferee.partner_id.name"/>
+                                        อายุ <span t-field="transferee.age"/> ปี สัญชาติ <span t-field="transferee.nation"/>
+                                        เลขประจำตัวประชาชน <span t-field="transferee.partner_id.thai_id"/>
+                                        ที่อยู่ <span t-field="transferee.street"/> ตำบล<span t-field="transferee.partner_id.street2"/> อำเภอ<span t-field="transferee.partner_id.city"/> 
+                                        จังหวัด<span t-field="transferee.partner_id.state_id.name"/> <span t-field="transferee.partner_id.zip"/> <br/>
+                                        หมายเลขโทรศัพท์ <span t-field="transferee.partner_id.phone"/>
+                                        <t t-if="transferee_index != len(doc.transferee_ids.filtered(lambda r: r.active)) - 1">และ</t>
+                                        <t t-if="transferee_index == len(doc.transferee_ids.filtered(lambda r: r.active)) - 1">ซึ่งต่อไปในสัญญานี้จะเรียกว่า "ผู้รับโอนสิทธิ" ฝ่ายหนึ่ง</t>
+                                    </p>
+                                </t>
+                            </div>
+                        </main>
+                    </div>
+                </t>
+            </t>
         </t>
     </template>
 </odoo>
