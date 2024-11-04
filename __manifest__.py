@@ -1,0 +1,21 @@
+{
+    'name': 'Contract Management',
+    'version': '17.0.1.0.0',
+    'category': 'Sales/Contracts',
+    'sequence': -100,
+    'summary': 'Manage contracts with buyers and transferees',
+    'depends': ['base', 'contacts','mail'],
+    'data': [
+        'security/ir.model.access.csv',
+        'data/contract_sequence.xml',
+        'data/res_partner_data.xml',
+        'reports/contract_report.xml',
+        'views/res_partner_views.xml',
+        'views/contract_views.xml',
+    ], 
+    'web_icon': 'contract/static/description/icon.png',
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+    'license': 'LGPL-3',
+}
