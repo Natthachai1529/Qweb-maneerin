@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from odoo.exceptions import UserError
 
 class ManeerinCode(models.Model):
     _name = 'maneerincode.code'
@@ -10,9 +11,9 @@ class ManeerinCode(models.Model):
     buyer_ids = fields.One2many(comodel_name='maneerincode.buyer', inverse_name='maneerincode_id', string="ผู้จะซื้อ")  
     beneficiary_ids = fields.One2many(comodel_name='maneerincode.beneficiary', inverse_name='maneerincode_id', string="ผู้รับสิทธิ์") 
 
-    @api.multi
-    def action_print(self):
-        return self.env.ref('your_module_name.maneerincode_report').report_action(self)
+    def print_report(self):
+        # ฟังก์ชันที่ใช้ในการพิมพ์รายงาน
+        return self.env.ref('your_module_name.report_maneerincode_code').report_action(self)
 
 class ManeerinCodeBuyer(models.Model):
     _name = 'maneerincode.buyer'

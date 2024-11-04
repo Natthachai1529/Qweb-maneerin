@@ -5,7 +5,7 @@
         <field name="arch" type="xml">
             <form string="Maneerin Code">
                 <header>
-                    <button name="action_print" type="object" string="Print" class="oe_highlight"/>
+                    <button name="print_report" type="object" string="Print" class="oe_highlight"/>
                 </header>
                 <sheet>
                     <group>
@@ -60,6 +60,4 @@
 
     <menuitem id="menu_maneerincode_root" name="Maneerin Code"/>
     <menuitem id="menu_maneerincode" name="Maneerin Codes" parent="menu_maneerincode_root" action="action_maneerincode"/>
-
-    <report id="maneerincode_report" model="maneerincode.code" string="Maneerin Code Report" report_type="qweb-pdf" name="your_module_name.maneerincode_report_template" file="your_module_name.maneerincode_report_template"/>
 </odoo>
