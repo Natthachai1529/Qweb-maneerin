@@ -10,7 +10,7 @@
                         <field name="contract_no"/>
                         <field name="contact_date"/>
                         <field name="seller"/>
-                        <field name="buyer_id" label="ผู้จะซื้อ" domain="[('active', '=', True)]">
+                        <field name="buyer_id" label="ผู้จะซื้อ">
                             <tree editable="bottom">
                                 <field name="name" string="ชื่อ"/>
                                 <field name="age" string="อายุ"/>
@@ -19,7 +19,7 @@
                                 <field name="phone" string="โทรศัพท์"/>
                             </tree>
                         </field>
-                        <field name="beneficiary_id" label="ผู้รับสิทธิ์" domain="[('active', '=', True)]">
+                        <field name="beneficiary_id" label="ผู้รับสิทธิ์">
                             <tree editable="bottom">
                                 <field name="name" string="ชื่อ"/>
                                 <field name="age" string="อายุ"/>
