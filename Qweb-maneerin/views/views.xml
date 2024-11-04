@@ -21,7 +21,7 @@
                     <group>
                         <field name="buyer_ids" string="ผู้จะซื้อ">
                             <tree editable="bottom">
-                                <field name="partner_id" string="ชื่อ"/>
+                                <field name="name" string="ชื่อ"/>
                                 <field name="age" string="อายุ"/>
                                 <field name="nation" string="สัญชาติ"/>
                                 <field name="street" string="ถนน"/>
@@ -30,7 +30,7 @@
                         </field>
                         <field name="beneficiary_ids" string="ผู้รับสิทธิ์">
                             <tree editable="bottom">
-                                <field name="partner_id" string="ชื่อ"/>
+                                <field name="name" string="ชื่อ"/>
                                 <field name="age" string="อายุ"/>
                                 <field name="nation" string="สัญชาติ"/>
                                 <field name="street" string="ถนน"/>
