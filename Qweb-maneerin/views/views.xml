@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="Purchase_Management_view_form" model="ir.ui.view">
-        <field name="name">Purchase Management Form</field>
-        <field name="model">purchase.management.code</field> 
+    <record id="maneerincode_view_form" model="ir.ui.view">
+        <field name="name">maneerincode Form</field>
+        <field name="model">maneerincode.code</field> 
         <field name="arch" type="xml">
-            <form string="Purchase Management Form">
+            <form string="maneerincode Form">
                 <sheet>
                     <group>
                         <field name="vendor"/>
@@ -17,11 +17,11 @@
         </field>
     </record>
 
-    <record id="Purchase_Management_view_tree" model="ir.ui.view">
-        <field name="name">Purchase Management Tree</field>
-        <field name="model">purchase.management.code</field> 
+    <record id="maneerincode_view_tree" model="ir.ui.view">
+        <field name="name">maneerincode Tree</field>
+        <field name="model">maneerincode.code</field> 
         <field name="arch" type="xml">
-            <tree string="Purchase Management List">
+            <tree string="maneerincode List">
                 <field name="vendor"/>
                 <field name="v_ref"/>  
                 <field name="order_deadline"/>
@@ -30,11 +30,11 @@
         </field>
     </record>
 
-    <record id="Purchase_Management_action" model="ir.actions.act_window">
-        <field name="name">Purchase Management</field>
-        <field name="res_model">purchase.management.code</field>
+    <record id="maneerincode_action" model="ir.actions.act_window">
+        <field name="name">maneerincode</field>
+        <field name="res_model">maneerincode.code</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="Purchase_Management_menu" name="Purchase Management" sequence="1" action="Purchase_Management_action"/>
+    <menuitem id="maneerincode_menu" name="maneerincode" sequence="1" action="maneerincode_action"/>
 </odoo>
