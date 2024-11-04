@@ -3,28 +3,8 @@ from odoo import models, fields
 class ManeerinCode(models.Model):
     _name = 'maneerincode.code'
 
-    contract_no = fields.Char(string="เลขที่สัญญา")
-    contact_date = fields.Date(string='Contact Date', default=fields.Date.today)
+    contract_no = fields.Char(string="เลขที่สัญญา")  # แก้ชื่อฟิลด์ให้เป็น snake_case
+    contact_date = fields.Date(string='Contact Date', default=fields.Date.today) 
     seller = fields.Char(string="ผู้จะขาย")
-    buyer_ids = fields.One2many('buyer.info', 'maneerin_code_id', string="ผู้จะซื้อ")
-    beneficiary_ids = fields.One2many('beneficiary.info', 'maneerin_code_id', string="ผู้รับสิทธิ์โอน")
-
-class BuyerInfo(models.Model):
-    _name = 'buyer.info'
-
-    name = fields.Char(string="Name")
-    age = fields.Integer(string="Age")
-    nation = fields.Char(string="Nation")
-    street = fields.Char(string="Street")
-    phone = fields.Char(string="Phone")
-    maneerin_code_id = fields.Many2one('maneerincode.code', string="Maneerin Code")  # ใช้ Many2one เพื่อเชื่อมโยง
-
-class BeneficiaryInfo(models.Model):
-    _name = 'beneficiary.info'
-
-    name = fields.Char(string="Name")
-    age = fields.Integer(string="Age")
-    nation = fields.Char(string="Nation")
-    street = fields.Char(string="Street")
-    phone = fields.Char(string="Phone")
-    maneerin_code_id = fields.Many2one('maneerincode.code', string="Maneerin Code")  # ใช้ Many2one เพื่อเชื่อมโยง
+    buyer = fields.Char(string="ผู้จะซื้อ")  
+    beneficiary = fields.Char(string="ผู้รับสิทธิ์")
