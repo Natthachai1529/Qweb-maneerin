@@ -9,7 +9,7 @@
                         <field name="contract_no"/>
                         <field name="contact_date"/>
                         <field name="seller"/>
-                        
+
                         <label for="buyer_ids" string="ผู้จะซื้อ"/>
                         <field name="buyer_ids" widget="one2many_list">
                             <tree>
@@ -31,7 +31,7 @@
                                 <field name="phone" string="Phone"/>
                             </tree>
                         </field>
-                    </group>                
+                    </group>
                 </sheet>
             </form>
         </field>
