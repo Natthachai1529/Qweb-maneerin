@@ -9,7 +9,6 @@
         'views/views.xml',
         'views/maneerin_contract.xml',  
     ],
-
     'application': True,
     'installable': True,
 }
