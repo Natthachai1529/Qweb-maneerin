@@ -8,55 +8,36 @@
                     <group>
                         <field name="contract_no" string="เลขที่สัญญา"/>
                         <field name="contact_date" string="Contact Date"/>
-                        <field name="seller" string="ผู้จะขาย"/> <!-- เปลี่ยนจาก seller_id เป็น seller -->
+                        <field name="seller" string="ผู้จะขาย"/>
                     </group>
-                    <notebook>
-                        <page string="ผู้จะซื้อ">
-                            <field name="buyer_ids" widget="one2many_list">
-                                <tree>
-                                    <field name="name" string="ผู้ซื้อ"/> <!-- ใช้ name เป็น Many2one -->
-                                    <field name="age" string="Age"/>
-                                    <field name="nation" string="Nation"/>
-                                    <field name="street" string="Street"/>
-                                    <field name="phone" string="Phone"/>
-                                </tree>
-                            </field>
-                        </page>
-                        <page string="ผู้รับสิทธิ์โอน">
-                            <field name="beneficiary_ids" widget="one2many_list">
-                                <tree>
-                                    <field name="name" string="ผู้รับสิทธิ์"/>
-                                    <field name="age" string="Age"/>
-                                    <field name="nation" string="Nation"/>
-                                    <field name="street" string="Street"/>
-                                    <field name="phone" string="Phone"/>
-                                </tree>
-                            </field>
-                        </page>
-                    </notebook>
+                    <group>
+                        <label for="buyer_ids" string="ผู้จะซื้อ"/>
+                        <field name="buyer_ids" widget="one2many_list">
+                            <tree>
+                                <field name="partner_id" string="ผู้ซื้อ"/> <!-- เลือกจาก res.partner -->
+                                <field name="name" string="Name"/>
+                                <field name="age" string="Age"/>
+                                <field name="nation" string="Nation"/>
+                                <field name="street" string="Street"/>
+                                <field name="phone" string="Phone"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group>
+                        <label for="beneficiary_ids" string="ผู้รับสิทธิ์โอน"/>
+                        <field name="beneficiary_ids" widget="one2many_list">
+                            <tree>
+                                <field name="partner_id" string="ผู้รับสิทธิ์"/> <!-- เลือกจาก res.partner -->
+                                <field name="name" string="Name"/>
+                                <field name="age" string="Age"/>
+                                <field name="nation" string="Nation"/>
+                                <field name="street" string="Street"/>
+                                <field name="phone" string="Phone"/>
+                            </tree>
+                        </field>
+                    </group>
                 </sheet>
             </form>
         </field>
     </record>
-
-    <record id="maneerincode_view_tree" model="ir.ui.view">
-        <field name="name">maneerincode.code.tree</field>
-        <field name="model">maneerincode.code</field>
-        <field name="arch" type="xml">
-            <tree string="Maneerin Codes">
-                <field name="contract_no" string="เลขที่สัญญา"/>
-                <field name="contact_date" string="Contact Date"/>
-                <field name="seller" string="ผู้จะขาย"/> <!-- เปลี่ยนจาก seller_id เป็น seller -->
-            </tree>
-        </field>
-    </record>
-
-    <record id="action_maneerincode" model="ir.actions.act_window">
-        <field name="name">Maneerin Codes</field>
-        <field name="res_model">maneerincode.code</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-    <menuitem id="menu_maneerincode_root" name="Maneerin Code"/>
-    <menuitem id="menu_maneerincode" name="Maneerin Codes" parent="menu_maneerincode_root" action="action_maneerincode"/>
 </odoo>
