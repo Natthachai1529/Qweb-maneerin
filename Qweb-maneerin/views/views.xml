@@ -8,21 +8,27 @@
                     <group>
                         <field name="contract_no" string="เลขที่สัญญา"/>
                         <field name="contact_date" string="Contact Date"/>
-                        <field name="seller" string="ผู้จะขาย"/> <!-- เปลี่ยนจาก seller_id เป็น seller -->
+                        <field name="seller" string="ผู้จะขาย"/>
                     </group>
                     <group>
-                        <field name="buyer_ids" widget="one2many_list">
-                            <tree>
-                                <field name="partner_id" string="ผู้ซื้อ"/> <!-- เลือกจาก res.partner -->
-                                <field name="phone" string="Phone"/>
+                        <field name="buyer_ids" widget="one2many_list" options="{'no_create': True}">
+                            <tree editable="bottom">
+                                <field name="partner_id" string="ผู้ซื้อ" options="{'no_open': True}"/>
+                                <field name="age" string="Age"/>
+                                <field name="nation" string="Nation"/>
+                                <field name="street" string="Street"/>
+                                <field name="phone" string="Phone"/>  <!-- หมายเลขโทรศัพท์จะแสดงอัตโนมัติ -->
                             </tree>
                         </field>
                     </group>
                     <group>
-                        <field name="beneficiary_ids" widget="one2many_list">
-                            <tree>
-                                <field name="partner_id" string="ผู้รับสิทธิ์"/> <!-- เลือกจาก res.partner -->
-                                <field name="phone" string="Phone"/>
+                        <field name="beneficiary_ids" widget="one2many_list" options="{'no_create': True}">
+                            <tree editable="bottom">
+                                <field name="partner_id" string="ผู้รับสิทธิ์" options="{'no_open': True}"/>
+                                <field name="age" string="Age"/>
+                                <field name="nation" string="Nation"/>
+                                <field name="street" string="Street"/>
+                                <field name="phone" string="Phone"/>  <!-- หมายเลขโทรศัพท์จะแสดงอัตโนมัติ -->
                             </tree>
                         </field>
                     </group>
@@ -38,7 +44,7 @@
             <tree string="Maneerin Codes">
                 <field name="contract_no" string="เลขที่สัญญา"/>
                 <field name="contact_date" string="Contact Date"/>
-                <field name="seller" string="ผู้จะขาย"/> <!-- เปลี่ยนจาก seller_id เป็น seller -->
+                <field name="seller" string="ผู้จะขาย"/>
             </tree>
         </field>
     </record>
