@@ -11,9 +11,9 @@
                         <field name="seller" string="ผู้จะขาย"/>
                     </group>
                     <group>
-                        <field name="buyer_ids" widget="one2many_list" options="{'no_create': True}">
-                            <tree editable="bottom">
-                                <field name="partner_id" string="ผู้ซื้อ" options="{'no_open': True}"/> <!-- ใช้ partner_id -->
+                        <field name="buyer_ids" widget="one2many_list">
+                            <tree>
+                                <field name="partner_id" string="ผู้ซื้อ"/>  <!-- ฟิลด์ Many2one เพื่อเลือกจาก res.partner -->
                                 <field name="title" string="คำนำหน้าชื่อ" readonly="1"/>
                                 <field name="age" string="Age" readonly="1"/>
                                 <field name="nation" string="Nation" readonly="1"/>
@@ -23,9 +23,9 @@
                         </field>
                     </group>
                     <group>
-                        <field name="beneficiary_ids" widget="one2many_list" options="{'no_create': True}">
-                            <tree editable="bottom">
-                                <field name="partner_id" string="ผู้รับสิทธิ์" options="{'no_open': True}"/> <!-- ใช้ partner_id -->
+                        <field name="beneficiary_ids" widget="one2many_list">
+                            <tree>
+                                <field name="partner_id" string="ผู้รับสิทธิ์"/>  <!-- ฟิลด์ Many2one เพื่อเลือกจาก res.partner -->
                                 <field name="title" string="คำนำหน้าชื่อ" readonly="1"/>
                                 <field name="age" string="Age" readonly="1"/>
                                 <field name="nation" string="Nation" readonly="1"/>
