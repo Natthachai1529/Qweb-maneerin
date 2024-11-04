@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_contract_contract,access.contract.contract,model_contract_contract,base.group_user,1,1,1,1
-access_contract_buyer_line,access.contract.buyer.line,model_contract_buyer_line,base.group_user,1,1,1,1
-access_contract_transferee_line,access.contract.transferee.line,model_contract_transferee_line,base.group_user,1,1,1,1
-access_contract_report,access.contract.report,model_contract_contract,base.group_user,1,1,1,1
