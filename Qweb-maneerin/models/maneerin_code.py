@@ -6,7 +6,7 @@ class ManeerinCode(models.Model):
     contract_no = fields.Char(string="เลขที่สัญญา")  
     contact_date = fields.Date(string='Contact Date', default=fields.Date.today) 
     seller = fields.Char(string="ผู้จะขาย")
-    buyer_id = fields.Many2one('maneerincode.buyer', string="ผู้จะซื้อ")  
+    buyer_id = fields.Many2one('maneerincode.buyer', string="ผู้จะซื้อ")
     beneficiary_id = fields.Many2one('maneerincode.beneficiary', string="ผู้รับสิทธิ์")
 
 class Buyer(models.Model):
