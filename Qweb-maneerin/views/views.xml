@@ -1,4 +1,5 @@
 <odoo>
+    <!-- Form View for Maneerin Code -->
     <record id="view_maneerincode_form" model="ir.ui.view">
         <field name="name">maneerincode.form</field>
         <field name="model">maneerincode.code</field>
@@ -6,9 +7,9 @@
             <form string="Maneerin Code">
                 <sheet>
                     <group>
-                        <field name="contract_no"/>
-                        <field name="contact_date"/>
-                        <field name="seller"/>
+                        <field name="contract_no" string="เลขที่สัญญา"/>
+                        <field name="contact_date" string="Contact Date"/>
+                        <field name="seller" string="ผู้จะขาย"/>
                     </group>
                     <group>
                         <label for="buyer_ids" string="ผู้จะซื้อ"/>
@@ -39,23 +40,26 @@
         </field>
     </record>
 
+    <!-- Tree View for Maneerin Code -->
     <record id="view_maneerincode_tree" model="ir.ui.view">
         <field name="name">maneerincode.tree</field>
         <field name="model">maneerincode.code</field>
         <field name="arch" type="xml">
             <tree string="Maneerin Code">
-                <field name="contract_no"/>
-                <field name="contact_date"/>
-                <field name="seller"/>
+                <field name="contract_no" string="เลขที่สัญญา"/>
+                <field name="contact_date" string="Contact Date"/>
+                <field name="seller" string="ผู้จะขาย"/>
             </tree>
         </field>
     </record>
 
+    <!-- Action for Maneerin Code -->
     <record id="action_maneerincode" model="ir.actions.act_window">
         <field name="name">Maneerin Code</field>
         <field name="res_model">maneerincode.code</field>
         <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- Menu Item for Maneerin Code -->
     <menuitem id="menu_maneerincode" name="Maneerin Code" action="action_maneerincode"/>
 </odoo>
