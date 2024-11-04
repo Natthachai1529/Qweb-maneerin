@@ -1,4 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_maneerincode_code,access_maneerincode_code,model_maneerincode_code,base.group_user,1,1,1,1
-access_buyer_info,access_buyer_info,model_buyer_info,base.group_user,1,1,1,1
-access_beneficiary_info,access_beneficiary_info,model_beneficiary_info,base.group_user,1,1,1,1
