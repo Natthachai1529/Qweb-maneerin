@@ -1,0 +1,71 @@
+<odoo>
+    <template id="report_maneerincode">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <h2>รายงาน Maneerin Code</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>เลขที่สัญญา</th>
+                            <th>Contact Date</th>
+                            <th>ผู้จะขาย</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><t t-esc="doc.contract_no"/></td>
+                            <td><t t-esc="doc.contact_date"/></td>
+                            <td><t t-esc="doc.seller.name"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>ผู้จะซื้อ</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ชื่อ</th>
+                            <th>อายุ</th>
+                            <th>สัญชาติ</th>
+                            <th>ถนน</th>
+                            <th>โทรศัพท์</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="doc.buyer_ids" t-as="buyer">
+                            <tr>
+                                <td><t t-esc="buyer.partner_id.name"/></td>
+                                <td><t t-esc="buyer.age"/></td>
+                                <td><t t-esc="buyer.nation"/></td>
+                                <td><t t-esc="buyer.street"/></td>
+                                <td><t t-esc="buyer.phone"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                <h3>ผู้รับสิทธิ์</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ชื่อ</th>
+                            <th>อายุ</th>
+                            <th>สัญชาติ</th>
+                            <th>ถนน</th>
+                            <th>โทรศัพท์</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="doc.beneficiary_ids" t-as="beneficiary">
+                            <tr>
+                                <td><t t-esc="beneficiary.partner_id.name"/></td>
+                                <td><t t-esc="beneficiary.age"/></td>
+                                <td><t t-esc="beneficiary.nation"/></td>
+                                <td><t t-esc="beneficiary.street"/></td>
+                                <td><t t-esc="beneficiary.phone"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo>
