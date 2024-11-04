@@ -23,10 +23,10 @@ class ManeerinCodeBuyer(models.Model):
     @api.onchange('partner_id')
     def _onchange_partner_id(self):
         if self.partner_id:
-            self.age = 0  # หรือกำหนดเป็นค่าพื้นฐาน
-            self.nation = self.partner_id.nationality  # ตรวจสอบชื่อฟิลด์ใน res.partner
-            self.street = self.partner_id.street
-            self.phone = self.partner_id.phone
+            self.age = self.partner_id.age or 0  # หรือใช้ค่า default อื่นๆ
+            self.nation = self.partner_id.country_id.name if self.partner_id.country_id else ''
+            self.street = self.partner_id.street or ''
+            self.phone = self.partner_id.phone or ''
 
 class ManeerinCodeBeneficiary(models.Model):
     _name = 'maneerincode.beneficiary'
@@ -41,7 +41,7 @@ class ManeerinCodeBeneficiary(models.Model):
     @api.onchange('partner_id')
     def _onchange_partner_id(self):
         if self.partner_id:
-            self.age = 0  # หรือกำหนดเป็นค่าพื้นฐาน
-            self.nation = self.partner_id.nationality  # ตรวจสอบชื่อฟิลด์ใน res.partner
-            self.street = self.partner_id.street
-            self.phone = self.partner_id.phone
+            self.age = self.partner_id.age or 0  # หรือใช้ค่า default อื่นๆ
+            self.nation = self.partner_id.country_id.name if self.partner_id.country_id else ''
+            self.street = self.partner_id.street or ''
+            self.phone = self.partner_id.phone or ''
