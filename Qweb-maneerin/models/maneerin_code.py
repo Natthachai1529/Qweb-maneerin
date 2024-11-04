@@ -14,7 +14,7 @@ class ManeerinCodeBuyer(models.Model):
     _name = 'maneerincode.buyer'
     
     maneerincode_id = fields.Many2one(comodel_name='maneerincode.code', string="Maneerin Code")
-    partner_id = fields.Many2one(comodel_name='res.partner', string="ผู้ซื้อ")  # เปลี่ยนเป็น Many2one เพื่อเลือกจาก res.partner
+    partner_id = fields.Many2one(comodel_name='res.partner', string="ผู้ซื้อ")
     age = fields.Integer(string="Age")
     nation = fields.Char(string="Nation")
     street = fields.Char(string="Street")
@@ -23,16 +23,16 @@ class ManeerinCodeBuyer(models.Model):
     @api.onchange('partner_id')
     def _onchange_partner_id(self):
         if self.partner_id:
-            self.age = self.partner_id.age  # กำหนดค่าอายุจาก partner
-            self.nation = self.partner_id.nationality  # กำหนดค่าสัญชาติจาก partner
-            self.street = self.partner_id.street  # กำหนดค่าถนนจาก partner
-            self.phone = self.partner_id.phone  # กำหนดค่าโทรศัพท์จาก partner
+            self.age = 0  # หรือกำหนดเป็นค่าพื้นฐาน
+            self.nation = self.partner_id.nationality  # ตรวจสอบชื่อฟิลด์ใน res.partner
+            self.street = self.partner_id.street
+            self.phone = self.partner_id.phone
 
 class ManeerinCodeBeneficiary(models.Model):
     _name = 'maneerincode.beneficiary'
     
     maneerincode_id = fields.Many2one(comodel_name='maneerincode.code', string="Maneerin Code")
-    partner_id = fields.Many2one(comodel_name='res.partner', string="ผู้รับสิทธิ์")  # เปลี่ยนเป็น Many2one เพื่อเลือกจาก res.partner
+    partner_id = fields.Many2one(comodel_name='res.partner', string="ผู้รับสิทธิ์")
     age = fields.Integer(string="Age")
     nation = fields.Char(string="Nation")
     street = fields.Char(string="Street")
@@ -41,7 +41,7 @@ class ManeerinCodeBeneficiary(models.Model):
     @api.onchange('partner_id')
     def _onchange_partner_id(self):
         if self.partner_id:
-            self.age = self.partner_id.age  # กำหนดค่าอายุจาก partner
-            self.nation = self.partner_id.nationality  # กำหนดค่าสัญชาติจาก partner
-            self.street = self.partner_id.street  # กำหนดค่าถนนจาก partner
-            self.phone = self.partner_id.phone  # กำหนดค่าโทรศัพท์จาก partner
+            self.age = 0  # หรือกำหนดเป็นค่าพื้นฐาน
+            self.nation = self.partner_id.nationality  # ตรวจสอบชื่อฟิลด์ใน res.partner
+            self.street = self.partner_id.street
+            self.phone = self.partner_id.phone
