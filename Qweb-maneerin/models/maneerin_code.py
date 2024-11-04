@@ -12,18 +12,17 @@ class ManeerinCode(models.Model):
 class BuyerInfo(models.Model):
     _name = 'buyer.info'
 
-    name = fields.Char(string="Name")
+    name = fields.Many2one('res.partner', string="ผู้ซื้อ")  # เชื่อมโยงกับโมเดล res.partner
     age = fields.Integer(string="Age")
     nation = fields.Char(string="Nation")
     street = fields.Char(string="Street")
     phone = fields.Char(string="Phone")
     maneerin_code_id = fields.Many2one('maneerincode.code', string="Maneerin Code")
-    buyer_id = fields.Many2one('res.partner', string="ผู้ซื้อ")  # เชื่อมโยงกับโมเดล res.partner
 
 class BeneficiaryInfo(models.Model):
     _name = 'beneficiary.info'
 
-    name = fields.Char(string="Name")
+    name = fields.Many2one('res.partner', string="ผู้รับสิทธิ์")  # เชื่อมโยงกับโมเดล res.partner
     age = fields.Integer(string="Age")
     nation = fields.Char(string="Nation")
     street = fields.Char(string="Street")

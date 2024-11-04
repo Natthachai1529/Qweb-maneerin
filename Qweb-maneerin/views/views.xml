@@ -9,13 +9,13 @@
                         <group>
                             <field name="contract_no" string="เลขที่สัญญา"/>
                             <field name="contact_date" string="Contact Date"/>
-                            <field name="seller" string="ผู้จะขาย"/>
+                            <field name="seller_id" string="ผู้จะขาย"/>
                         </group>
 
                         <label for="buyer_ids" string="ผู้จะซื้อ"/>
                         <field name="buyer_ids" widget="one2many_list">
                             <tree>
-                                <field name="name" string="Name"/>
+                                <field name="name" string="ผู้ซื้อ"/>
                                 <field name="age" string="Age"/>
                                 <field name="nation" string="Nation"/>
                                 <field name="street" string="Street"/>
@@ -26,7 +26,7 @@
                         <label for="beneficiary_ids" string="ผู้รับสิทธิ์โอน"/>
                         <field name="beneficiary_ids" widget="one2many_list">
                             <tree>
-                                <field name="name" string="Name"/>
+                                <field name="name" string="ผู้รับสิทธิ์"/>
                                 <field name="age" string="Age"/>
                                 <field name="nation" string="Nation"/>
                                 <field name="street" string="Street"/>
@@ -38,24 +38,4 @@
             </form>
         </field>
     </record>
-
-    <record id="maneerincode_view_tree" model="ir.ui.view">
-        <field name="name">maneerincode Tree</field>
-        <field name="model">maneerincode.code</field> 
-        <field name="arch" type="xml">
-            <tree string="maneerincode List">
-                <field name="contract_no" string="เลขที่สัญญา"/>
-                <field name="contact_date" string="Contact Date"/>
-                <field name="seller" string="ผู้จะขาย"/>
-            </tree>
-        </field>
-    </record>
-
-    <record id="maneerincode_action" model="ir.actions.act_window">
-        <field name="name">maneerincode</field>
-        <field name="res_model">maneerincode.code</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-    <menuitem id="maneerincode_menu" name="maneerincode" sequence="1" action="maneerincode_action"/>
 </odoo>
