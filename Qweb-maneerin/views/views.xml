@@ -11,26 +11,26 @@
                         <field name="seller" string="ผู้จะขาย"/>
                     </group>
                     <group>
-                        <label string="ผู้จะซื้อ"/>
                         <field name="buyer_ids" widget="one2many_list" options="{'no_create': True}">
                             <tree editable="bottom">
-                                <field name="partner_id" string="ผู้ซื้อ" options="{'no_open': True}"/>
-                                <field name="age" string="Age"/>
-                                <field name="nation" string="Nation"/>
-                                <field name="street" string="Street"/>
-                                <field name="phone" string="Phone"/>
+                                <field name="partner_id" string="ผู้ซื้อ" options="{'no_open': True}"/> <!-- ใช้ partner_id -->
+                                <field name="title" string="คำนำหน้าชื่อ" readonly="1"/>
+                                <field name="age" string="Age" readonly="1"/>
+                                <field name="nation" string="Nation" readonly="1"/>
+                                <field name="street" string="Street" readonly="1"/>
+                                <field name="phone" string="Phone" readonly="1"/>
                             </tree>
                         </field>
                     </group>
                     <group>
-                        <label string="ผู้รับสิทธิ์"/>
                         <field name="beneficiary_ids" widget="one2many_list" options="{'no_create': True}">
                             <tree editable="bottom">
-                                <field name="partner_id" string="ผู้รับสิทธิ์" options="{'no_open': True}"/>
-                                <field name="age" string="Age"/>
-                                <field name="nation" string="Nation"/>
-                                <field name="street" string="Street"/>
-                                <field name="phone" string="Phone"/>
+                                <field name="partner_id" string="ผู้รับสิทธิ์" options="{'no_open': True}"/> <!-- ใช้ partner_id -->
+                                <field name="title" string="คำนำหน้าชื่อ" readonly="1"/>
+                                <field name="age" string="Age" readonly="1"/>
+                                <field name="nation" string="Nation" readonly="1"/>
+                                <field name="street" string="Street" readonly="1"/>
+                                <field name="phone" string="Phone" readonly="1"/>
                             </tree>
                         </field>
                     </group>
