@@ -1,10 +1,19 @@
 <odoo>
     <record id="action_print_contract" model="ir.actions.server">
         <field name="name">Print Contract</field>
-        <field name="model_id" ref="model_maneerincode_code"/> 
-        <field name="binding_model_id" ref="model_maneerincode_code"/> 
+        <field name="model_id" ref="model_maneerincode_code"/>
+        <field name="binding_model_id" ref="model_maneerincode_code"/>
         <field name="binding_view_types">form,list</field>
         <field name="state">code</field>
         <field name="code">action = records.action_print_contract()</field>
     </record>
+
+    <report
+        id="report_maneerincode"
+        model="maneerincode.code"
+        string="Maneerin Code Report"
+        report_type="qweb-pdf"
+        name="your_module_name.report_maneerincode"
+        file="your_module_name.report_maneerincode"
+        />
 </odoo>
