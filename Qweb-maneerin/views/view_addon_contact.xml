@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_inherit" model="ir.ui.view">
+        <field name="name">addon.contact.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="age"/>
+                <field name="nation"/>
+                <field name="thai_id"/>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="title" placeholder="กรุณาเลือกคำนำหน้าชื่อ" 
+                        invisible="company_type == 'company'"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
