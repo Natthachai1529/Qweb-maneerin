@@ -1,3 +1,3 @@
 id,name,model_id:id,group_id,perm_read,perm_write,perm_create,perm_unlink
-access_info_user_code,access_info_user_code,model_purchase_management_code,,1,1,1,1
+access_info_user_code,access_info_user_code,model_maneerin_code,,1,1,1,1
 

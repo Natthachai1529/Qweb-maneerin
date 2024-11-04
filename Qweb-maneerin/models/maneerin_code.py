@@ -1,7 +1,7 @@
 from odoo import models, fields
 
-class PurchaseManagement(models.Model):
-    _name = 'purchase.management.code'
+class maneerincode(models.Model):
+    _name = 'maneerincode.code'
 
     vendor = fields.Many2one(comodel_name='res.partner', string='Vendor')
     v_ref = fields.Char(string='Vendor Reference') 
