@@ -15,21 +15,17 @@ class ManeerinCodeBuyer(models.Model):
     
     maneerincode_id = fields.Many2one(comodel_name='maneerincode.code', string="Maneerin Code")
     partner_id = fields.Many2one(comodel_name='res.partner', string="ผู้ซื้อ")  # เปลี่ยนเป็น Many2one เพื่อเลือกจาก res.partner
-
-    # ใช้ related fields เพื่อดึงข้อมูลจาก res.partner
-    age = fields.Integer(related='partner_id.age', string="Age", store=True)
-    nation = fields.Char(related='partner_id.nationality', string="Nation", store=True)
-    street = fields.Char(related='partner_id.street', string="Street", store=True)
-    phone = fields.Char(related='partner_id.phone', string="Phone", store=True)
+    age = fields.Integer(related='partner_id.age', string="Age", readonly=True)  # ใช้ related
+    nation = fields.Char(related='partner_id.nationality', string="Nation", readonly=True)  # ใช้ related
+    street = fields.Char(related='partner_id.street', string="Street", readonly=True)  # ใช้ related
+    phone = fields.Char(related='partner_id.phone', string="Phone", readonly=True)  # ใช้ related
 
 class ManeerinCodeBeneficiary(models.Model):
     _name = 'maneerincode.beneficiary'
     
     maneerincode_id = fields.Many2one(comodel_name='maneerincode.code', string="Maneerin Code")
     partner_id = fields.Many2one(comodel_name='res.partner', string="ผู้รับสิทธิ์")  # เปลี่ยนเป็น Many2one เพื่อเลือกจาก res.partner
-
-    # ใช้ related fields เพื่อดึงข้อมูลจาก res.partner
-    age = fields.Integer(related='partner_id.age', string="Age", store=True)
-    nation = fields.Char(related='partner_id.nationality', string="Nation", store=True)
-    street = fields.Char(related='partner_id.street', string="Street", store=True)
-    phone = fields.Char(related='partner_id.phone', string="Phone", store=True)
+    age = fields.Integer(related='partner_id.age', string="Age", readonly=True)  # ใช้ related
+    nation = fields.Char(related='partner_id.nationality', string="Nation", readonly=True)  # ใช้ related
+    street = fields.Char(related='partner_id.street', string="Street", readonly=True)  # ใช้ related
+    phone = fields.Char(related='partner_id.phone', string="Phone", readonly=True)  # ใช้ related
