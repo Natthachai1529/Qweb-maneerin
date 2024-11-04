@@ -1,41 +1,41 @@
 <odoo>
-    <record id="maneerincode_view_form" model="ir.ui.view">
-        <field name="name">maneerincode Form</field>
+    <record id="view_maneerincode_form" model="ir.ui.view">
+        <field name="name">maneerincode.form</field>
         <field name="model">maneerincode.code</field>
         <field name="arch" type="xml">
-            <form string="maneerincode Form">
+            <form string="Maneerin Code">
                 <sheet>
                     <group>
-                        <field name="contract_no"/>  <!-- ฟิลด์เลขที่สัญญา -->
-                        <field name="contact_date"/>  <!-- ฟิลด์วันที่ติดต่อ -->
-                        <field name="seller"/>  <!-- ฟิลด์ผู้ขาย -->
-                        <field name="buyer"/>   <!-- ฟิลด์ผู้ซื้อ -->
-                        <field name="beneficiary"/>  <!-- ฟิลด์ผู้รับสิทธิ์ -->
-                    </group>                
+                        <field name="contract_no"/>
+                        <field name="contact_date"/>
+                        <field name="seller"/>
+                        <field name="buyer_id"/>
+                        <field name="beneficiary_id"/>
+                    </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <record id="maneerincode_view_tree" model="ir.ui.view">
-        <field name="name">maneerincode Tree</field>
+    <record id="view_maneerincode_tree" model="ir.ui.view">
+        <field name="name">maneerincode.tree</field>
         <field name="model">maneerincode.code</field>
         <field name="arch" type="xml">
-            <tree string="maneerincode List">
-                <field name="contract_no"/>  <!-- ฟิลด์เลขที่สัญญา -->
-                <field name="contact_date"/>  <!-- ฟิลด์วันที่ติดต่อ -->
-                <field name="seller"/>  <!-- ฟิลด์ผู้ขาย -->
-                <field name="buyer"/>   <!-- ฟิลด์ผู้ซื้อ -->
-                <field name="beneficiary"/>  <!-- ฟิลด์ผู้รับสิทธิ์ -->
+            <tree string="Maneerin Code">
+                <field name="contract_no"/>
+                <field name="contact_date"/>
+                <field name="seller"/>
+                <field name="buyer_id"/>
+                <field name="beneficiary_id"/>
             </tree>
         </field>
     </record>
 
-    <record id="maneerincode_action" model="ir.actions.act_window">
-        <field name="name">maneerincode</field>
+    <record id="action_maneerincode" model="ir.actions.act_window">
+        <field name="name">Maneerin Code</field>
         <field name="res_model">maneerincode.code</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="maneerincode_menu" name="maneerincode" sequence="1" action="maneerincode_action"/>
+    <menuitem id="menu_maneerincode" name="Maneerin Code" action="action_maneerincode"/>
 </odoo>
