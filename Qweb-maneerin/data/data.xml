@@ -1,15 +1,17 @@
 <odoo>
-    <record id="model_x_contract_contract" model="ir.model">
-        <field name="name">X Contract</field>
-        <field name="model">x.contract.contract</field>
-    </record>
-
     <record id="action_print_contract" model="ir.actions.server">
         <field name="name">Print Contract</field>
-        <field name="model_id" ref="model_x_contract_contract"/>
-        <field name="binding_model_id" ref="model_x_contract_contract"/>
+        <field name="model_id" ref="model_contract_contract"/>
+        <field name="binding_model_id" ref="model_contract_contract"/>
         <field name="binding_view_types">form,list</field>
         <field name="state">code</field>
         <field name="code">action = records.action_print_contract()</field>
+    </record>
+
+    <!-- เพิ่มการอ้างอิงไปยังเมนูหรือการดำเนินการอื่น ๆ ที่เกี่ยวข้องที่คุณต้องการใช้ action นี้ -->
+    <record id="menu_print_contract" model="ir.ui.menu">
+        <field name="name">Print Contract</field>
+        <field name="parent_id" ref="menu_maneerincode_root"/>  <!-- เปลี่ยนเป็น parent menu ที่ต้องการ -->
+        <field name="action" ref="action_print_contract"/>
     </record>
 </odoo>
