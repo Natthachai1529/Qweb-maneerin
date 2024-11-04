@@ -1,71 +1,61 @@
 <odoo>
-    <record id="maneerincode_view_form" model="ir.ui.view">
-        <field name="name">maneerincode.code.form</field>
-        <field name="model">maneerincode.code</field>
-        <field name="arch" type="xml">
-            <form string="Maneerin Code">
-                <sheet>
-                    <group>
-                        <field name="contract_no" string="เลขที่สัญญา"/>
-                        <field name="contact_date" string="Contact Date"/>
-                        <field name="seller" string="ผู้จะขาย"/>
-                    </group>
-                    <group>
-                        <field name="buyer_ids" widget="one2many_list" options="{'no_create': True}">
-                            <tree editable="bottom">
-                                <field name="partner_id" string="ผู้ซื้อ" options="{'no_open': True}"/>
-                                <field name="age" string="Age"/>
-                                <field name="nation" string="Nation"/>
-                                <field name="street" string="Street"/>
-                                <field name="phone" string="Phone"/>
-                            </tree>
-                        </field>
-                    </group>
-                    <group>
-                        <field name="beneficiary_ids" widget="one2many_list" options="{'no_create': True}">
-                            <tree editable="bottom">
-                                <field name="partner_id" string="ผู้รับสิทธิ์" options="{'no_open': True}"/>
-                                <field name="age" string="Age"/>
-                                <field name="nation" string="Nation"/>
-                                <field name="street" string="Street"/>
-                                <field name="phone" string="Phone"/>
-                            </tree>
-                        </field>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
+    <report
+        id="report_maneerincode"
+        model="maneerincode.code"
+        string="Maneerin Code Report"
+        report_type="qweb-pdf"
+        name="your_module_name.report_maneerincode_template"
+        file="your_module_name.report_maneerincode_template"
+        menu="True"/>
 
-    <record id="maneerincode_view_tree" model="ir.ui.view">
-        <field name="name">maneerincode.code.tree</field>
-        <field name="model">maneerincode.code</field>
-        <field name="arch" type="xml">
-            <tree string="Maneerin Codes">
-                <field name="contract_no" string="เลขที่สัญญา"/>
-                <field name="contact_date" string="Contact Date"/>
-                <field name="seller" string="ผู้จะขาย"/>
-            </tree>
-        </field>
-    </record>
+    <template id="report_maneerincode_template">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <h2>Maneerin Code Report</h2>
+                <p>เลขที่สัญญา: <t t-esc="doc.contract_no"/></p>
+                <p>วันที่ติดต่อ: <t t-esc="doc.contact_date"/></p>
+                <p>ผู้ขาย: <t t-esc="doc.seller.name"/></p>
+                
+                <h3>ผู้จะซื้อ</h3>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>ชื่อ</th>
+                        <th>อายุ</th>
+                        <th>สัญชาติ</th>
+                        <th>ถนน</th>
+                        <th>โทรศัพท์</th>
+                    </tr>
+                    <t t-foreach="doc.buyer_ids" t-as="buyer">
+                        <tr>
+                            <td><t t-esc="buyer.partner_id.name"/></td>
+                            <td><t t-esc="buyer.age"/></td>
+                            <td><t t-esc="buyer.nation"/></td>
+                            <td><t t-esc="buyer.street"/></td>
+                            <td><t t-esc="buyer.phone"/></td>
+                        </tr>
+                    </t>
+                </table>
 
-    <record id="action_maneerincode" model="ir.actions.act_window">
-        <field name="name">Maneerin Codes</field>
-        <field name="res_model">maneerincode.code</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-    <!-- เพิ่มการสร้างปุ่มในเมนูการตั้งค่า -->
-    <record id="action_maneerincode_setting" model="ir.actions.act_window">
-        <field name="name">Maneerin Code Settings</field>
-        <field name="res_model">maneerincode.code</field>
-        <field name="view_mode">tree,form</field>
-        <field name="target">current</field>
-    </record>
-
-    <menuitem id="menu_maneerincode_root" name="Maneerin Code"/>
-    <menuitem id="menu_maneerincode" name="Maneerin Codes" parent="menu_maneerincode_root" action="action_maneerincode"/>
-
-    <!-- เพิ่มปุ่มในเมนูการตั้งค่า -->
-    <menuitem id="menu_maneerincode_setting" name="Maneerin Code Settings" parent="base.menu_config" action="action_maneerincode_setting" sequence="10"/>
+                <h3>ผู้รับสิทธิ์</h3>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>ชื่อ</th>
+                        <th>อายุ</th>
+                        <th>สัญชาติ</th>
+                        <th>ถนน</th>
+                        <th>โทรศัพท์</th>
+                    </tr>
+                    <t t-foreach="doc.beneficiary_ids" t-as="beneficiary">
+                        <tr>
+                            <td><t t-esc="beneficiary.partner_id.name"/></td>
+                            <td><t t-esc="beneficiary.age"/></td>
+                            <td><t t-esc="beneficiary.nation"/></td>
+                            <td><t t-esc="beneficiary.street"/></td>
+                            <td><t t-esc="beneficiary.phone"/></td>
+                        </tr>
+                    </t>
+                </table>
+            </div>
+        </t>
+    </template>
 </odoo>
