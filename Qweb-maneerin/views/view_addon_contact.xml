@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='vat']" position="after">
                 <field name="age"/>
-                <field name="nationality"/>
+                <field name="nation"/>
                 <field name="identification_number"/>
             </xpath>
         </field>
