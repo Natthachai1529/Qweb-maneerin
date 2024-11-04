@@ -1,2 +1,2 @@
-id,name,model_id:id,group_id,perm_read,perm_write,perm_create,perm_unlink
-access_info_user_code,access_info_user_code,model_maneerincode_code,,1,1,1,1
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_buyer_code_user,access_buyer_code_user,model_buyer_code,base.group_user,1,1,1,1
