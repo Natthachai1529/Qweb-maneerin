@@ -6,16 +6,15 @@ class ManeerinCode(models.Model):
     contract_no = fields.Char(string="เลขที่สัญญา")  
     contact_date = fields.Date(string='Contact Date', default=fields.Date.today) 
     seller = fields.Many2one(comodel_name="res.partner", string="ผู้จะขาย")  # ผู้ขายเป็น res.partner
-
-    # ใช้ Many2one เพื่อเชื่อมโยงกับ res.partner
-    buyer_id = fields.Many2one('res.partner', string="ผู้จะซื้อ")  
-    beneficiary_id = fields.Many2one('res.partner', string="ผู้รับสิทธิ์")  
+    
+    buyer_ids = fields.One2many(comodel_name='maneerincode.buyer', inverse_name='maneerincode_id', string="ผู้จะซื้อ")  
+    beneficiary_ids = fields.One2many(comodel_name='maneerincode.beneficiary', inverse_name='maneerincode_id', string="ผู้รับสิทธิ์") 
 
 class ManeerinCodeBuyer(models.Model):
     _name = 'maneerincode.buyer'
     
-    maneerincode_id = fields.Many2one('maneerincode.code', string="Maneerin Code")
-    partner_id = fields.Many2one('res.partner', string="ผู้ซื้อ")  # เชื่อมโยงกับ res.partner
+    maneerincode_id = fields.Many2one(comodel_name='maneerincode.code', string="Maneerin Code")
+    name = fields.Char(string="Name")
     age = fields.Integer(string="Age")
     nation = fields.Char(string="Nation")
     street = fields.Char(string="Street")
@@ -24,8 +23,8 @@ class ManeerinCodeBuyer(models.Model):
 class ManeerinCodeBeneficiary(models.Model):
     _name = 'maneerincode.beneficiary'
     
-    maneerincode_id = fields.Many2one('maneerincode.code', string="Maneerin Code")
-    partner_id = fields.Many2one('res.partner', string="ผู้รับสิทธิ์")  # เชื่อมโยงกับ res.partner
+    maneerincode_id = fields.Many2one(comodel_name='maneerincode.code', string="Maneerin Code")
+    name = fields.Char(string="Name")
     age = fields.Integer(string="Age")
     nation = fields.Char(string="Nation")
     street = fields.Char(string="Street")
