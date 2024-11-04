@@ -1,59 +1,37 @@
 <odoo>
-    <report
-        id="report_maneerincode"
-        model="maneerincode.code"
-        string="Maneerin Code Report"
-        report_type="qweb-pdf"
-        name="your_module_name.report_maneerincode_template"
-        file="your_module_name.report_maneerincode_template"
-        menu="True"/>
-
     <template id="report_maneerincode_template">
-        <t t-call="web.external_layout">
+        <t t-call="web.basic_layout">
             <div class="page">
                 <h2>Maneerin Code Report</h2>
-                <p>เลขที่สัญญา: <t t-esc="doc.contract_no"/></p>
-                <p>วันที่ติดต่อ: <t t-esc="doc.contact_date"/></p>
-                <p>ผู้ขาย: <t t-esc="doc.seller.name"/></p>
-                
-                <h3>ผู้จะซื้อ</h3>
                 <table class="table table-bordered">
                     <tr>
-                        <th>ชื่อ</th>
-                        <th>อายุ</th>
-                        <th>สัญชาติ</th>
-                        <th>ถนน</th>
-                        <th>โทรศัพท์</th>
+                        <th>เลขที่สัญญา</th>
+                        <td><t t-esc="o.contract_no"/></td>
                     </tr>
-                    <t t-foreach="doc.buyer_ids" t-as="buyer">
-                        <tr>
-                            <td><t t-esc="buyer.partner_id.name"/></td>
-                            <td><t t-esc="buyer.age"/></td>
-                            <td><t t-esc="buyer.nation"/></td>
-                            <td><t t-esc="buyer.street"/></td>
-                            <td><t t-esc="buyer.phone"/></td>
-                        </tr>
-                    </t>
-                </table>
-
-                <h3>ผู้รับสิทธิ์</h3>
-                <table class="table table-bordered">
                     <tr>
-                        <th>ชื่อ</th>
-                        <th>อายุ</th>
-                        <th>สัญชาติ</th>
-                        <th>ถนน</th>
-                        <th>โทรศัพท์</th>
+                        <th>Contact Date</th>
+                        <td><t t-esc="o.contact_date"/></td>
                     </tr>
-                    <t t-foreach="doc.beneficiary_ids" t-as="beneficiary">
-                        <tr>
-                            <td><t t-esc="beneficiary.partner_id.name"/></td>
-                            <td><t t-esc="beneficiary.age"/></td>
-                            <td><t t-esc="beneficiary.nation"/></td>
-                            <td><t t-esc="beneficiary.street"/></td>
-                            <td><t t-esc="beneficiary.phone"/></td>
-                        </tr>
-                    </t>
+                    <tr>
+                        <th>ผู้จะขาย</th>
+                        <td><t t-esc="o.seller.name"/></td>
+                    </tr>
+                    <tr>
+                        <th>ผู้จะซื้อ</th>
+                        <td>
+                            <t t-foreach="o.buyer_ids" t-as="buyer">
+                                <div><t t-esc="buyer.name.name"/> - <t t-esc="buyer.age"/> ปี</div>
+                            </t>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>ผู้รับสิทธิ์</th>
+                        <td>
+                            <t t-foreach="o.beneficiary_ids" t-as="beneficiary">
+                                <div><t t-esc="beneficiary.name.name"/> - <t t-esc="beneficiary.age"/> ปี</div>
+                            </t>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </t>

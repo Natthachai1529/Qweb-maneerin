@@ -4,9 +4,6 @@
         <field name="model">maneerincode.code</field>
         <field name="arch" type="xml">
             <form string="Maneerin Code">
-                <header>
-                    <button name="action_print_report" type="object" string="Print" class="oe_highlight"/>
-                </header>
                 <sheet>
                     <group>
                         <field name="contract_no" string="เลขที่สัญญา"/>
@@ -14,28 +11,13 @@
                         <field name="seller" string="ผู้จะขาย"/>
                     </group>
                     <group>
-                        <field name="buyer_ids" widget="one2many_list" options="{'no_create': True}">
-                            <tree editable="bottom">
-                                <field name="partner_id" string="ผู้ซื้อ" options="{'no_open': True}"/>
-                                <field name="age" string="Age"/>
-                                <field name="nation" string="Nation"/>
-                                <field name="street" string="Street"/>
-                                <field name="phone" string="Phone"/>
-                            </tree>
-                        </field>
-                    </group>
-                    <group>
-                        <field name="beneficiary_ids" widget="one2many_list" options="{'no_create': True}">
-                            <tree editable="bottom">
-                                <field name="partner_id" string="ผู้รับสิทธิ์" options="{'no_open': True}"/>
-                                <field name="age" string="Age"/>
-                                <field name="nation" string="Nation"/>
-                                <field name="street" string="Street"/>
-                                <field name="phone" string="Phone"/>
-                            </tree>
-                        </field>
+                        <field name="buyer_ids" widget="one2many_list"/>
+                        <field name="beneficiary_ids" widget="one2many_list"/>
                     </group>
                 </sheet>
+                <footer>
+                    <button name="action_print_report" string="Print" type="object" class="oe_highlight"/>
+                </footer>
             </form>
         </field>
     </record>
