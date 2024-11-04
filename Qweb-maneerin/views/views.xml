@@ -1,68 +1,61 @@
 <odoo>
-    <data>
-        <!-- Form View for Maneerin Code -->
-        <record id="maneerincode_view_form" model="ir.ui.view">
-            <field name="name">maneerincode.code.form</field>
-            <field name="model">maneerincode.code</field>
-            <field name="arch" type="xml">
-                <form string="Maneerin Code">
-                    <sheet>
+    <record id="maneerincode_view_form" model="ir.ui.view">
+        <field name="name">maneerincode Form</field>
+        <field name="model">maneerincode.code</field> 
+        <field name="arch" type="xml">
+            <form string="maneerincode Form">
+                <sheet>
+                    <group>
                         <group>
-                            <field name="contract_no"/>
-                            <field name="contact_date"/>
-                            <field name="seller_id"/> <!-- แก้ไขจาก seller เป็น seller_id -->
+                            <field name="contract_no" string="เลขที่สัญญา"/>
+                            <field name="contact_date" string="Contact Date"/>
+                            <field name="seller" string="ผู้จะขาย"/>
                         </group>
-                        <notebook>
-                            <page string="ผู้จะซื้อ">
-                                <field name="buyer_ids" widget="one2many_list">
-                                    <tree>
-                                        <field name="name" string="ผู้ซื้อ"/> <!-- เปลี่ยนจาก buyer_id เป็น name -->
-                                        <field name="age" string="Age"/>
-                                        <field name="nation" string="Nation"/>
-                                        <field name="street" string="Street"/>
-                                        <field name="phone" string="Phone"/>
-                                    </tree>
-                                </field>
-                            </page>
-                            <page string="ผู้รับสิทธิ์โอน">
-                                <field name="beneficiary_ids" widget="one2many_list">
-                                    <tree>
-                                        <field name="name" string="ผู้รับสิทธิ์"/> <!-- เปลี่ยนจาก beneficiary_id เป็น name -->
-                                        <field name="age" string="Age"/>
-                                        <field name="nation" string="Nation"/>
-                                        <field name="street" string="Street"/>
-                                        <field name="phone" string="Phone"/>
-                                    </tree>
-                                </field>
-                            </page>
-                        </notebook>
-                    </sheet>
-                </form>
-            </field>
-        </record>
 
-        <!-- Tree View for Maneerin Code -->
-        <record id="maneerincode_view_tree" model="ir.ui.view">
-            <field name="name">maneerincode.code.tree</field>
-            <field name="model">maneerincode.code</field>
-            <field name="arch" type="xml">
-                <tree string="Maneerin Code">
-                    <field name="contract_no"/>
-                    <field name="contact_date"/>
-                    <field name="seller_id"/>
-                </tree>
-            </field>
-        </record>
+                        <label for="buyer_ids" string="ผู้จะซื้อ"/>
+                        <field name="buyer_ids" widget="one2many_list">
+                            <tree>
+                                <field name="name" string="Name"/>
+                                <field name="age" string="Age"/>
+                                <field name="nation" string="Nation"/>
+                                <field name="street" string="Street"/>
+                                <field name="phone" string="Phone"/>
+                            </tree>
+                        </field>
 
-        <!-- Action for Maneerin Code -->
-        <record id="action_maneerincode" model="ir.actions.act_window">
-            <field name="name">Maneerin Codes</field>
-            <field name="res_model">maneerincode.code</field>
-            <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="maneerincode_view_tree"/>
-        </record>
+                        <label for="beneficiary_ids" string="ผู้รับสิทธิ์โอน"/>
+                        <field name="beneficiary_ids" widget="one2many_list">
+                            <tree>
+                                <field name="name" string="Name"/>
+                                <field name="age" string="Age"/>
+                                <field name="nation" string="Nation"/>
+                                <field name="street" string="Street"/>
+                                <field name="phone" string="Phone"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-        <!-- Menu Item for Maneerin Code -->
-        <menuitem id="menu_maneerincode" name="Maneerin Code" parent="your_parent_menu_id" action="action_maneerincode"/>
-    </data>
+    <record id="maneerincode_view_tree" model="ir.ui.view">
+        <field name="name">maneerincode Tree</field>
+        <field name="model">maneerincode.code</field> 
+        <field name="arch" type="xml">
+            <tree string="maneerincode List">
+                <field name="contract_no" string="เลขที่สัญญา"/>
+                <field name="contact_date" string="Contact Date"/>
+                <field name="seller" string="ผู้จะขาย"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="maneerincode_action" model="ir.actions.act_window">
+        <field name="name">maneerincode</field>
+        <field name="res_model">maneerincode.code</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="maneerincode_menu" name="maneerincode" sequence="1" action="maneerincode_action"/>
 </odoo>
