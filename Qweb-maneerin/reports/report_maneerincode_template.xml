@@ -1,39 +1,32 @@
 <odoo>
     <template id="report_maneerincode_template">
-        <t t-call="web.basic_layout">
-            <div class="page">
-                <h2>Maneerin Code Report</h2>
-                <table class="table table-bordered">
-                    <tr>
-                        <th>เลขที่สัญญา</th>
-                        <td><t t-esc="o.contract_no"/></td>
-                    </tr>
-                    <tr>
-                        <th>Contact Date</th>
-                        <td><t t-esc="o.contact_date"/></td>
-                    </tr>
-                    <tr>
-                        <th>ผู้จะขาย</th>
-                        <td><t t-esc="o.seller.name"/></td>
-                    </tr>
-                    <tr>
-                        <th>ผู้จะซื้อ</th>
-                        <td>
-                            <t t-foreach="o.buyer_ids" t-as="buyer">
-                                <div><t t-esc="buyer.name.name"/> - <t t-esc="buyer.age"/> ปี</div>
-                            </t>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>ผู้รับสิทธิ์</th>
-                        <td>
-                            <t t-foreach="o.beneficiary_ids" t-as="beneficiary">
-                                <div><t t-esc="beneficiary.name.name"/> - <t t-esc="beneficiary.age"/> ปี</div>
-                            </t>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+        <t t-call="web.html_container">
+            <t t-foreach="docids" t-as="doc">
+                <div class="page">
+                    <h2>รายละเอียดสัญญา</h2>
+                    <p>เลขที่สัญญา: <t t-esc="doc.contract_no"/></p>
+                    <p>วันที่ติดต่อ: <t t-esc="doc.contact_date"/></p>
+                    <p>ผู้จะขาย: <t t-esc="doc.seller.name"/></p>
+
+                    <h3>ผู้จะซื้อ</h3>
+                    <t t-foreach="doc.buyer_ids" t-as="buyer">
+                        <p>ชื่อ: <t t-esc="buyer.partner_id.name"/></p>
+                        <p>อายุ: <t t-esc="buyer.age"/></p>
+                        <p>สัญชาติ: <t t-esc="buyer.nation"/></p>
+                        <p>ถนน: <t t-esc="buyer.street"/></p>
+                        <p>โทรศัพท์: <t t-esc="buyer.phone"/></p>
+                    </t>
+
+                    <h3>ผู้รับสิทธิ์</h3>
+                    <t t-foreach="doc.beneficiary_ids" t-as="beneficiary">
+                        <p>ชื่อ: <t t-esc="beneficiary.partner_id.name"/></p>
+                        <p>อายุ: <t t-esc="beneficiary.age"/></p>
+                        <p>สัญชาติ: <t t-esc="beneficiary.nation"/></p>
+                        <p>ถนน: <t t-esc="beneficiary.street"/></p>
+                        <p>โทรศัพท์: <t t-esc="beneficiary.phone"/></p>
+                    </t>
+                </div>
+            </t>
         </t>
     </template>
 </odoo>
