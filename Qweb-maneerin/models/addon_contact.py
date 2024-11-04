@@ -1,6 +1,7 @@
 from odoo import fields, models
 
 class ResPartner(models.Model):
+    _name = 'addon_contact'
     _inherit = 'res.partner'
 
     age = fields.Integer(string='Age')
