@@ -1,13 +1,4 @@
 <odoo>
-    <record id="action_print_contract" model="ir.actions.server">
-        <field name="name">Print Contract</field>
-        <field name="model_id" ref="model_maneerincode_code"/>  <!-- เปลี่ยนเป็น model ของคุณ -->
-        <field name="binding_model_id" ref="model_maneerincode_code"/>  <!-- เปลี่ยนเป็น model ของคุณ -->
-        <field name="binding_view_types">form,list</field>
-        <field name="state">code</field>
-        <field name="code">action = records.action_print_contract()</field>
-    </record>
-
     <record id="maneerincode_view_form" model="ir.ui.view">
         <field name="name">maneerincode.code.form</field>
         <field name="model">maneerincode.code</field>
@@ -17,38 +8,29 @@
                     <group>
                         <field name="contract_no" string="เลขที่สัญญา"/>
                         <field name="contact_date" string="Contact Date"/>
-                        <field name="seller" string="ผู้จะขาย"/>
+                        <field name="seller" string="ผู้จะขาย"/> <!-- เปลี่ยนจาก seller_id เป็น seller -->
                     </group>
                     <group>
-                        <field name="buyer_ids" widget="one2many_list" options="{'no_create': True}">
-                            <tree editable="bottom">
-                                <field name="partner_id" string="ผู้ซื้อ" options="{'no_open': True}"/>
-                                <field name="age" string="Age"/>
-                                <field name="nation" string="Nation"/>
-                                <field name="street" string="Street"/>
-                                <field name="phone" string="Phone"/>  <!-- หมายเลขโทรศัพท์จะแสดงอัตโนมัติ -->
+                        <field name="buyer_ids" widget="one2many_list">
+                            <tree>
+                                <field name="partner_id" string="ผู้ซื้อ"/> <!-- เลือกจาก res.partner -->
+                                <field name="phone" string="Phone"/>
                             </tree>
                         </field>
                     </group>
                     <group>
-                        <field name="beneficiary_ids" widget="one2many_list" options="{'no_create': True}">
-                            <tree editable="bottom">
-                                <field name="partner_id" string="ผู้รับสิทธิ์" options="{'no_open': True}"/>
-                                <field name="age" string="Age"/>
-                                <field name="nation" string="Nation"/>
-                                <field name="street" string="Street"/>
-                                <field name="phone" string="Phone"/>  <!-- หมายเลขโทรศัพท์จะแสดงอัตโนมัติ -->
+                        <field name="beneficiary_ids" widget="one2many_list">
+                            <tree>
+                                <field name="partner_id" string="ผู้รับสิทธิ์"/> <!-- เลือกจาก res.partner -->
+                                <field name="phone" string="Phone"/>
                             </tree>
                         </field>
                     </group>
                 </sheet>
-                <footer>
-                    <button name="action_print_contract" type="object" string="Print Contract" class="btn-primary"/>
-                </footer>
             </form>
         </field>
     </record>
-    
+
     <record id="maneerincode_view_tree" model="ir.ui.view">
         <field name="name">maneerincode.code.tree</field>
         <field name="model">maneerincode.code</field>
@@ -56,7 +38,7 @@
             <tree string="Maneerin Codes">
                 <field name="contract_no" string="เลขที่สัญญา"/>
                 <field name="contact_date" string="Contact Date"/>
-                <field name="seller" string="ผู้จะขาย"/>
+                <field name="seller" string="ผู้จะขาย"/> <!-- เปลี่ยนจาก seller_id เป็น seller -->
             </tree>
         </field>
     </record>
