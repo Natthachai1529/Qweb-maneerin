@@ -6,9 +6,10 @@
     'data': [
         'security/ir.model.access.csv',
         'data/data.xml',
-        'views/views.xml', 
-        'views/maneerin_contract.xml',
+        'views/views.xml',
+        'views/maneerin_contract.xml',  # เพิ่มไฟล์นี้
     ],
+
     'application': True,
     'installable': True,
 }
