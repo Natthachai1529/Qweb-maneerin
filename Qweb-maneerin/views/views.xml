@@ -1,63 +1,62 @@
 <odoo>
-    <record id="view_maneerincode_form" model="ir.ui.view">
-        <field name="name">maneerincode.form</field>
+    <record id="maneerincode_view_form" model="ir.ui.view">
+        <field name="name">maneerincode.code.form</field>
         <field name="model">maneerincode.code</field>
         <field name="arch" type="xml">
             <form string="Maneerin Code">
                 <sheet>
                     <group>
-                        <group>
-                            <field name="contract_no" style="width: 300px;" />
-                            <field name="contact_date" style="width: 200px;" />
-                            <field name="seller" style="width: 300px;" />
-                        </group>
+                        <field name="contract_no" string="เลขที่สัญญา"/>
+                        <field name="contact_date" string="Contact Date"/>
+                        <field name="seller_id" string="ผู้จะขาย"/>
                     </group>
-                    <group>
-                        <label for="buyer_ids" string="ผู้จะซื้อ" />
-                        <field name="buyer_ids" widget="one2many_list" >
-                            <tree>
-                                <field name="name" string="Name" style="width: 200px;" />
-                                <field name="age" string="Age" style="width: 80px;" />
-                                <field name="nation" string="Nation" style="width: 150px;" />
-                                <field name="street" string="Street" style="width: 200px;" />
-                                <field name="phone" string="Phone" style="width: 150px;" />
-                            </tree>
-                        </field>
-                    </group>
-                    <group>
-                        <label for="beneficiary_ids" string="ผู้รับสิทธิ์โอน" />
-                        <field name="beneficiary_ids" widget="one2many_list">
-                            <tree>
-                                <field name="name" string="Name" style="width: 200px;" />
-                                <field name="age" string="Age" style="width: 80px;" />
-                                <field name="nation" string="Nation" style="width: 150px;" />
-                                <field name="street" string="Street" style="width: 200px;" />
-                                <field name="phone" string="Phone" style="width: 150px;" />
-                            </tree>
-                        </field>
-                    </group>
+                    <notebook>
+                        <page string="ผู้จะซื้อ">
+                            <field name="buyer_ids" widget="one2many_list">
+                                <tree>
+                                    <field name="name" string="ผู้ซื้อ"/> <!-- ใช้ name เป็น Many2one -->
+                                    <field name="age" string="Age"/>
+                                    <field name="nation" string="Nation"/>
+                                    <field name="street" string="Street"/>
+                                    <field name="phone" string="Phone"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="ผู้รับสิทธิ์โอน">
+                            <field name="beneficiary_ids" widget="one2many_list">
+                                <tree>
+                                    <field name="name" string="ผู้รับสิทธิ์"/>
+                                    <field name="age" string="Age"/>
+                                    <field name="nation" string="Nation"/>
+                                    <field name="street" string="Street"/>
+                                    <field name="phone" string="Phone"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <record id="view_maneerincode_tree" model="ir.ui.view">
-        <field name="name">maneerincode.tree</field>
+    <record id="maneerincode_view_tree" model="ir.ui.view">
+        <field name="name">maneerincode.code.tree</field>
         <field name="model">maneerincode.code</field>
         <field name="arch" type="xml">
-            <tree string="Maneerin Code">
-                <field name="contract_no" />
-                <field name="contact_date" />
-                <field name="seller" />
+            <tree string="Maneerin Codes">
+                <field name="contract_no" string="เลขที่สัญญา"/>
+                <field name="contact_date" string="Contact Date"/>
+                <field name="seller_id" string="ผู้จะขาย"/>
             </tree>
         </field>
     </record>
 
     <record id="action_maneerincode" model="ir.actions.act_window">
-        <field name="name">Maneerin Code</field>
+        <field name="name">Maneerin Codes</field>
         <field name="res_model">maneerincode.code</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_maneerincode" name="Maneerin Code" action="action_maneerincode" />
+    <menuitem id="menu_maneerincode_root" name="Maneerin Code"/>
+    <menuitem id="menu_maneerincode" name="Maneerin Codes" parent="menu_maneerincode_root" action="action_maneerincode"/>
 </odoo>
