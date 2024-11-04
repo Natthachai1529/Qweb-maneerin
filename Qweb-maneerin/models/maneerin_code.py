@@ -4,7 +4,7 @@ class ManeerinCode(models.Model):
     _name = 'maneerincode.code'
 
     contract_no = fields.Char(string="เลขที่สัญญา")
-    contact_date = fields.Date(string='Contact Date', default=fields.Date.today) 
+    contact_date = fields.Date(string='Contact Date', default=fields.Date.today)
     seller = fields.Char(string="ผู้จะขาย")
     buyer_ids = fields.One2many('buyer.info', 'maneerin_code_id', string="ผู้จะซื้อ")
     beneficiary_ids = fields.One2many('beneficiary.info', 'maneerin_code_id', string="ผู้รับสิทธิ์โอน")
@@ -17,7 +17,7 @@ class BuyerInfo(models.Model):
     nation = fields.Char(string="Nation")
     street = fields.Char(string="Street")
     phone = fields.Char(string="Phone")
-    maneerin_code_id = fields.Many2one('maneerincode.code', string="Maneerin Code")  # Correctly set to Many2one
+    maneerin_code_id = fields.Many2one('maneerincode.code', string="Maneerin Code")  # ใช้ Many2one เพื่อเชื่อมโยง
 
 class BeneficiaryInfo(models.Model):
     _name = 'beneficiary.info'
@@ -27,4 +27,4 @@ class BeneficiaryInfo(models.Model):
     nation = fields.Char(string="Nation")
     street = fields.Char(string="Street")
     phone = fields.Char(string="Phone")
-    maneerin_code_id = fields.Many2one('maneerincode.code', string="Maneerin Code")  # Correctly set to Many2one
+    maneerin_code_id = fields.Many2one('maneerincode.code', string="Maneerin Code")  # ใช้ Many2one เพื่อเชื่อมโยง
