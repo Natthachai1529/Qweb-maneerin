@@ -7,13 +7,4 @@
         <field name="state">code</field>
         <field name="code">action = records.action_print_contract()</field>
     </record>
-
-    <report
-        id="report_maneerincode"
-        model="maneerincode.code"
-        string="Maneerin Code Report"
-        report_type="qweb-pdf"
-        name="your_module_name.report_maneerincode"
-        file="your_module_name.report_maneerincode"
-        />
 </odoo>
