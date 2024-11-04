@@ -7,20 +7,20 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="contract_no" />
-                            <field name="contact_date" />
-                            <field name="seller" />
+                            <field name="contract_no" style="width: 300px;" />
+                            <field name="contact_date" style="width: 200px;" />
+                            <field name="seller" style="width: 300px;" />
                         </group>
                     </group>
                     <group>
                         <label for="buyer_ids" string="ผู้จะซื้อ" />
-                        <field name="buyer_ids" widget="one2many_list">
+                        <field name="buyer_ids" widget="one2many_list" >
                             <tree>
-                                <field name="name" string="Name" />
-                                <field name="age" string="Age" />
-                                <field name="nation" string="Nation" />
-                                <field name="street" string="Street" />
-                                <field name="phone" string="Phone" />
+                                <field name="name" string="Name" style="width: 200px;" />
+                                <field name="age" string="Age" style="width: 80px;" />
+                                <field name="nation" string="Nation" style="width: 150px;" />
+                                <field name="street" string="Street" style="width: 200px;" />
+                                <field name="phone" string="Phone" style="width: 150px;" />
                             </tree>
                         </field>
                     </group>
@@ -28,11 +28,11 @@
                         <label for="beneficiary_ids" string="ผู้รับสิทธิ์โอน" />
                         <field name="beneficiary_ids" widget="one2many_list">
                             <tree>
-                                <field name="name" string="Name" />
-                                <field name="age" string="Age" />
-                                <field name="nation" string="Nation" />
-                                <field name="street" string="Street" />
-                                <field name="phone" string="Phone" />
+                                <field name="name" string="Name" style="width: 200px;" />
+                                <field name="age" string="Age" style="width: 80px;" />
+                                <field name="nation" string="Nation" style="width: 150px;" />
+                                <field name="street" string="Street" style="width: 200px;" />
+                                <field name="phone" string="Phone" style="width: 150px;" />
                             </tree>
                         </field>
                     </group>
