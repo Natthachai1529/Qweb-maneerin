@@ -5,10 +5,10 @@ class ManeerinCode(models.Model):
 
     contract_no = fields.Char(string="เลขที่สัญญา")  
     contact_date = fields.Date(string='Contact Date', default=fields.Date.today) 
-    seller = fields.Char(string="ผู้จะขาย")
+    seller = fields.Many2one(comodel_name="res.partner", string="ผู้จะขาย")  # แก้ไขเป็น comodel_name
     
-    buyer_ids = fields.One2many('maneerincode.buyer', 'maneerincode_id', string="ผู้จะซื้อ")  
-    beneficiary_ids = fields.One2many('maneerincode.beneficiary', 'maneerincode_id', string="ผู้รับสิทธิ์") 
+    buyer_ids = fields.One2many(comodel_name='maneerincode.buyer', 'maneerincode_id', string="ผู้จะซื้อ")  
+    beneficiary_ids = fields.One2many(comodel_name='maneerincode.beneficiary', 'maneerincode_id', string="ผู้รับสิทธิ์") 
 
 class ManeerinCodeBuyer(models.Model):
     _name = 'maneerincode.buyer'
