@@ -6,17 +6,25 @@ class ManeerinCode(models.Model):
     contract_no = fields.Char(string="เลขที่สัญญา")
     contact_date = fields.Date(string='Contact Date', default=fields.Date.today) 
     seller = fields.Char(string="ผู้จะขาย")
-    buyer_ids = fields.One2many('buyer.code', 'maneerincode_id', string="ผู้จะซื้อ")
-    beneficiary_ids = fields.One2many('beneficiary.code', 'maneerincode_id', string="ผู้รับสิทธิ์")
+    buyer_ids = fields.One2many('buyer.info', 'maneerin_code_id', string="ผู้จะซื้อ")
+    beneficiary_ids = fields.One2many('beneficiary.info', 'maneerin_code_id', string="ผู้รับสิทธิ์โอน")
 
-class BuyerCode(models.Model):
-    _name = 'buyer.code'
+class BuyerInfo(models.Model):
+    _name = 'buyer.info'
 
-    name = fields.Char(string="ชื่อผู้ซื้อ")
-    maneerincode_id = fields.Many2one('maneerincode.code', string="สัญญา")
+    name = fields.Char(string="Name")
+    age = fields.Integer(string="Age")
+    nation = fields.Char(string="Nation")
+    street = fields.Char(string="Street")
+    phone = fields.Char(string="Phone")
+    maneerin_code_id = fields.Many2one('maneerincode.code', string="Maneerin Code")
 
-class BeneficiaryCode(models.Model):
-    _name = 'beneficiary.code'
+class BeneficiaryInfo(models.Model):
+    _name = 'beneficiary.info'
 
-    name = fields.Char(string="ชื่อผู้รับสิทธิ์")
-    maneerincode_id = fields.Many2one('maneerincode.code', string="สัญญา")
+    name = fields.Char(string="Name")
+    age = fields.Integer(string="Age")
+    nation = fields.Char(string="Nation")
+    street = fields.Char(string="Street")
+    phone = fields.Char(string="Phone")
+    maneerin_code_id = fields.Many2one('maneerincode.code', string="Maneerin Code")

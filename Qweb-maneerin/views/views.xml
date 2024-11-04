@@ -1,18 +1,38 @@
 <odoo>
     <record id="maneerincode_view_form" model="ir.ui.view">
         <field name="name">maneerincode Form</field>
-        <field name="model">maneerincode.code</field>
+        <field name="model">maneerincode.code</field> 
         <field name="arch" type="xml">
             <form string="maneerincode Form">
                 <sheet>
                     <group>
-                        <field name="contract_no"/>  <!-- ฟิลด์เลขที่สัญญา -->
-                        <field name="contact_date"/>  <!-- ฟิลด์วันที่ติดต่อ -->
-                        <field name="seller"/>  <!-- ฟิลด์ผู้ขาย -->
-                    </group>
-                    <group>
-                        <field name="buyer_ids" widget="one2many_list"/>  <!-- ฟิลด์ผู้จะซื้อ -->
-                        <field name="beneficiary_ids" widget="one2many_list"/>  <!-- ฟิลด์ผู้รับสิทธิ์ -->
+                        <group>
+                            <field name="contract_no" string="เลขที่สัญญา"/>
+                            <field name="contact_date" string="Contact Date"/>
+                            <field name="seller" string="ผู้จะขาย"/>
+                        </group>
+
+                        <label for="buyer_ids" string="ผู้จะซื้อ"/>
+                        <field name="buyer_ids" widget="one2many_list">
+                            <tree>
+                                <field name="name" string="Name"/>
+                                <field name="age" string="Age"/>
+                                <field name="nation" string="Nation"/>
+                                <field name="street" string="Street"/>
+                                <field name="phone" string="Phone"/>
+                            </tree>
+                        </field>
+
+                        <label for="beneficiary_ids" string="ผู้รับสิทธิ์โอน"/>
+                        <field name="beneficiary_ids" widget="one2many_list">
+                            <tree>
+                                <field name="name" string="Name"/>
+                                <field name="age" string="Age"/>
+                                <field name="nation" string="Nation"/>
+                                <field name="street" string="Street"/>
+                                <field name="phone" string="Phone"/>
+                            </tree>
+                        </field>
                     </group>
                 </sheet>
             </form>
@@ -21,12 +41,12 @@
 
     <record id="maneerincode_view_tree" model="ir.ui.view">
         <field name="name">maneerincode Tree</field>
-        <field name="model">maneerincode.code</field>
+        <field name="model">maneerincode.code</field> 
         <field name="arch" type="xml">
             <tree string="maneerincode List">
-                <field name="contract_no"/>  <!-- ฟิลด์เลขที่สัญญา -->
-                <field name="contact_date"/>  <!-- ฟิลด์วันที่ติดต่อ -->
-                <field name="seller"/>  <!-- ฟิลด์ผู้ขาย -->
+                <field name="contract_no" string="เลขที่สัญญา"/>
+                <field name="contact_date" string="Contact Date"/>
+                <field name="seller" string="ผู้จะขาย"/>
             </tree>
         </field>
     </record>
