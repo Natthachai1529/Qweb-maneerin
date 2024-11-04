@@ -8,7 +8,7 @@
                     <group>
                         <field name="contract_no" string="เลขที่สัญญา"/>
                         <field name="contact_date" string="Contact Date"/>
-                        <field name="seller_id" string="ผู้จะขาย"/>
+                        <field name="seller" string="ผู้จะขาย"/> <!-- เปลี่ยนจาก seller_id เป็น seller -->
                     </group>
                     <notebook>
                         <page string="ผู้จะซื้อ">
@@ -46,7 +46,7 @@
             <tree string="Maneerin Codes">
                 <field name="contract_no" string="เลขที่สัญญา"/>
                 <field name="contact_date" string="Contact Date"/>
-                <field name="seller_id" string="ผู้จะขาย"/>
+                <field name="seller" string="ผู้จะขาย"/> <!-- เปลี่ยนจาก seller_id เป็น seller -->
             </tree>
         </field>
     </record>
