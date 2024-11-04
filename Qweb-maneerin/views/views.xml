@@ -4,13 +4,11 @@
         <field name="name">maneerincode Form</field>
         <field name="model">maneerincode.code</field> 
         <field name="arch" type="xml">
-            <form string="maneerincode Form">
+            <form string="Maneerin Code Form">
                 <sheet>
                     <group>
-                        <field name="vendor"/>
-                        <field name="v_ref"/>  
-                        <field name="order_deadline"/>
-                        <field name="expected_arrival"/>
+                        <field name="contact_date"/>
+                        <field name="seller"/>
                     </group>                
                 </sheet>
             </form>
@@ -21,20 +19,18 @@
         <field name="name">maneerincode Tree</field>
         <field name="model">maneerincode.code</field> 
         <field name="arch" type="xml">
-            <tree string="maneerincode List">
-                <field name="vendor"/>
-                <field name="v_ref"/>  
-                <field name="order_deadline"/>
-                <field name="expected_arrival"/>
+            <tree string="Maneerin Code List">
+                <field name="contact_date"/>
+                <field name="seller"/>
             </tree>
         </field>
     </record>
 
     <record id="maneerincode_action" model="ir.actions.act_window">
-        <field name="name">maneerincode</field>
+        <field name="name">Maneerin Code</field>
         <field name="res_model">maneerincode.code</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="maneerincode_menu" name="maneerincode" sequence="1" action="maneerincode_action"/>
+    <menuitem id="maneerincode_menu" name="Maneerin Code" sequence="1" action="maneerincode_action"/>
 </odoo>
