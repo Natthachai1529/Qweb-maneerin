@@ -1,18 +1,10 @@
 <odoo>
     <record id="action_print_contract" model="ir.actions.server">
         <field name="name">Print Contract</field>
-        <field name="model_id" ref="model_maneerincode_code"/>  <!-- อัปเดตเป็นโมเดลที่คุณใช้ -->
-        <field name="binding_model_id" ref="model_maneerincode_code"/>  <!-- อัปเดตเป็นโมเดลที่คุณใช้ -->
+        <field name="model_id" ref="model_contract_contract"/>
+        <field name="binding_model_id" ref="model_contract_contract"/>
         <field name="binding_view_types">form,list</field>
         <field name="state">code</field>
         <field name="code">action = records.action_print_contract()</field>
-    </record>
-
-    <record id="report_contract_id" model="ir.actions.report">
-        <field name="name">Contract Report</field>
-        <field name="model">maneerincode.code</field>
-        <field name="report_type">qweb-pdf</field>
-        <field name="report_file">your_module_name.report_contract_template</field> <!-- แทนที่ด้วยเทมเพลตที่คุณสร้าง -->
-        <field name="report_name">your_module_name.contract_report</field> <!-- ชื่อรายงาน -->
     </record>
 </odoo>

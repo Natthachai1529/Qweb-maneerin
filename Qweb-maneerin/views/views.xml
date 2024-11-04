@@ -1,4 +1,13 @@
 <odoo>
+    <record id="action_print_contract" model="ir.actions.server">
+        <field name="name">Print Contract</field>
+        <field name="model_id" ref="model_maneerincode_code"/>  <!-- เปลี่ยนเป็น model ของคุณ -->
+        <field name="binding_model_id" ref="model_maneerincode_code"/>  <!-- เปลี่ยนเป็น model ของคุณ -->
+        <field name="binding_view_types">form,list</field>
+        <field name="state">code</field>
+        <field name="code">action = records.action_print_contract()</field>
+    </record>
+
     <record id="maneerincode_view_form" model="ir.ui.view">
         <field name="name">maneerincode.code.form</field>
         <field name="model">maneerincode.code</field>
@@ -33,10 +42,13 @@
                         </field>
                     </group>
                 </sheet>
+                <footer>
+                    <button name="action_print_contract" type="object" string="Print Contract" class="btn-primary"/>
+                </footer>
             </form>
         </field>
     </record>
-
+    
     <record id="maneerincode_view_tree" model="ir.ui.view">
         <field name="name">maneerincode.code.tree</field>
         <field name="model">maneerincode.code</field>
