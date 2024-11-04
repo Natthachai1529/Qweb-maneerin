@@ -17,7 +17,7 @@ class BuyerInfo(models.Model):
     nation = fields.Char(string="Nation")
     street = fields.Char(string="Street")
     phone = fields.Char(string="Phone")
-    maneerin_code_id = fields.Many2one('maneerincode.code', string="Maneerin Code")
+    maneerin_code_id = fields.Many2one('maneerincode.code', string="Maneerin Code")  # Correctly set to Many2one
 
 class BeneficiaryInfo(models.Model):
     _name = 'beneficiary.info'
@@ -27,4 +27,4 @@ class BeneficiaryInfo(models.Model):
     nation = fields.Char(string="Nation")
     street = fields.Char(string="Street")
     phone = fields.Char(string="Phone")
-    maneerin_code_id = fields.Many2one('maneerincode.code', string="Maneerin Code")
+    maneerin_code_id = fields.Many2one('maneerincode.code', string="Maneerin Code")  # Correctly set to Many2one
