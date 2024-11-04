@@ -1,53 +1,41 @@
 <odoo>
     <record id="maneerincode_view_form" model="ir.ui.view">
-        <field name="name">maneerincode.form</field>
+        <field name="name">maneerincode Form</field>
         <field name="model">maneerincode.code</field>
         <field name="arch" type="xml">
-            <form string="Maneerin Code Form">
+            <form string="maneerincode Form">
                 <sheet>
                     <group>
-                        <group>
-                            <field name="contract_no"/>  <!-- ฟิลด์เลขที่สัญญา -->
-                            <field name="contact_date"/>  <!-- ฟิลด์วันที่ติดต่อ -->
-                        </group>
-                        <group>
-                            <field name="seller"/>  <!-- ฟิลด์ผู้ขาย -->
-                            <field name="buyer_id"/>   <!-- ฟิลด์ผู้ซื้อ -->
-                            <field name="beneficiary_id"/>  <!-- ฟิลด์ผู้รับสิทธิ์ -->
-                        </group>
-                    </group>
+                        <field name="contract_no"/>  <!-- ฟิลด์เลขที่สัญญา -->
+                        <field name="contact_date"/>  <!-- ฟิลด์วันที่ติดต่อ -->
+                        <field name="seller"/>  <!-- ฟิลด์ผู้ขาย -->
+                        <field name="buyer"/>   <!-- ฟิลด์ผู้ซื้อ -->
+                        <field name="beneficiary"/>  <!-- ฟิลด์ผู้รับสิทธิ์ -->
+                    </group>                
                 </sheet>
             </form>
         </field>
     </record>
 
     <record id="maneerincode_view_tree" model="ir.ui.view">
-        <field name="name">maneerincode.tree</field>
+        <field name="name">maneerincode Tree</field>
         <field name="model">maneerincode.code</field>
         <field name="arch" type="xml">
-            <tree string="Maneerin Code List">
+            <tree string="maneerincode List">
                 <field name="contract_no"/>  <!-- ฟิลด์เลขที่สัญญา -->
                 <field name="contact_date"/>  <!-- ฟิลด์วันที่ติดต่อ -->
                 <field name="seller"/>  <!-- ฟิลด์ผู้ขาย -->
-                <field name="buyer_id"/>   <!-- ฟิลด์ผู้ซื้อ -->
-                <field name="beneficiary_id"/>  <!-- ฟิลด์ผู้รับสิทธิ์ -->
+                <field name="buyer"/>   <!-- ฟิลด์ผู้ซื้อ -->
+                <field name="beneficiary"/>  <!-- ฟิลด์ผู้รับสิทธิ์ -->
             </tree>
         </field>
     </record>
 
     <record id="maneerincode_action" model="ir.actions.act_window">
-        <field name="name">Maneerin Code</field>
+        <field name="name">maneerincode</field>
         <field name="res_model">maneerincode.code</field>
         <field name="view_mode">tree,form</field>
-        <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">
-                <span>No Maneerin Codes found</span>
-            </p>
-            <p>
-                Create a new Maneerin Code by clicking on the "Create" button.
-            </p>
-        </field>
     </record>
 
-    <menuitem id="maneerincode_menu" name="Maneerin Code" sequence="1" action="maneerincode_action"/>
+    <menuitem id="maneerincode_menu" name="maneerincode" sequence="1" action="maneerincode_action"/>
 </odoo>
