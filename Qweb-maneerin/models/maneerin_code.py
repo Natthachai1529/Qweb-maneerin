@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields
 
 class ManeerinCode(models.Model):
     _name = 'maneerincode.code'
@@ -18,15 +18,7 @@ class ManeerinCodeBuyer(models.Model):
     age = fields.Integer(string="Age")
     nation = fields.Char(string="Nation")
     street = fields.Char(string="Street")
-    phone = fields.Char(string="Phone")
-
-    @api.onchange('partner_id')
-    def _onchange_partner_id(self):
-        if self.partner_id:
-            self.age = self.partner_id.age  # ปรับให้ดึงข้อมูลอายุจาก res.partner
-            self.nation = self.partner_id.nationality  # ปรับให้ดึงข้อมูลสัญชาติ
-            self.street = self.partner_id.street  # ปรับให้ดึงข้อมูลถนน
-            self.phone = self.partner_id.phone  # ปรับให้ดึงข้อมูลโทรศัพท์
+    phone = fields.Char(string="Phone", related='partner_id.phone', store=True)  # ใช้ related กับ partner_id
 
 class ManeerinCodeBeneficiary(models.Model):
     _name = 'maneerincode.beneficiary'
@@ -36,12 +28,4 @@ class ManeerinCodeBeneficiary(models.Model):
     age = fields.Integer(string="Age")
     nation = fields.Char(string="Nation")
     street = fields.Char(string="Street")
-    phone = fields.Char(string="Phone")
-
-    @api.onchange('partner_id')
-    def _onchange_partner_id(self):
-        if self.partner_id:
-            self.age = self.partner_id.age  # ปรับให้ดึงข้อมูลอายุจาก res.partner
-            self.nation = self.partner_id.nationality  # ปรับให้ดึงข้อมูลสัญชาติ
-            self.street = self.partner_id.street  # ปรับให้ดึงข้อมูลถนน
-            self.phone = self.partner_id.phone  # ปรับให้ดึงข้อมูลโทรศัพท์
+    phone = fields.Char(string="Phone", related='partner_id.phone', store=True)  # ใช้ related กับ partner_id
