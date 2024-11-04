@@ -1,6 +1,2 @@
 id,name,model_id:id,group_id,perm_read,perm_write,perm_create,perm_unlink
 access_info_user_code,access_info_user_code,model_maneerincode_code,,1,1,1,1
-access_info_user_code_read,access_info_user_code_read,model_maneerincode_code,,1,0,0,0
-access_info_user_code_write,access_info_user_code_write,model_maneerincode_code,,0,1,0,0
-access_info_user_code_create,access_info_user_code_create,model_maneerincode_code,,0,0,1,0
-access_info_user_code_unlink,access_info_user_code_unlink,model_maneerincode_code,,0,0,0,1
