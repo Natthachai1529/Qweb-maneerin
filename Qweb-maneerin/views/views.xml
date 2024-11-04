@@ -2,14 +2,16 @@
 <odoo>
     <record id="maneerincode_view_form" model="ir.ui.view">
         <field name="name">maneerincode Form</field>
-        <field name="model">maneerincode.code</field> 
+        <field name="model">maneerincode.code</field>
         <field name="arch" type="xml">
             <form string="Maneerin Code Form">
                 <sheet>
                     <group>
-                        <field name="contact_date"/>
+                        <field name="contact_date" widget="datetime"/>  <!-- ใช้ widget="datetime" สำหรับแสดงวันที่และเวลา -->
                         <field name="seller"/>
-                    </group>                
+                        <field name="buyer"/>
+                        <field name="beneficiary"/>
+                    </group>
                 </sheet>
             </form>
         </field>
@@ -17,11 +19,13 @@
 
     <record id="maneerincode_view_tree" model="ir.ui.view">
         <field name="name">maneerincode Tree</field>
-        <field name="model">maneerincode.code</field> 
+        <field name="model">maneerincode.code</field>
         <field name="arch" type="xml">
             <tree string="Maneerin Code List">
                 <field name="contact_date"/>
                 <field name="seller"/>
+                <field name="buyer"/>
+                <field name="beneficiary"/>
             </tree>
         </field>
     </record>
