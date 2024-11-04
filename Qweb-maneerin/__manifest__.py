@@ -5,6 +5,7 @@
     'depends': ['base', 'contacts'],  
     'data': [
         'security/ir.model.access.csv',
+        'data/data.xml',
         'views/views.xml', 
     ],
     'application': True,
