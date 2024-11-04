@@ -1,4 +1,5 @@
 <odoo>
+    <!-- ฟอร์มสำหรับ Maneerin Code -->
     <record id="view_maneerincode_form" model="ir.ui.view">
         <field name="name">maneerincode.form</field>
         <field name="model">maneerincode.code</field>
@@ -6,36 +7,127 @@
             <form string="Maneerin Code">
                 <sheet>
                     <group>
-                        <field name="contract_no"/>
-                        <field name="contact_date"/>
-                        <field name="seller"/>
-                        <field name="buyer_id"/>
-                        <field name="beneficiary_id"/>
+                        <field name="contract_no" />
+                        <field name="contact_date" />
+                        <field name="seller" />
+                        <field name="buyer_id" placeholder="เลือกผู้จะซื้อ" />
+                        <field name="beneficiary_id" placeholder="เลือกผู้รับสิทธิ์" />
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
+    <!-- มุมมองรายการสำหรับ Maneerin Code -->
     <record id="view_maneerincode_tree" model="ir.ui.view">
         <field name="name">maneerincode.tree</field>
         <field name="model">maneerincode.code</field>
         <field name="arch" type="xml">
             <tree string="Maneerin Code">
-                <field name="contract_no"/>
-                <field name="contact_date"/>
-                <field name="seller"/>
-                <field name="buyer_id"/>
-                <field name="beneficiary_id"/>
+                <field name="contract_no" />
+                <field name="contact_date" />
+                <field name="seller" />
+                <field name="buyer_id" />
+                <field name="beneficiary_id" />
             </tree>
         </field>
     </record>
 
+    <!-- Action สำหรับ Maneerin Code -->
     <record id="action_maneerincode" model="ir.actions.act_window">
         <field name="name">Maneerin Code</field>
         <field name="res_model">maneerincode.code</field>
         <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- เมนูสำหรับ Maneerin Code -->
     <menuitem id="menu_maneerincode" name="Maneerin Code" action="action_maneerincode"/>
+
+    <!-- ฟอร์มสำหรับ Buyer -->
+    <record id="view_buyer_form" model="ir.ui.view">
+        <field name="name">buyer.form</field>
+        <field name="model">buyer.info</field>
+        <field name="arch" type="xml">
+            <form string="Buyer Information">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="age" />
+                        <field name="nation" />
+                        <field name="street" />
+                        <field name="phone" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- มุมมองรายการสำหรับ Buyer -->
+    <record id="view_buyer_tree" model="ir.ui.view">
+        <field name="name">buyer.tree</field>
+        <field name="model">buyer.info</field>
+        <field name="arch" type="xml">
+            <tree string="Buyer Information">
+                <field name="name" />
+                <field name="age" />
+                <field name="nation" />
+                <field name="street" />
+                <field name="phone" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action สำหรับ Buyer -->
+    <record id="action_buyer" model="ir.actions.act_window">
+        <field name="name">Buyer</field>
+        <field name="res_model">buyer.info</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- เมนูสำหรับ Buyer -->
+    <menuitem id="menu_buyer" name="Buyer" action="action_buyer"/>
+
+    <!-- ฟอร์มสำหรับ Beneficiary -->
+    <record id="view_beneficiary_form" model="ir.ui.view">
+        <field name="name">beneficiary.form</field>
+        <field name="model">beneficiary.info</field>
+        <field name="arch" type="xml">
+            <form string="Beneficiary Information">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="age" />
+                        <field name="nation" />
+                        <field name="street" />
+                        <field name="phone" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- มุมมองรายการสำหรับ Beneficiary -->
+    <record id="view_beneficiary_tree" model="ir.ui.view">
+        <field name="name">beneficiary.tree</field>
+        <field name="model">beneficiary.info</field>
+        <field name="arch" type="xml">
+            <tree string="Beneficiary Information">
+                <field name="name" />
+                <field name="age" />
+                <field name="nation" />
+                <field name="street" />
+                <field name="phone" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action สำหรับ Beneficiary -->
+    <record id="action_beneficiary" model="ir.actions.act_window">
+        <field name="name">Beneficiary</field>
+        <field name="res_model">beneficiary.info</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- เมนูสำหรับ Beneficiary -->
+    <menuitem id="menu_beneficiary" name="Beneficiary" action="action_beneficiary"/>
 </odoo>
