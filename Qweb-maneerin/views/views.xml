@@ -6,9 +6,13 @@
             <form string="Maneerin Code">
                 <sheet>
                     <group>
-                        <field name="contract_no" string="เลขที่สัญญา"/>
-                        <field name="contact_date" string="Contact Date"/>
-                        <field name="seller" string="ผู้จะขาย"/> <!-- ใช้ชื่อฟิลด์ตามโค้ด Python -->
+                        <group>
+                            <field name="contract_no" string="เลขที่สัญญา"/>
+                            <field name="contact_date" string="Contact Date"/>
+                        </group>
+                        <group>
+                            <field name="seller" string="ผู้จะขาย"/> <!-- ฟิลด์ผู้จะขาย -->
+                        </group>
                     </group>
                     <group>
                         <label for="buyer_ids" string="ผู้จะซื้อ"/>
@@ -46,7 +50,7 @@
             <tree string="Maneerin Codes">
                 <field name="contract_no" string="เลขที่สัญญา"/>
                 <field name="contact_date" string="Contact Date"/>
-                <field name="seller" string="ผู้จะขาย"/> <!-- ใช้ชื่อฟิลด์ตามโค้ด Python -->
+                <field name="seller" string="ผู้จะขาย"/> <!-- ฟิลด์ผู้จะขาย -->
             </tree>
         </field>
     </record>
