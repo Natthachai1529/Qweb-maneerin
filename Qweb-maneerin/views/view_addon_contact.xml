@@ -5,10 +5,11 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='vat']" position="after">
-                <field name="age"/>
-                <field name="nation"/>
-                <field name="identification_number"/>
+            <!-- เพิ่มฟิลด์ใหม่หลังจากฟิลด์ VAT -->
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="partner_age" string="Age"/>
+                <field name="partner_nation" string="Nationality"/>
+                <field name="identification_number" string="Identification Number"/>
             </xpath>
         </field>
     </record>
