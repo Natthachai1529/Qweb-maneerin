@@ -6,7 +6,6 @@
     'data': [
         'security/ir.model.access.csv',
         'views/views.xml', 
-        'reports/report_maneerincode.xml',
     ],
     'application': True,
     'installable': True,
