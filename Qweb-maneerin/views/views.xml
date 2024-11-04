@@ -13,7 +13,7 @@
                     <group>
                         <field name="buyer_ids" widget="one2many_list" options="{'no_create': True}">
                             <tree editable="bottom">
-                                <field name="name" string="ผู้ซื้อ" options="{'no_open': True}"/>
+                                <field name="partner_id" string="ผู้ซื้อ" options="{'no_open': True}"/> <!-- ใช้ partner_id -->
                                 <field name="age" string="Age"/>
                                 <field name="nation" string="Nation"/>
                                 <field name="street" string="Street"/>
@@ -24,7 +24,7 @@
                     <group>
                         <field name="beneficiary_ids" widget="one2many_list" options="{'no_create': True}">
                             <tree editable="bottom">
-                                <field name="name" string="ผู้รับสิทธิ์" options="{'no_open': True}"/>
+                                <field name="partner_id" string="ผู้รับสิทธิ์" options="{'no_open': True}"/> <!-- ใช้ partner_id -->
                                 <field name="age" string="Age"/>
                                 <field name="nation" string="Nation"/>
                                 <field name="street" string="Street"/>

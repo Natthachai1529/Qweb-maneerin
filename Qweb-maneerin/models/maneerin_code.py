@@ -14,7 +14,7 @@ class ManeerinCodeBuyer(models.Model):
     _name = 'maneerincode.buyer'
     
     maneerincode_id = fields.Many2one(comodel_name='maneerincode.code', string="Maneerin Code")
-    name = fields.Char(string="Name")
+    partner_id = fields.Many2one(comodel_name='res.partner', string="ผู้ซื้อ")  # เปลี่ยนเป็น Many2one เพื่อเลือกจาก res.partner
     age = fields.Integer(string="Age")
     nation = fields.Char(string="Nation")
     street = fields.Char(string="Street")
@@ -24,7 +24,7 @@ class ManeerinCodeBeneficiary(models.Model):
     _name = 'maneerincode.beneficiary'
     
     maneerincode_id = fields.Many2one(comodel_name='maneerincode.code', string="Maneerin Code")
-    name = fields.Char(string="Name")
+    partner_id = fields.Many2one(comodel_name='res.partner', string="ผู้รับสิทธิ์")  # เปลี่ยนเป็น Many2one เพื่อเลือกจาก res.partner
     age = fields.Integer(string="Age")
     nation = fields.Char(string="Nation")
     street = fields.Char(string="Street")
