@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="Purchase_Management_view_form" model="ir.ui.view">
+        <field name="name">Purchase Management Form</field>
+        <field name="model">purchase.management.code</field> 
+        <field name="arch" type="xml">
+            <form string="Purchase Management Form">
+                <sheet>
+                    <group>
+                        <field name="vendor"/>
+                        <field name="v_ref"/>  
+                        <field name="order_deadline"/>
+                        <field name="expected_arrival"/>
+                    </group>                
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="Purchase_Management_view_tree" model="ir.ui.view">
+        <field name="name">Purchase Management Tree</field>
+        <field name="model">purchase.management.code</field> 
+        <field name="arch" type="xml">
+            <tree string="Purchase Management List">
+                <field name="vendor"/>
+                <field name="v_ref"/>  
+                <field name="order_deadline"/>
+                <field name="expected_arrival"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="Purchase_Management_action" model="ir.actions.act_window">
+        <field name="name">Purchase Management</field>
+        <field name="res_model">purchase.management.code</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="Purchase_Management_menu" name="Purchase Management" sequence="1" action="Purchase_Management_action"/>
+</odoo>
