@@ -4,5 +4,5 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     age = fields.Integer(string='Age')
-    nation = fields.Char(string='Nation')
-    Identification_Number = fields.Char(string='Identification Number')
+    nation = fields.Char(string='Nationality')
+    identification_number = fields.Char(string='Identification Number')
