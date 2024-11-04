@@ -1,129 +1,50 @@
 <odoo>
-    <!-- ฟอร์มสำหรับ ManeerinCode -->
-    <record id="view_maneerincode_code_form" model="ir.ui.view">
-        <field name="name">maneerincode.code.form</field>
-        <field name="model">maneerincode.code</field>
-        <field name="arch" type="xml">
-            <form string="Contract">
-                <sheet>
-                    <group>
-                        <field name="contract_no"/>
-                        <field name="contact_date"/>
-                        <field name="seller"/>
-                        <field name="buyer_id"/>
-                        <field name="beneficiary_id"/>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
+    <data>
 
-    <!-- รายการสำหรับ ManeerinCode -->
-    <record id="view_maneerincode_code_tree" model="ir.ui.view">
-        <field name="name">maneerincode.code.tree</field>
-        <field name="model">maneerincode.code</field>
-        <field name="arch" type="xml">
-            <tree string="Contracts">
-                <field name="contract_no"/>
-                <field name="contact_date"/>
-                <field name="seller"/>
-                <field name="buyer_id"/>
-                <field name="beneficiary_id"/>
-            </tree>
-        </field>
-    </record>
+        <!-- Action -->
+        <record id="action_maneerincode_code" model="ir.actions.act_window">
+            <field name="name">Contracts</field>
+            <field name="res_model">maneerincode.code</field>
+            <field name="view_mode">tree,form</field>
+        </record>
 
-    <!-- ฟอร์มสำหรับ Buyer -->
-    <record id="view_maneerincode_buyer_form" model="ir.ui.view">
-        <field name="name">maneerincode.buyer.form</field>
-        <field name="model">maneerincode.buyer</field>
-        <field name="arch" type="xml">
-            <form string="Buyer">
-                <sheet>
-                    <group>
-                        <field name="name"/>
-                        <field name="age"/>
-                        <field name="nation"/>
-                        <field name="street"/>
-                        <field name="phone"/>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
+        <!-- Menu Item -->
+        <menuitem id="menu_maneerincode_root" name="Maneerin" sequence="1"/>
+        <menuitem id="menu_maneerincode_code" name="Contracts" parent="menu_maneerincode_root" action="action_maneerincode_code" sequence="1"/>
 
-    <!-- รายการสำหรับ Buyer -->
-    <record id="view_maneerincode_buyer_tree" model="ir.ui.view">
-        <field name="name">maneerincode.buyer.tree</field>
-        <field name="model">maneerincode.buyer</field>
-        <field name="arch" type="xml">
-            <tree string="Buyers">
-                <field name="name"/>
-                <field name="age"/>
-                <field name="nation"/>
-                <field name="street"/>
-                <field name="phone"/>
-            </tree>
-        </field>
-    </record>
+        <!-- Form View -->
+        <record id="view_maneerincode_code_form" model="ir.ui.view">
+            <field name="name">maneerincode.code.form</field>
+            <field name="model">maneerincode.code</field>
+            <field name="arch" type="xml">
+                <form string="Contracts">
+                    <sheet>
+                        <group>
+                            <field name="contract_no"/>
+                            <field name="contact_date"/>
+                            <field name="seller"/>
+                            <field name="buyer_id"/>
+                            <field name="beneficiary_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
 
-    <!-- ฟอร์มสำหรับ Beneficiary -->
-    <record id="view_maneerincode_beneficiary_form" model="ir.ui.view">
-        <field name="name">maneerincode.beneficiary.form</field>
-        <field name="model">maneerincode.beneficiary</field>
-        <field name="arch" type="xml">
-            <form string="Beneficiary">
-                <sheet>
-                    <group>
-                        <field name="name"/>
-                        <field name="age"/>
-                        <field name="nation"/>
-                        <field name="street"/>
-                        <field name="phone"/>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
+        <!-- Tree View -->
+        <record id="view_maneerincode_code_tree" model="ir.ui.view">
+            <field name="name">maneerincode.code.tree</field>
+            <field name="model">maneerincode.code</field>
+            <field name="arch" type="xml">
+                <tree string="Contracts">
+                    <field name="contract_no"/>
+                    <field name="contact_date"/>
+                    <field name="seller"/>
+                    <field name="buyer_id"/>
+                    <field name="beneficiary_id"/>
+                </tree>
+            </field>
+        </record>
 
-    <!-- รายการสำหรับ Beneficiary -->
-    <record id="view_maneerincode_beneficiary_tree" model="ir.ui.view">
-        <field name="name">maneerincode.beneficiary.tree</field>
-        <field name="model">maneerincode.beneficiary</field>
-        <field name="arch" type="xml">
-            <tree string="Beneficiaries">
-                <field name="name"/>
-                <field name="age"/>
-                <field name="nation"/>
-                <field name="street"/>
-                <field name="phone"/>
-            </tree>
-        </field>
-    </record>
-
-    <!-- เมนูสำหรับ ManeerinCode -->
-    <menuitem id="menu_maneerincode_root" name="Maneerin Code" sequence="10"/>
-
-    <menuitem id="menu_maneerincode_code" name="Contracts" parent="menu_maneerincode_root" action="action_maneerincode_code" sequence="1"/>
-    <menuitem id="menu_maneerincode_buyer" name="Buyers" parent="menu_maneerincode_root" action="action_maneerincode_buyer" sequence="2"/>
-    <menuitem id="menu_maneerincode_beneficiary" name="Beneficiaries" parent="menu_maneerincode_root" action="action_maneerincode_beneficiary" sequence="3"/>
-
-    <!-- การกระทำ (Actions) -->
-    <record id="action_maneerincode_code" model="ir.actions.act_window">
-        <field name="name">Contracts</field>
-        <field name="res_model">maneerincode.code</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-    <record id="action_maneerincode_buyer" model="ir.actions.act_window">
-        <field name="name">Buyers</field>
-        <field name="res_model">maneerincode.buyer</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-    <record id="action_maneerincode_beneficiary" model="ir.actions.act_window">
-        <field name="name">Beneficiaries</field>
-        <field name="res_model">maneerincode.beneficiary</field>
-        <field name="view_mode">tree,form</field>
-    </record>
+    </data>
 </odoo>
