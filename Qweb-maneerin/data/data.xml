@@ -1,5 +1,25 @@
 <odoo>
-    <record id="action_print_contract" model="ir.actions.server">
+    <!-- Action สำหรับพิมพ์สัญญา -->
+    <record id="action_print_contract" model="ir.actions.act_window">
+        <field name="name">Print Contract</field>
+        <field name="res_model">maneerincode.code</field>
+        <field name="view_mode">form</field>
+        <field name="target">current</field>
+        <field name="context">{'form_view_initial_mode': 'edit'}</field>
+    </record>
+
+    <!-- QWeb Report -->
+    <report
+        id="report_maneerincode"
+        model="maneerincode.code"
+        string="Maneerin Code Report"
+        report_type="qweb-pdf"
+        name="your_module_name.report_maneerincode"
+        file="your_module_name.report_maneerincode"
+        />
+
+    <!-- Action server สำหรับการพิมพ์ -->
+    <record id="action_print_contract_server" model="ir.actions.server">
         <field name="name">Print Contract</field>
         <field name="model_id" ref="model_maneerincode_code"/>
         <field name="binding_model_id" ref="model_maneerincode_code"/>
