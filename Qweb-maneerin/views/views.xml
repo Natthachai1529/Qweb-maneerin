@@ -1,46 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Contract Form View -->
-    <record id="view_contract_form" model="ir.ui.view">
-        <field name="name">contract.contract.form</field>
-        <field name="model">contract.contract</field>
+    <record id="view_maneerincode_form" model="ir.ui.view">
+        <field name="name">maneerincode.form</field>
+        <field name="model">maneerincode.code</field>
         <field name="arch" type="xml">
-            <form>
+            <form string="Maneerin Code">
                 <sheet>
-                    <div class="oe_title">
-                        <h1>
-                            <field name="name" class="oe_inline"/>
-                        </h1>
-                    </div>
                     <group>
                         <group>
-                            <field name="contract_date" string="วันที่สัญญา"/>
-                            <field name="project_name" string="ชื่อโปรเจกต์"/>
-                            <field name="land_id" string="ที่ดิน"/>
-                            <field name="seller_id" widget="many2one" string="ผู้จะขาย"/>
+                            <field name="contract_no" />
+                            <field name="contact_date" />
+                            <field name="seller" />
                         </group>
                     </group>
                     <group>
-                        <label for="buyer_ids" string="ผู้จะซื้อ"/>
-                        <field name="buyer_ids" domain="[('active', '=', True)]">
-                            <tree editable="bottom">
-                                <field name="active" column_invisible="1"/>
-                                <field name="partner_id" string="ผู้ซื้อ"/>
-                                <field name="age" string="อายุ"/>
-                                <field name="nation" string="สัญชาติ"/>
-                                <field name="street" string="ถนน"/>
-                                <field name="phone" string="โทรศัพท์"/>
+                        <label for="buyer_ids" string="ผู้จะซื้อ" />
+                        <field name="buyer_ids" widget="one2many_list">
+                            <tree>
+                                <field name="name" string="Name" />
+                                <field name="age" string="Age" />
+                                <field name="nation" string="Nation" />
+                                <field name="street" string="Street" />
+                                <field name="phone" string="Phone" />
                             </tree>
                         </field>
-                        <label for="transferee_ids" string="ผู้รับโอนสิทธิ์"/>
-                        <field name="transferee_ids" domain="[('active', '=', True)]">
-                            <tree editable="bottom">
-                                <field name="active" column_invisible="1"/>
-                                <field name="partner_id" string="ผู้รับโอน"/>
-                                <field name="age" string="อายุ"/>
-                                <field name="nation" string="สัญชาติ"/>
-                                <field name="street" string="ถนน"/>
-                                <field name="phone" string="โทรศัพท์"/>
+                    </group>
+                    <group>
+                        <label for="beneficiary_ids" string="ผู้รับสิทธิ์โอน" />
+                        <field name="beneficiary_ids" widget="one2many_list">
+                            <tree>
+                                <field name="name" string="Name" />
+                                <field name="age" string="Age" />
+                                <field name="nation" string="Nation" />
+                                <field name="street" string="Street" />
+                                <field name="phone" string="Phone" />
                             </tree>
                         </field>
                     </group>
@@ -49,22 +41,23 @@
         </field>
     </record>
 
-    <!-- Actions -->
-    <record id="action_contract" model="ir.actions.act_window">
-        <field name="name">Contracts</field>
-        <field name="res_model">contract.contract</field>
+    <record id="view_maneerincode_tree" model="ir.ui.view">
+        <field name="name">maneerincode.tree</field>
+        <field name="model">maneerincode.code</field>
+        <field name="arch" type="xml">
+            <tree string="Maneerin Code">
+                <field name="contract_no" />
+                <field name="contact_date" />
+                <field name="seller" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_maneerincode" model="ir.actions.act_window">
+        <field name="name">Maneerin Code</field>
+        <field name="res_model">maneerincode.code</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- Menus -->
-    <menuitem id="menu_contract_root" 
-              name="การจัดการสัญญา" 
-              web_icon="contract,static/description/icon.png"
-              sequence="1"/>
-    
-    <menuitem id="menu_contract" 
-              name="รายการสัญญา"
-              parent="menu_contract_root"
-              action="action_contract"
-              sequence="1"/>
+    <menuitem id="menu_maneerincode" name="Maneerin Code" action="action_maneerincode" />
 </odoo>
