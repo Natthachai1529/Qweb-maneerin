@@ -7,7 +7,7 @@
         'security/ir.model.access.csv',
         'data/data.xml',
         'views/views.xml', 
-        'maneerin_contract.xml',
+        'views/maneerin_contract.xml',
     ],
     'application': True,
     'installable': True,
