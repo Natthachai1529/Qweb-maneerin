@@ -1,0 +1,39 @@
+<odoo>
+    <template id="report_maneerincode_template">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <h2>Maneerin Code Report</h2>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>เลขที่สัญญา</th>
+                        <td><t t-esc="o.contract_no"/></td>
+                    </tr>
+                    <tr>
+                        <th>Contact Date</th>
+                        <td><t t-esc="o.contact_date"/></td>
+                    </tr>
+                    <tr>
+                        <th>ผู้จะขาย</th>
+                        <td><t t-esc="o.seller.name"/></td>
+                    </tr>
+                    <tr>
+                        <th>ผู้จะซื้อ</th>
+                        <td>
+                            <t t-foreach="o.buyer_ids" t-as="buyer">
+                                <div><t t-esc="buyer.name.name"/> - <t t-esc="buyer.age"/> ปี</div>
+                            </t>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>ผู้รับสิทธิ์</th>
+                        <td>
+                            <t t-foreach="o.beneficiary_ids" t-as="beneficiary">
+                                <div><t t-esc="beneficiary.name.name"/> - <t t-esc="beneficiary.age"/> ปี</div>
+                            </t>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo>
