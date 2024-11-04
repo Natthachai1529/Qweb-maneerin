@@ -1,50 +1,41 @@
 <odoo>
-    <data>
+    <record id="view_maneerincode_form" model="ir.ui.view">
+        <field name="name">maneerincode.form</field>
+        <field name="model">maneerincode.code</field>
+        <field name="arch" type="xml">
+            <form string="Maneerin Code">
+                <sheet>
+                    <group>
+                        <field name="contract_no"/>
+                        <field name="contact_date"/>
+                        <field name="seller"/>
+                        <field name="buyer_id"/>
+                        <field name="beneficiary_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-        <!-- Action -->
-        <record id="action_maneerincode_code" model="ir.actions.act_window">
-            <field name="name">Contracts</field>
-            <field name="res_model">maneerincode.code</field>
-            <field name="view_mode">tree,form</field>
-        </record>
+    <record id="view_maneerincode_tree" model="ir.ui.view">
+        <field name="name">maneerincode.tree</field>
+        <field name="model">maneerincode.code</field>
+        <field name="arch" type="xml">
+            <tree string="Maneerin Code">
+                <field name="contract_no"/>
+                <field name="contact_date"/>
+                <field name="seller"/>
+                <field name="buyer_id"/>
+                <field name="beneficiary_id"/>
+            </tree>
+        </field>
+    </record>
 
-        <!-- Menu Item -->
-        <menuitem id="menu_maneerincode_root" name="Maneerin" sequence="1"/>
-        <menuitem id="menu_maneerincode_code" name="Contracts" parent="menu_maneerincode_root" action="action_maneerincode_code" sequence="1"/>
+    <record id="action_maneerincode" model="ir.actions.act_window">
+        <field name="name">Maneerin Code</field>
+        <field name="res_model">maneerincode.code</field>
+        <field name="view_mode">tree,form</field>
+    </record>
 
-        <!-- Form View -->
-        <record id="view_maneerincode_code_form" model="ir.ui.view">
-            <field name="name">maneerincode.code.form</field>
-            <field name="model">maneerincode.code</field>
-            <field name="arch" type="xml">
-                <form string="Contracts">
-                    <sheet>
-                        <group>
-                            <field name="contract_no"/>
-                            <field name="contact_date"/>
-                            <field name="seller"/>
-                            <field name="buyer_id"/>
-                            <field name="beneficiary_id"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
-
-        <!-- Tree View -->
-        <record id="view_maneerincode_code_tree" model="ir.ui.view">
-            <field name="name">maneerincode.code.tree</field>
-            <field name="model">maneerincode.code</field>
-            <field name="arch" type="xml">
-                <tree string="Contracts">
-                    <field name="contract_no"/>
-                    <field name="contact_date"/>
-                    <field name="seller"/>
-                    <field name="buyer_id"/>
-                    <field name="beneficiary_id"/>
-                </tree>
-            </field>
-        </record>
-
-    </data>
+    <menuitem id="menu_maneerincode" name="Maneerin Code" action="action_maneerincode"/>
 </odoo>
