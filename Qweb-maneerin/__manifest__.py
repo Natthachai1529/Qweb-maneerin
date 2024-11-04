@@ -5,10 +5,8 @@
     'depends': ['base', 'contacts'],  
     'data': [
         'security/ir.model.access.csv',
-        'data/data.xml',
-        'data/maneerin_contract.xml',
+        'button/ButtonTag.xml',
         'views/views.xml',
-        'reports/report_maneerin_contract.xml',  
     ],
     'application': True,
     'installable': True,
