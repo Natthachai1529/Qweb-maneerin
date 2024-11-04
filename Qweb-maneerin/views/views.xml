@@ -8,33 +8,23 @@
                     <group>
                         <field name="contract_no" string="เลขที่สัญญา"/>
                         <field name="contact_date" string="Contact Date"/>
-                        <field name="seller_id" string="ผู้จะขาย"/>  <!-- ใช้ seller_id -->
+                        <field name="seller" string="ผู้จะขาย"/>
                     </group>
                     <group>
-                        <label for="buyer_ids" string="ผู้จะซื้อ"/>
-                        <field name="buyer_ids" widget="one2many_list">
-                            <tree>
-                                <field name="partner_id" string="ผู้ซื้อ"/>  <!-- เลือกจาก res.partner -->
-                                <field name="name" string="Name" invisible="1"/> <!-- ซ่อนฟิลด์ name -->
-                                <field name="age" string="Age" invisible="1"/>   <!-- ซ่อนฟิลด์ age -->
-                                <field name="nation" string="Nation" invisible="1"/> <!-- ซ่อนฟิลด์ nation -->
-                                <field name="street" string="Street" invisible="1"/> <!-- ซ่อนฟิลด์ street -->
-                                <field name="phone" string="Phone" invisible="1"/> <!-- ซ่อนฟิลด์ phone -->
-                            </tree>
-                        </field>
+                        <label for="buyer_id" string="ผู้จะซื้อ"/>
+                        <field name="buyer_id" widget="many2one"/>
+                        <field name="age" string="Age" readonly="1" attrs="{'invisible': [('buyer_id', '=', False)]}"/>
+                        <field name="nation" string="Nation" readonly="1" attrs="{'invisible': [('buyer_id', '=', False)]}"/>
+                        <field name="street" string="Street" readonly="1" attrs="{'invisible': [('buyer_id', '=', False)]}"/>
+                        <field name="phone" string="Phone" readonly="1" attrs="{'invisible': [('buyer_id', '=', False)]}"/>
                     </group>
                     <group>
-                        <label for="beneficiary_ids" string="ผู้รับสิทธิ์โอน"/>
-                        <field name="beneficiary_ids" widget="one2many_list">
-                            <tree>
-                                <field name="partner_id" string="ผู้รับสิทธิ์"/>  <!-- เลือกจาก res.partner -->
-                                <field name="name" string="Name" invisible="1"/> <!-- ซ่อนฟิลด์ name -->
-                                <field name="age" string="Age" invisible="1"/>   <!-- ซ่อนฟิลด์ age -->
-                                <field name="nation" string="Nation" invisible="1"/> <!-- ซ่อนฟิลด์ nation -->
-                                <field name="street" string="Street" invisible="1"/> <!-- ซ่อนฟิลด์ street -->
-                                <field name="phone" string="Phone" invisible="1"/> <!-- ซ่อนฟิลด์ phone -->
-                            </tree>
-                        </field>
+                        <label for="beneficiary_id" string="ผู้รับสิทธิ์"/>
+                        <field name="beneficiary_id" widget="many2one"/>
+                        <field name="age" string="Age" readonly="1" attrs="{'invisible': [('beneficiary_id', '=', False)]}"/>
+                        <field name="nation" string="Nation" readonly="1" attrs="{'invisible': [('beneficiary_id', '=', False)]}"/>
+                        <field name="street" string="Street" readonly="1" attrs="{'invisible': [('beneficiary_id', '=', False)]}"/>
+                        <field name="phone" string="Phone" readonly="1" attrs="{'invisible': [('beneficiary_id', '=', False)]}"/>
                     </group>
                 </sheet>
             </form>
@@ -48,7 +38,7 @@
             <tree string="Maneerin Codes">
                 <field name="contract_no" string="เลขที่สัญญา"/>
                 <field name="contact_date" string="Contact Date"/>
-                <field name="seller_id" string="ผู้จะขาย"/>
+                <field name="seller" string="ผู้จะขาย"/>
             </tree>
         </field>
     </record>
