@@ -14,10 +14,10 @@
                         <field name="buyer_ids" widget="one2many_list" options="{'no_create': True}">
                             <tree editable="bottom">
                                 <field name="partner_id" string="ผู้ซื้อ" options="{'no_open': True}"/> <!-- ใช้ partner_id -->
-                                <field name="age" string="Age"/>
-                                <field name="nation" string="Nation"/>
-                                <field name="street" string="Street"/>
-                                <field name="phone" string="Phone"/>
+                                <field name="age" string="Age"/> <!-- Age จะถูกดึงจาก partner_id -->
+                                <field name="nation" string="Nation"/> <!-- Nation จะถูกดึงจาก partner_id -->
+                                <field name="street" string="Street"/> <!-- Street จะถูกดึงจาก partner_id -->
+                                <field name="phone" string="Phone"/> <!-- Phone จะถูกดึงจาก partner_id -->
                             </tree>
                         </field>
                     </group>
@@ -25,10 +25,10 @@
                         <field name="beneficiary_ids" widget="one2many_list" options="{'no_create': True}">
                             <tree editable="bottom">
                                 <field name="partner_id" string="ผู้รับสิทธิ์" options="{'no_open': True}"/> <!-- ใช้ partner_id -->
-                                <field name="age" string="Age"/>
-                                <field name="nation" string="Nation"/>
-                                <field name="street" string="Street"/>
-                                <field name="phone" string="Phone"/>
+                                <field name="age" string="Age"/> <!-- Age จะถูกดึงจาก partner_id -->
+                                <field name="nation" string="Nation"/> <!-- Nation จะถูกดึงจาก partner_id -->
+                                <field name="street" string="Street"/> <!-- Street จะถูกดึงจาก partner_id -->
+                                <field name="phone" string="Phone"/> <!-- Phone จะถูกดึงจาก partner_id -->
                             </tree>
                         </field>
                     </group>
