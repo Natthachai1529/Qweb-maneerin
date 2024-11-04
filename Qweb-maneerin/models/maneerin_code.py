@@ -18,7 +18,7 @@ class ManeerinCodeBuyer(models.Model):
 
     # ใช้ related fields เพื่อดึงข้อมูลจาก res.partner
     age = fields.Integer(related='partner_id.age', string="Age", store=True)
-    nation = fields.Char(related='partner_id.nation', string="Nation", store=True)
+    nation = fields.Char(related='partner_id.nationality', string="Nation", store=True)
     street = fields.Char(related='partner_id.street', string="Street", store=True)
     phone = fields.Char(related='partner_id.phone', string="Phone", store=True)
 
@@ -30,6 +30,6 @@ class ManeerinCodeBeneficiary(models.Model):
 
     # ใช้ related fields เพื่อดึงข้อมูลจาก res.partner
     age = fields.Integer(related='partner_id.age', string="Age", store=True)
-    nation = fields.Char(related='partner_id.nation', string="Nation", store=True)
+    nation = fields.Char(related='partner_id.nationality', string="Nation", store=True)
     street = fields.Char(related='partner_id.street', string="Street", store=True)
     phone = fields.Char(related='partner_id.phone', string="Phone", store=True)
