@@ -8,32 +8,30 @@
                     <group>
                         <field name="contract_no" string="เลขที่สัญญา"/>
                         <field name="contact_date" string="Contact Date"/>
-                        <field name="seller" string="ผู้จะขาย"/> <!-- เปลี่ยนจาก seller_id เป็น seller -->
+                        <field name="seller" string="ผู้จะขาย"/>
                     </group>
-                    <notebook>
-                        <page string="ผู้จะซื้อ">
-                            <field name="buyer_ids" widget="one2many_list">
-                                <tree>
-                                    <field name="name" string="ผู้ซื้อ"/> <!-- ใช้ name เป็น Many2one -->
-                                    <field name="age" string="Age"/>
-                                    <field name="nation" string="Nation"/>
-                                    <field name="street" string="Street"/>
-                                    <field name="phone" string="Phone"/>
-                                </tree>
-                            </field>
-                        </page>
-                        <page string="ผู้รับสิทธิ์โอน">
-                            <field name="beneficiary_ids" widget="one2many_list">
-                                <tree>
-                                    <field name="name" string="ผู้รับสิทธิ์"/>
-                                    <field name="age" string="Age"/>
-                                    <field name="nation" string="Nation"/>
-                                    <field name="street" string="Street"/>
-                                    <field name="phone" string="Phone"/>
-                                </tree>
-                            </field>
-                        </page>
-                    </notebook>
+                    <group>
+                        <field name="buyer_ids" widget="one2many_list" options="{'no_create': True}">
+                            <tree>
+                                <field name="name" string="ผู้ซื้อ"/>
+                                <field name="age" string="Age"/>
+                                <field name="nation" string="Nation"/>
+                                <field name="street" string="Street"/>
+                                <field name="phone" string="Phone"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group>
+                        <field name="beneficiary_ids" widget="one2many_list" options="{'no_create': True}">
+                            <tree>
+                                <field name="name" string="ผู้รับสิทธิ์"/>
+                                <field name="age" string="Age"/>
+                                <field name="nation" string="Nation"/>
+                                <field name="street" string="Street"/>
+                                <field name="phone" string="Phone"/>
+                            </tree>
+                        </field>
+                    </group>
                 </sheet>
             </form>
         </field>
@@ -46,7 +44,7 @@
             <tree string="Maneerin Codes">
                 <field name="contract_no" string="เลขที่สัญญา"/>
                 <field name="contact_date" string="Contact Date"/>
-                <field name="seller" string="ผู้จะขาย"/> <!-- เปลี่ยนจาก seller_id เป็น seller -->
+                <field name="seller" string="ผู้จะขาย"/>
             </tree>
         </field>
     </record>
