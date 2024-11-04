@@ -7,7 +7,7 @@
         'security/ir.model.access.csv',
         'button/ButtonTag.xml',
         'views/views.xml',
-        'views/view_addon_contact.xml',
+       
     ],
     'application': True,
     'installable': True,
