@@ -5,4 +5,4 @@ class ResPartner(models.Model):
 
     age = fields.Integer(string='Age')
     nation = fields.Char(string='Nation')
-    thai_id = fields.Char(string='Identification Number')
+    Identification_Number = fields.Char(string='Identification Number')

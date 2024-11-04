@@ -8,7 +8,7 @@
             <xpath expr="//field[@name='vat']" position="after">
                 <field name="age"/>
                 <field name="nation"/>
-                <field name="thai_id" string="Identification Number"/>
+                <field name="Identification_Number" string="Identification Number"/>
             </xpath>
         </field>
     </record>
