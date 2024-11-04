@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_maneerincode_code,access_maneerincode_code,model_maneerincode_code,,1,1,1,1
 access_maneerincode_buyer,access_maneerincode_buyer,model_maneerincode_buyer,,1,1,1,1
 access_maneerincode_beneficiary,access_maneerincode_beneficiary,model_maneerincode_beneficiary,,1,1,1,1
+access_addon_contact,access_addon_contact,model_addon_contact,,1,1,1,1 
