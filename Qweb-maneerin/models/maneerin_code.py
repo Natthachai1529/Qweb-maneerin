@@ -26,3 +26,4 @@ class Beneficiary(models.Model):
     nation = fields.Char(string="สัญชาติ")
     street = fields.Char(string="ถนน")
     phone = fields.Char(string="โทรศัพท์")
+
