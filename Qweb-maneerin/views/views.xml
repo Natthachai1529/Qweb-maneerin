@@ -11,6 +11,7 @@
                         <field name="seller" string="ผู้จะขาย"/>
                     </group>
                     <group>
+                        <label string="ผู้จะซื้อ"/>
                         <field name="buyer_ids" widget="one2many_list" options="{'no_create': True}">
                             <tree editable="bottom">
                                 <field name="partner_id" string="ผู้ซื้อ" options="{'no_open': True}"/>
@@ -22,6 +23,7 @@
                         </field>
                     </group>
                     <group>
+                        <label string="ผู้รับสิทธิ์"/>
                         <field name="beneficiary_ids" widget="one2many_list" options="{'no_create': True}">
                             <tree editable="bottom">
                                 <field name="partner_id" string="ผู้รับสิทธิ์" options="{'no_open': True}"/>

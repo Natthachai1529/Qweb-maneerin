@@ -18,7 +18,7 @@ class ManeerinCodeBuyer(models.Model):
     
     # ฟิลด์ที่ใช้ related
     age = fields.Integer(related='partner_id.age', string='Age', readonly=True)
-    nation = fields.Char(related='partner_id.nationality', string='Nation', readonly=True)  # ใช้ 'nationality' แทน 'nation'
+    nation = fields.Char(related='partner_id.nationality', string='Nation', readonly=True)
     street = fields.Char(related='partner_id.street', string='Street', readonly=True)
     phone = fields.Char(related='partner_id.phone', string='Phone', readonly=True)
 
@@ -30,6 +30,6 @@ class ManeerinCodeBeneficiary(models.Model):
     
     # ฟิลด์ที่ใช้ related
     age = fields.Integer(related='partner_id.age', string='Age', readonly=True)
-    nation = fields.Char(related='partner_id.nationality', string='Nation', readonly=True)  # ใช้ 'nationality' แทน 'nation'
+    nation = fields.Char(related='partner_id.nationality', string='Nation', readonly=True)
     street = fields.Char(related='partner_id.street', string='Street', readonly=True)
     phone = fields.Char(related='partner_id.phone', string='Phone', readonly=True)
