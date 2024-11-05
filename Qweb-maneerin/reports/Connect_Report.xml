@@ -1,13 +1,13 @@
 <odoo>
     <record id="action_report_contract" model="ir.actions.report">
         <field name="name">Print Contract</field>
-        <field name="model">maneerincode.code</field> <!-- ใช้ชื่อโมเดลที่ถูกต้อง -->
+        <field name="model">maneerincode.code</field> <!-- ชื่อโมเดลที่ถูกต้อง -->
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">module_name.report_maneerin_template</field> <!-- ชื่อรายงานที่ถูกต้อง -->
         <field name="report_file">module_name.report_maneerin_template</field> <!-- ชื่อไฟล์ที่ถูกต้อง -->
         <field name="print_report_name">Contract - ${object.name}</field>
-        <field name="paperformat_id" ref="module_name.paperformat_report"/> <!-- ตรวจสอบว่า ID นี้มีอยู่ -->
-        <field name="binding_model_id" ref="module_name.model_maneerincode_code"/> <!-- ID นี้ต้องตรงกับ _name ของโมเดล -->
+        <field name="paperformat_id" ref="your_module_name.paperformat_report"/> <!-- เปลี่ยน module_name ให้ตรงกับชื่อโมดูลของคุณ -->
+        <field name="binding_model_id" ref="your_module_name.model_maneerincode_code"/> <!-- เปลี่ยน module_name ให้ตรงกับชื่อโมดูลของคุณ -->
         <field name="binding_type">report</field>
     </record>
 </odoo>
