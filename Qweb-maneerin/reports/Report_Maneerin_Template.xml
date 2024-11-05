@@ -1,43 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="report_maneerin_template" model="ir.actions.report">
+        <record id="paperformat_report" model="report.paperformat">
+            <field name="name">Contract A4 Format</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">15</field>
+            <field name="margin_bottom">25</field>
+            <field name="margin_left">15</field>
+            <field name="margin_right">15</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="action_report_contract" model="ir.actions.report">
             <field name="name">Print Report</field>
             <field name="model">maneerincode.code</field>
             <field name="report_type">qweb-pdf</field>
-            <field name="report_name">module_name.report_maneerin_template</field>
-            <field name="report_file">module_name.report_maneerin_template</field>
+            <field name="report_name">Qweb-maneerin.report_maneerin_template</field>
+            <field name="report_file">Qweb-maneerin.report_maneerin_template</field>
             <field name="print_report_name">Contract - ${object.name}</field>
-            <field name="paperformat_id" ref="reports.Format_Report"/>
-            <field name="binding_model_id" ref="maneerincode_code"/>
+            <field name="paperformat_id" ref="paperformat_report"/>
+            <field name="binding_model_id" ref="model_maneerincode_code"/> <!-- Update ID -->
             <field name="binding_type">report</field>
         </record>
 
         <template id="report_maneerin_template">
             <t t-call="web.html_container">
-                <t t-foreach="doc_ids" t-as="doc_id">
-                    <t t-set="doc" t-value="docs[doc_id]"/>
-                    <div class="page">
-                        <h2>Contract Report</h2>
-                        <p>Name: <t t-esc="doc.name"/></p>
-                        <p>Age: <t t-esc="doc.age"/></p>
-                        <p>Nationality: <t t-esc="doc.nationality"/></p>
-                        <p>Address: <t t-esc="doc.street"/></p>
-                        <p>Phone: <t t-esc="doc.phone"/></p>
+                <t t-set="doc" t-value="doc"/>
+                <t t-set="company" t-value="doc.company_id"/>
+
+                <div class="page">
+                    <h2>รายงานสัญญา</h2>
+                    <p>ชื่อสัญญา: <span t-esc="doc.name"/></p>
+                    <p>วันที่เริ่มสัญญา: <span t-esc="doc.start_date"/></p>
+                    <p>วันที่สิ้นสุดสัญญา: <span t-esc="doc.end_date"/></p>
+                    <p>บริษัท: <span t-esc="company.name"/></p>
+
+                    <h3>รายละเอียดสัญญา</h3>
+                    <p t-esc="doc.description"/>
+
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>รายการ</th>
+                                <th>จำนวน</th>
+                                <th>ราคา</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="doc.line_ids" t-as="line">
+                                <td t-esc="line.name"/>
+                                <td t-esc="line.quantity"/>
+                                <td t-esc="line.price_unit"/>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="footer">
+                        <p>ขอบคุณที่ใช้บริการ</p>
                     </div>
-                </t>
+                </div>
             </t>
         </template>
-        
-        <record id="paperformat_report" model="report.paperformat">
-            <field name="name">Report Format</field>
-            <field name="default" eval="True"/>
-            <field name="format">A4</field>
-            <field name="orientation">Portrait</field>
-            <field name="margin_top">10</field>
-            <field name="margin_bottom">10</field>
-            <field name="margin_left">10</field>
-            <field name="margin_right">10</field>
-            <field name="dpi">90</field>
-        </record>
     </data>
 </odoo>
