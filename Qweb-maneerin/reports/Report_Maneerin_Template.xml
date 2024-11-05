@@ -1,73 +1,43 @@
 <odoo>
-    <!-- Paper Format Definition -->
-    <record id="paperformat_report" model="report.paperformat">
-        <field name="name">Custom Report Format</field>
-        <field name="default">True</field>
-        <field name="page_width">210</field>
-        <field name="page_height">297</field>
-        <field name="margin_top">10</field>
-        <field name="margin_bottom">10</field>
-        <field name="margin_left">10</field>
-        <field name="margin_right">10</field>
-        <!-- Remove the reference to base.paperformat_a4 -->
-    </record>
+    <data>
+        <record id="report_maneerin_template" model="ir.actions.report">
+            <field name="name">Print Report</field>
+            <field name="model">maneerincode.code</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">module_name.report_maneerin_template</field>
+            <field name="report_file">module_name.report_maneerin_template</field>
+            <field name="print_report_name">Contract - ${object.name}</field>
+            <field name="paperformat_id" ref="reports.Format_Report"/>
+            <field name="binding_model_id" ref="maneerincode_code"/>
+            <field name="binding_type">report</field>
+        </record>
 
-    <!-- QWeb Template -->
-    <template id="report_maneerin_template">
-        <t t-call="web.html_container">
-            <div class="page">
-                <h1>รายงาน</h1>
-                <t t-if="doc">
-                    <h2>รายละเอียดเอกสาร</h2>
-                    <p>ชื่อ: <span t-esc="doc.name"/></p>
-                    <p>บริษัท: <span t-esc="doc.company_id.name"/></p>
-                    <p>วันที่ติดต่อ: <span t-esc="doc.contact_date"/></p>
-                    <t t-if="doc.buyer_ids">
-                        <h3>ผู้ซื้อ</h3>
-                        <ul>
-                            <t t-foreach="doc.buyer_ids" t-as="buyer">
-                                <li>
-                                    <span t-esc="buyer.name"/> - 
-                                    <span t-esc="buyer.age"/> ปี, 
-                                    <span t-esc="buyer.nationality"/>, 
-                                    <span t-esc="buyer.street"/>, 
-                                    <span t-esc="buyer.phone"/>
-                                </li>
-                            </t>
-                        </ul>
-                    </t>
-                    <t t-if="doc.beneficiary_ids">
-                        <h3>ผู้รับผลประโยชน์</h3>
-                        <ul>
-                            <t t-foreach="doc.beneficiary_ids" t-as="beneficiary">
-                                <li>
-                                    <span t-esc="beneficiary.name"/> - 
-                                    <span t-esc="beneficiary.age"/> ปี, 
-                                    <span t-esc="beneficiary.nationality"/>, 
-                                    <span t-esc="beneficiary.street"/>, 
-                                    <span t-esc="beneficiary.phone"/>
-                                </li>
-                            </t>
-                        </ul>
-                    </t>
+        <template id="report_maneerin_template">
+            <t t-call="web.html_container">
+                <t t-foreach="doc_ids" t-as="doc_id">
+                    <t t-set="doc" t-value="docs[doc_id]"/>
+                    <div class="page">
+                        <h2>Contract Report</h2>
+                        <p>Name: <t t-esc="doc.name"/></p>
+                        <p>Age: <t t-esc="doc.age"/></p>
+                        <p>Nationality: <t t-esc="doc.nationality"/></p>
+                        <p>Address: <t t-esc="doc.street"/></p>
+                        <p>Phone: <t t-esc="doc.phone"/></p>
+                    </div>
                 </t>
-                <t t-else="">
-                    <div>ไม่พบเอกสาร</div>
-                </t>
-            </div>
-        </t>
-    </template>
-
-    <!-- Action for the report -->
-    <record id="action_report_contract" model="ir.actions.report">
-        <field name="name">Print Report</field>
-        <field name="model">maneerincode.code</field>
-        <field name="report_type">qweb-pdf</field>
-        <field name="report_name">module_name.report_maneerin_template</field>
-        <field name="report_file">module_name.report_maneerin_template</field>
-        <field name="print_report_name">Contract - ${object.name}</field>
-        <field name="paperformat_id" ref="paperformat_report"/>
-        <field name="binding_model_id" ref="maneerincode_code"/>
-        <field name="binding_type">report</field>
-    </record>
+            </t>
+        </template>
+        
+        <record id="paperformat_report" model="report.paperformat">
+            <field name="name">Report Format</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">10</field>
+            <field name="margin_right">10</field>
+            <field name="dpi">90</field>
+        </record>
+    </data>
 </odoo>
