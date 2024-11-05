@@ -8,7 +8,7 @@
         'button/ButtonTag.xml',
         'views/views.xml',
         'views/view_addon_contact.xml',
-        'view/Report_Maneerin_Template.xml',
+        'reports/Report_Maneerin_Template.xml',
     ],
     'application': True,
     'installable': True,
