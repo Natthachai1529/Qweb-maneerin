@@ -3,19 +3,15 @@
     <data>
         <template id="report_maneerin_template">
             <t t-call="web.html_container">
-                <!-- ตรวจสอบว่ามีข้อมูลเอกสารหรือไม่ -->
                 <t t-if="doc">
-                    <!-- ตั้งค่า company เป็นค่าเริ่มต้น -->
                     <t t-set="company" t-value="doc.company_id"/>
 
                     <div class="page">
                         <h2>รายงานสัญญา</h2>
-                        <!-- แสดงชื่อสัญญา ถ้าไม่มีค่าให้แสดงเป็น 'N/A' -->
                         <p>ชื่อสัญญา: <span t-esc="doc.name or 'N/A'"/></p>
                         <p>วันที่เริ่มสัญญา: <span t-esc="doc.start_date or 'N/A'"/></p>
                         <p>วันที่สิ้นสุดสัญญา: <span t-esc="doc.end_date or 'N/A'"/></p>
 
-                        <!-- ตรวจสอบว่ามีข้อมูลบริษัทหรือไม่ -->
                         <t t-if="company">
                             <p>บริษัท: <span t-esc="company.name or 'N/A'"/></p>
                         </t>
@@ -24,7 +20,6 @@
                         </t>
 
                         <h3>รายละเอียดสัญญา</h3>
-                        <!-- แสดงรายละเอียดสัญญา ถ้าไม่มีค่าให้แสดงเป็น 'ไม่มีรายละเอียด' -->
                         <p t-esc="doc.description or 'ไม่มีรายละเอียด'"/>
 
                         <table class="table table-sm">
@@ -36,7 +31,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- ตรวจสอบว่ามีข้อมูล line_ids หรือไม่ -->
                                 <t t-if="doc.line_ids">
                                     <tr t-foreach="doc.line_ids" t-as="line">
                                         <td t-esc="line.name or 'N/A'"/>
@@ -58,7 +52,6 @@
                     </div>
                 </t>
                 <t t-else="">
-                    <!-- แสดงข้อความนี้เมื่อไม่มีข้อมูลเอกสาร -->
                     <p>ไม่พบข้อมูลเอกสาร</p>
                 </t>
             </t>
