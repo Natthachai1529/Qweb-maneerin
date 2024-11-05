@@ -9,9 +9,9 @@
 
                     <div class="page">
                         <h2>รายงานสัญญา</h2>
-                        <p>ชื่อสัญญา: <span t-esc="doc.name"/></p>
-                        <p>วันที่เริ่มสัญญา: <span t-esc="doc.start_date"/></p>
-                        <p>วันที่สิ้นสุดสัญญา: <span t-esc="doc.end_date"/></p>
+                        <p>ชื่อสัญญา: <span t-esc="doc.name or 'N/A'"/></p>
+                        <p>วันที่เริ่มสัญญา: <span t-esc="doc.start_date or 'N/A'"/></p>
+                        <p>วันที่สิ้นสุดสัญญา: <span t-esc="doc.end_date or 'N/A'"/></p>
 
                         <t t-if="company">
                             <p>บริษัท: <span t-esc="company.name"/></p>
@@ -21,7 +21,7 @@
                         </t>
 
                         <h3>รายละเอียดสัญญา</h3>
-                        <p t-esc="doc.description"/>
+                        <p t-esc="doc.description or 'ไม่มีรายละเอียด'"/>
 
                         <table class="table table-sm">
                             <thead>
@@ -32,11 +32,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr t-foreach="doc.line_ids" t-as="line">
-                                    <td t-esc="line.name"/>
-                                    <td t-esc="line.quantity"/>
-                                    <td t-esc="line.price_unit"/>
-                                </tr>
+                                <t t-if="doc.line_ids">
+                                    <tr t-foreach="doc.line_ids" t-as="line">
+                                        <td t-esc="line.name or 'N/A'"/>
+                                        <td t-esc="line.quantity or 0"/>
+                                        <td t-esc="line.price_unit or 0.0"/>
+                                    </tr>
+                                </t>
+                                <t t-else="">
+                                    <tr>
+                                        <td colspan="3">ไม่มีรายการในสัญญา</td>
+                                    </tr>
+                                </t>
                             </tbody>
                         </table>
 
