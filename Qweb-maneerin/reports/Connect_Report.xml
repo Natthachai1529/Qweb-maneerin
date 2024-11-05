@@ -8,8 +8,8 @@
             <field name="report_name">maneerin.report_maneerin_template</field>
             <field name="report_file">maneerin.report_maneerin_template</field>
             <field name="print_report_name">Contract - ${object.name}</field>
-            <field name="paperformat_id" ref="Qweb.paperformat_contract_report"/>
-            <field name="binding_model_id" ref="Qweb.model_maneerincode_code"/>
+            <field name="paperformat_id" ref="your_module_name.paperformat_contract_report"/> <!-- แทนที่ your_module_name ด้วยชื่อโมดูลที่ถูกต้อง -->
+            <field name="binding_model_id" ref="your_module_name.model_maneerincode_code"/> <!-- แทนที่ your_module_name ด้วยชื่อโมดูลที่ถูกต้อง -->
             <field name="binding_type">report</field>
         </record>
     </data>
