@@ -1,12 +1,16 @@
-<!-- Report Action -->
-<record id="action_report_contract" model="ir.actions.report">
-    <field name="name">Print Contract</field>
-    <field name="model">maneerincode.code</field>
-    <field name="report_type">qweb-pdf</field>
-    <field name="report_name">module_name.report_maneerin_temp</field>
-    <field name="report_file">module_name.report_maneerin_temp</field>
-    <field name="print_report_name">Contract - ${object.name}</field>
-    <field name="paperformat_id" ref="module_name.paperformat_report"/>
-    <field name="binding_model_id" ref="module_name.model_maneerincode_code"/>
-    <field name="binding_type">report</field>
-</record>
+<odoo>
+    <data>
+        <record id="action_report_contract" model="ir.actions.report">
+            <field name="name">Print Contract</field>
+            <field name="model">maneerincode.code</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">maneerin.report_maneerin_template</field>
+            <field name="report_file">maneerin.report_maneerin_template</field>
+            <field name="print_report_name">Contract - ${object.name}</field>
+            <field name="paperformat_id" ref="your_module_name.paperformat_report"/>
+            <field name="binding_model_id" ref="your_module_name.model_maneerincode_code"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>
+
