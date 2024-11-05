@@ -9,7 +9,7 @@
         <field name="margin_bottom">10</field>
         <field name="margin_left">10</field>
         <field name="margin_right">10</field>
-        <field name="paper_id" ref="base.paperformat_a4"/>
+        <!-- Remove the reference to base.paperformat_a4 -->
     </record>
 
     <!-- QWeb Template -->
