@@ -4,7 +4,6 @@
             <t t-foreach="docs" t-as="doc">
                 <t t-call="web.html_container">
                     <t t-call="web.basic_layout">
-                        <!-- Add Sarabun font style -->
                         <style>
                             @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&amp;family=IBM+Plex+Sans+Thai:wght@400;700&amp;display=swap');
                             .page {
@@ -13,7 +12,6 @@
                         </style>
                         <div class="page">
                             <main>
-                                <!-- Header Section -->
                                 <div style="text-align: right;">
                                     <span class="text-muted" style="margin-right: 10px;">(การโอนสิทธิ์)</span>
                                     <span>ต้นฉบับ</span>
@@ -38,13 +36,12 @@
                                 </div>
 
                                 <div style="margin-top: 30px;">
-                                    <p>บันทึกข้อตกลงฉบับนี้ทำขึ้นเมื่อวันที่<span class="date-space"><span t-esc="doc.get_thai_date(doc.contract_date)"/></span>ระหว่าง</p>
+                                    <p>บันทึกข้อตกลงฉบับนี้ทำขึ้นเมื่อวันที่ <span class="date-space"><span t-esc="doc.get_thai_date(doc.contract_date)"/></span> ระหว่าง</p>
                                     <p style="margin-top:30px;">
-                                        1. บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จํากัด สํานักงานตั้งอยู่เลขที่ 219 หมู่ 2 &#x200B;
-                                        ตําบลบางพระ อําเภอศรีราชา จังหวัดชลบุรี 20110 โดย <span t-field="doc.seller_id.title.name"/><span t-field="doc.seller_id.name"/> ผู้มีอำนาจลงนามผูกพันบริษัท &#x200B;
+                                        1. บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด สํานักงานตั้งอยู่เลขที่ 219 หมู่ 2 
+                                        ตําบลบางพระ อําเภอศรีราชา จังหวัดชลบุรี 20110 โดย <span t-field="doc.seller_id.title.name"/><span t-field="doc.seller_id.name"/> ผู้มีอำนาจลงนามผูกพันบริษัท 
                                         ซึ่งต่อไปในสัญญานี้จะเรียกว่า "ผู้จะขาย" ฝ่ายหนึ่งกับ
                                     </p>
-                                    <!-- Buyer Section -->
                                     <t t-foreach="doc.buyer_ids.filtered(lambda r: r.active)" t-as="buyer">
                                         <p style="margin-top: 20px;">
                                             <span t-field="buyer.title.name"/><span t-field="buyer.partner_id.name"/>
