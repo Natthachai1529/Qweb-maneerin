@@ -5,8 +5,8 @@
             <field name="name">Print Report</field>
             <field name="model">maneerincode.code</field>
             <field name="report_type">qweb-pdf</field>
-            <field name="report_name">module_name.report_maneerin_template</field>
-            <field name="report_file">module_name.report_maneerin_template</field>
+            <field name="report_name">Qweb-maneerin.report_maneerin_template</field>
+            <field name="report_file">Qweb-maneerin.report_maneerin_template</field>
             <field name="print_report_name">"Report</field> 
             <field name="paperformat_id" ref="paperformat_report"/>
             <field name="binding_model_id" ref="model_maneerincode_code"/> 
