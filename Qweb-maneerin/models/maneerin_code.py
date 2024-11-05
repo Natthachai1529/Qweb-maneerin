@@ -15,7 +15,7 @@ class ManeerinCodeBuyer(models.Model):
     
     maneerincode_id = fields.Many2one(comodel_name='maneerincode.code', string="Maneerin Code")
     partner_id = fields.Many2one(comodel_name='res.partner', string="ผู้ซื้อ")  # เปลี่ยนเป็น Many2one เพื่อเลือกจาก res.partner
-    age = fields.Integer(comodel_name='res.partner',string="Age")
+    age = fields.Integer(string="Age", related='partner_id.age', store=True)
     nation = fields.Char(string="Nation", related='partner_id.nation', store=True)
     street = fields.Char(string="Street", related='partner_id.street', store=True)
     phone = fields.Char(string="Phone", related='partner_id.phone', store=True)  # ใช้ related กับ partner_id
