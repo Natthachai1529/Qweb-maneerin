@@ -8,7 +8,8 @@
         'button/ButtonTag.xml',
         'views/views.xml',
         'views/view_addon_contact.xml',
-
+        'reports/Connect_Report.xml',
+        'reports/Format_Report.xml',
         'reports/Report_Maneerin_Template.xml', 
     ],
     'application': True,
