@@ -1,18 +1,15 @@
+<?xml version="1.0"?>
 <odoo>
-    <record id="paperformat_contract_report" model="report.paperformat">
-        <field name="name">Contract A4 Format</field>
-        <field name="default" eval="True"/>
-        <field name="format">A4</field>
-        <field name="page_height">0</field>
-        <field name="page_width">0</field>
-        <field name="orientation">Portrait</field>
-        <field name="margin_top">15</field>
-        <field name="margin_bottom">25</field>
-        <field name="margin_left">15</field>
-        <field name="margin_right">15</field>
-        <field name="header_line" eval="False"/>
-        <field name="header_spacing">0</field>
-        <field name="dpi">90</field>
-    </record>
+    <data>
+        <record id="paperformat_contract_report" model="report.paperformat">
+            <field name="name">A4 Portrait</field>
+            <field name="default" eval="True"/>
+            <field name="margin_top" eval="10"/>
+            <field name="margin_bottom" eval="10"/>
+            <field name="margin_left" eval="10"/>
+            <field name="margin_right" eval="10"/>
+            <field name="page_size">A4</field>
+            <field name="orientation">Portrait</field>
+        </record>
+    </data>
 </odoo>
-
