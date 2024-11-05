@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_contract_custom">
+        <t t-call="web.html_container">
+            <t t-set="doc" t-value="doc"/>
+            <t t-set="company" t-value="doc.company_id"/>
+
+            <div class="page">
+                <!-- ส่วนหัวของรายงาน -->
+                <h2>รายงานสัญญา</h2>
+                <p>ชื่อสัญญา: <span t-esc="doc.name"/></p>
+                <p>วันที่เริ่มสัญญา: <span t-esc="doc.start_date"/></p>
+                <p>วันที่สิ้นสุดสัญญา: <span t-esc="doc.end_date"/></p>
+                <p>บริษัท: <span t-esc="company.name"/></p>
+
+                <!-- รายละเอียดสัญญา -->
+                <h3>รายละเอียดสัญญา</h3>
+                <p t-esc="doc.description"/>
+
+                <!-- ตารางแสดงรายการต่างๆ ในสัญญา -->
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>รายการ</th>
+                            <th>จำนวน</th>
+                            <th>ราคา</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="doc.line_ids" t-as="line">
+                            <td t-esc="line.name"/>
+                            <td t-esc="line.quantity"/>
+                            <td t-esc="line.price_unit"/>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- ส่วนท้ายของรายงาน -->
+                <div class="footer">
+                    <p>ขอบคุณที่ใช้บริการ</p>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
