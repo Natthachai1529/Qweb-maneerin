@@ -70,11 +70,12 @@
                         <th style="border: none;">สัญญาเลขที่ <t t-esc="docs[0].contract_no"/> ลงวันที่ 9 กุมภาพันธ์ 2567</th>
                     </tr>
                     <tr>
-                        <th style="border: none; text-align: right; display: inline-block; width: auto;">ทำที่บริษัทมณีรินพร็อพเพอร์ตี้จำกัด</th>
+                        <th style="border: none; text-align: right; padding-right: 0;">ทำที่บริษัทมณีรินพร็อพเพอร์ตี้จำกัด</th>
                     </tr>
                     <tr>
-                        <th style="border: none; text-align: right; display: inline-block; width: auto;">219 หมู่ 2 ตำบลบางพระ อำเภอศรีราชา จังหวัดชลบุรี 20110</th>
+                        <th style="border: none; text-align: right; padding-right: 0;">219 หมู่ 2 ตำบลบางพระ อำเภอศรีราชา จังหวัดชลบุรี 20110</th>
                     </tr>
+                    <tr>
                         <th style="border: none; text-align: left;">บันทึกข้อตกลงฉบับนี้ทำขึ้นเมื่อวันที่ <t t-esc="docs[0].contact_date"/> ระหว่าง</th>
                     </tr>
                     <tr>
