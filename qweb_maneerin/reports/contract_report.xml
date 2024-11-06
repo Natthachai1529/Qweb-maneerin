@@ -99,7 +99,7 @@
                 </div>
                 <div>
                     <strong>2. <t t-esc="docs[0].beneficiary_ids.partner_id.name"/> อายุ <t t-esc="docs[0].beneficiary_ids.age"/> ปี สัญชาติ <t t-esc="docs[0].beneficiary_ids.nation"/> 
-                    เลขประชาชน <t t-esc="docs[0].beneficiary_ids.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="docs[0].beneficiary_ids.partner_id.street"/> โทรศัพท์ <t t-esc="docs[0].beneficiary_ids.partner_id.phone"/>  </strong>
+                    เลขประชาชน <t t-esc="docs[0].beneficiary_ids.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="docs[0].beneficiary_ids.partner_id.street"/> โทรศัพท์ <t t-esc="docs[0].beneficiary_ids.partner_id.phone"/> ซึ่งต่อไปในสัญญานี้จะเรียกว่า "ผู้รับสิทธิ" ฝ่ายหนึ่ง </strong>
                 </div>
                 <div>
                     <strong>เนื่องจากผู้จะซื้อประสงค์จะโอนสิทธิและหน้าที่ตามสัญญาจะซื้อจะขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างในโครงการ มิตทาวน์ ซอย12
