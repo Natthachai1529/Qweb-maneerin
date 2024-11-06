@@ -1,10 +1,12 @@
 <odoo>
-    <record id="action_print_contract" model="ir.actions.server">
-        <field name="name">Print Report</field>
-        <field name="model_id" ref="model_maneerincode_code"/>
-        <field name="binding_model_id" ref="model_maneerincode_code"/>
-        <field name="binding_view_types">form,list</field>
-        <field name="state">code</field>
-        <field name="code">action = records.action_print_contract()</field>
-    </record>
+    <data>
+        <record id="action_print_contract" model="ir.actions.server">
+            <field name="name">Print Report</field>
+            <field name="model_id" ref="model_maneerincode_code"/>
+            <field name="binding_model_id" ref="model_maneerincode_code"/>
+            <field name="binding_view_types">form,list</field>
+            <field name="state">code</field>
+            <field name="code">action = records.action_print_contract()</field>
+        </record>
+    </data>
 </odoo>
