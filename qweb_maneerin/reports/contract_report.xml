@@ -1,6 +1,6 @@
 <odoo>
     <!-- Customize the paper size -->
-    <record id="paperformat_contract_report" model="report.paperformat">
+    <record id="paper_format_contract_report" model="report.paperformat">
         <field name="name">Report Custom Size</field>
         <field name="default" eval="True"/>
         <field name="page_width">210</field>
