@@ -22,9 +22,11 @@
         <!-- ระยะห่างจากขอบด้านขวา -->
         <field name="margin_right">15</field>
         <!-- ไม่แสดงเส้นหัวบนกระดาษ --> 
-        <field name="header_line" eval="True"/>
+        <field name="header_line" eval="False"/>
+        <!-- ระยะห่างระหว่างส่วนหัวกับเนื้อหาเป็น 0 -->
         <field name="header_spacing">0</field>
-        <field name="dpi">90</field> <!-- ความละเอียดของภาพ (DPI) -->
+        <!-- ความละเอียดของภาพ (DPI) -->
+        <field name="dpi">90</field> 
     </record>
 
     <!-- การตั้งค่ารายงาน -->
