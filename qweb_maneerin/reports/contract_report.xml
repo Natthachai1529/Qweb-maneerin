@@ -1,45 +1,64 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- ประกาศโมเดล Contract -->
-    <record id="model_contract_contract" model="ir.model">
-        <field name="name">Contract Model</field>
-        <field name="model">maneerincode.code</field>
+    <!-- Paper Format Definition -->
+    <record id="paperformat_contract_report" model="report.paperformat">
+        <field name="name">Contract A4 Format</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">25</field>
+        <field name="margin_left">15</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
     </record>
 
-    <!-- ประกาศรายงาน -->
+        <!-- QWeb Report Template -->
+    <template id="report_contract_custom">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <h2>Contract Report</h2>
+                <table class="table table-condensed">
+                    <tr>
+                        <th>Name</th>
+                        <td><span t-field="doc.name"/></td>
+                    </tr>
+                    <tr>
+                        <th>Start Date</th>
+                        <td><span t-field="doc.start_date"/></td>
+                    </tr>
+                    <tr>
+                        <th>End Date</th>
+                        <td><span t-field="doc.end_date"/></td>
+                    </tr>
+                    <tr>
+                        <th>Amount</th>
+                        <td><span t-field="doc.amount"/></td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td><span t-field="doc.status"/></td>
+                    </tr>
+                </table>
+            </div>
+        </t>
+    </template>
+
+
+    <!-- Report Action -->
     <record id="action_report_contract" model="ir.actions.report">
         <field name="name">Print Contract</field>
         <field name="model">maneerincode.code</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">report_contract_custom</field>
-        <field name="report_file">report_contract_custom</field>
+        <field name="report_name">qweb_maneerin.report_contract_custom</field>
+        <field name="report_file">qweb_maneerin.report_contract_custom</field>
         <field name="print_report_name">'Contract - %s' % (object.name)</field>
         <field name="paperformat_id" ref="paperformat_contract_report"/>
-        <field name="binding_model_id" ref="model_contract_contract"/> <!-- ใช้ ID ของโมเดล -->
+        <field name="binding_model_id" ref="model_contract_contract"/>
         <field name="binding_type">report</field>
     </record>
-
-    <!-- ประกาศ Paperformat สำหรับรายงาน -->
-    <record id="paperformat_contract_report" model="report.paperformat">
-        <field name="name">Contract Paperformat</field>
-        <field name="default" eval="True"/>
-        <field name="format">A4</field>
-        <field name="orientation">portrait</field>
-        <field name="margin_top">10</field>
-        <field name="margin_bottom">10</field>
-        <field name="margin_left">10</field>
-        <field name="margin_right">10</field>
-    </record>
-
-    <!-- รายงาน QWeb -->
-    <template id="report_contract_custom">
-        <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="doc">
-                <div class="page">
-                    <h2>Contract: <t t-esc="doc.name"/></h2>
-                    <p>Details of contract...</p>
-                </div>
-            </t>
-        </t>
-    </template>
 </odoo>
