@@ -1,16 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-   <data>
+    <data>
+        <!-- Report Action -->
         <record id="action_report_contract" model="ir.actions.report">
-           <field name="name">Print Report</field>
-           <field name="model">maneerincode.code</field>
-           <field name="report_type">qweb-pdf</field>
-           <field name="report_name">qweb_maneerin.report_maneerin_template</field>
-           <field name="report_file">qweb_maneerin.report_maneerin_template</field>
-           <field name="print_report_name">Report</field>
-           <field name="paperformat_id" ref="paperformat_contract_report"/>
-           <field name="binding_model_id" ref="model_maneerincode_code"/>
-           <field name="binding_type">report</field>
+            <field name="name">Print Contract</field>
+            <field name="model">contract.contract</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">contract.report_contract_custom</field>
+            <field name="report_file">contract.report_contract_custom</field>
+            <field name="print_report_name">'Contract - %s' % (object.name)</field>
+            <field name="paperformat_id" ref="paperformat_contract_report"/>
+            <field name="binding_model_id" ref="model_contract_contract"/>
+            <field name="binding_type">report</field>
         </record>
-   </data>
+    </data>
 </odoo>
+
