@@ -1,6 +1,6 @@
 <odoo>
-    <!-- กำหนดขนาดกระดาษเอง -->
-    <record id="paper_format_custom_report" model="report.paper_format">
+    <!-- Paper Format Definition -->
+    <record id="paper_format_custom_report" model="report.paperformat">
         <field name="name">Report Custom Size</field>
         <field name="default" eval="True"/>
         <field name="page_width">210</field>  <!-- ความกว้างของกระดาษในมิลลิเมตร -->
