@@ -1,29 +1,20 @@
 <odoo>
     <!-- Paper Format Definition -->
     <record id="paper_format_custom_report" model="report.paperformat">
-        <!-- กำหนดชื่อของกระดาษที่ถูกสร้างขึ้น -->
         <field name="name">Report Custom Size</field>
-        <!-- กำหนดเป็นค่าเริ่มต้น -->
         <field name="default" eval="True"/>
         <!-- ความกว้างของกระดาษในมิลลิเมตร -->
-        <field name="page_width">210</field>  <!-- ขนาดกว้างที่ต้องการ -->
+        <field name="page_width">210</field>
         <!-- ความสูงของกระดาษในมิลลิเมตร -->
-        <field name="page_height">297</field>  <!-- ขนาดสูงที่ต้องการ -->
+        <field name="page_height">297</field>
         <!-- กำหนดรูปแบบกระดาษ แนวตั้ง (Portrait) หรือแนวนอน (Landscape) -->
-        <field name="orientation">Portrait</field> 
-        <!-- ระยะห่างจากขอบด้านบน -->
+        <field name="orientation">portrait</field>  <!-- ค่าที่ถูกต้องเป็น 'portrait' หรือ 'landscape' -->
         <field name="margin_top">15</field> 
-        <!-- ระยะห่างจากขอบด้านล่าง -->
         <field name="margin_bottom">15</field>
-        <!-- ระยะห่างจากขอบด้านซ้าย -->
         <field name="margin_left">15</field> 
-        <!-- ระยะห่างจากขอบด้านขวา -->
         <field name="margin_right">15</field>
-        <!-- ไม่แสดงเส้นหัวบนกระดาษ --> 
         <field name="header_line" eval="False"/>
-        <!-- ระยะห่างระหว่างส่วนหัวกับเนื้อหาเป็น 0 -->
         <field name="header_spacing">0</field>
-        <!-- ความละเอียดของภาพ (DPI) -->
         <field name="dpi">90</field> 
     </record>
 
@@ -48,23 +39,23 @@
                 <table class="table">
                     <tr>
                         <th>ชื่อสัญญา</th>
-                        <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                        <td></td>
                     </tr>
                     <tr>
                         <th>วันที่เริ่มต้น</th>
-                        <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                        <td></td>
                     </tr>
                     <tr>
                         <th>วันที่สิ้นสุด</th>
-                        <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                        <td></td>
                     </tr>
                     <tr>
                         <th>จำนวนเงิน</th>
-                        <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                        <td></td>
                     </tr>
                     <tr>
                         <th>สถานะ</th>
-                        <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                        <td></td>
                     </tr>
                 </table>
             </div>
