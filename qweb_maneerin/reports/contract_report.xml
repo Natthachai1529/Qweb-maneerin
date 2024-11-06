@@ -1,32 +1,43 @@
 <odoo>
     <!-- Paper Format Definition -->
-    <record id="paper_format_custom_report" model="report.paperformat">
+    <record id="paper_format_custom_report12" model="report.paperformat">
+        <!-- กำหนดชื่อของกระดาษที่ถูกสร้างขึ้น -->
         <field name="name">Report Custom Size</field>
+        <!-- กำหนดเป็นค่าเริ่มต้น -->
         <field name="default" eval="True"/>
-        <!-- กำหนดขนาดหน้าเอง -->
-        <field name="page_width">210</field> <!-- ความกว้างของกระดาษ -->
-        <field name="page_height">297</field> <!-- ความสูงของกระดาษ -->
-        <field name="orientation">Portrait</field> <!-- แนวตั้ง -->
-        <field name="margin_top">15</field> <!-- ระยะห่างจากขอบด้านบน -->
-        <field name="margin_bottom">15</field> <!-- ระยะห่างจากขอบด้านล่าง -->
-        <field name="margin_left">15</field> <!-- ระยะห่างจากขอบด้านซ้าย -->
-        <field name="margin_right">15</field> <!-- ระยะห่างจากขอบด้านขวา -->
-        <field name="header_line" eval="False"/> <!-- ไม่แสดงเส้นหัวบนกระดาษ -->
-        <field name="header_spacing">0</field> <!-- ระยะห่างระหว่างส่วนหัวกับเนื้อหา -->
-        <field name="dpi">90</field> <!-- ความละเอียดของภาพ -->
+        <!-- ความกว้างของกระดาษในมิลลิเมตร -->
+        <field name="page_width">210</field>  <!-- ขนาดกว้างที่ต้องการ -->
+        <!-- ความสูงของกระดาษในมิลลิเมตร -->
+        <field name="page_height">297</field>  <!-- ขนาดสูงที่ต้องการ -->
+        <!-- กำหนดรูปแบบกระดาษ แนวตั้ง (Portrait) หรือแนวนอน (Landscape) -->
+        <field name="orientation">Portrait</field> 
+        <!-- ระยะห่างจากขอบด้านบน -->
+        <field name="margin_top">15</field> 
+        <!-- ระยะห่างจากขอบด้านล่าง -->
+        <field name="margin_bottom">15</field>
+        <!-- ระยะห่างจากขอบด้านซ้าย -->
+        <field name="margin_left">15</field> 
+        <!-- ระยะห่างจากขอบด้านขวา -->
+        <field name="margin_right">15</field>
+        <!-- ไม่แสดงเส้นหัวบนกระดาษ --> 
+        <field name="header_line" eval="False"/>
+        <!-- ระยะห่างระหว่างส่วนหัวกับเนื้อหาเป็น 0 -->
+        <field name="header_spacing">0</field>
+        <!-- ความละเอียดของภาพ (DPI) -->
+        <field name="dpi">90</field> 
     </record>
 
     <!-- Report Action -->
     <record id="action_report_contract" model="ir.actions.report">
         <field name="name">พิมพ์สัญญา</field>
-        <field name="model">maneerincode.code</field> <!-- โมเดลที่ใช้ในรายงาน -->
-        <field name="report_type">qweb-pdf</field> <!-- ชนิดของรายงาน -->
-        <field name="report_name">qweb_maneerin.report_contract_custom</field> <!-- ชื่อเทมเพลต -->
-        <field name="report_file">qweb_maneerin.report_contract_custom</field> <!-- ไฟล์รายงานที่ใช้งาน -->
-        <field name="print_report_name">"Report"</field> <!-- ชื่อที่พิมพ์ออกมา -->
-        <field name="paperformat_id" ref="paper_format_custom_report"/> <!-- ใช้ paperformat ที่กำหนด -->
-        <field name="binding_model_id" ref="model_maneerincode_code"/> <!-- โมเดลที่ผูกไว้ -->
-        <field name="binding_type">report</field> <!-- ประเภทการผูก -->
+        <field name="model">maneerincode.code</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">qweb_maneerin.report_contract_custom</field>
+        <field name="report_file">qweb_maneerin.report_contract_custom</field>
+        <field name="print_report_name">"Report"</field>  
+        <field name="paperformat_id" ref="paper_format_custom_report12"/>
+        <field name="binding_model_id" ref="model_maneerincode_code"/>
+        <field name="binding_type">report</field>
     </record>
 
     <!-- Template Report -->
