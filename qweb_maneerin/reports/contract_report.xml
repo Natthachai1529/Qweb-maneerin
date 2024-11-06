@@ -15,6 +15,19 @@
         <field name="dpi">90</field>
     </record>
 
+    <!-- Customize the Action -->
+    <record id="action_report_contract" model="ir.actions.report">
+        <field name="name">พิมพ์สัญญา</field>
+        <field name="model">maneerincode.code</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">qweb_maneerin.report_contract_custom</field>
+        <field name="report_file">qweb_maneerin.report_contract_custom</field>
+        <field name="print_report_name">"Report"</field>  
+        <field name="paperformat_id" ref="paperformat_contract_report"/>
+        <field name="binding_model_id" ref="model_maneerincode_code"/>
+        <field name="binding_type">report</field>
+    </record>
+
     <!-- Customize the Template -->
     <template id="report_contract_custom">
         <t t-call="web.basic_layout">
@@ -45,17 +58,4 @@
             </div>
         </t>
     </template>
-
-    <!-- Customize the Action -->
-    <record id="action_report_contract" model="ir.actions.report">
-        <field name="name">พิมพ์สัญญา</field>
-        <field name="model">maneerincode.code</field>
-        <field name="report_type">qweb-pdf</field>
-        <field name="report_name">qweb_maneerin.report_contract_custom</field>
-        <field name="report_file">qweb_maneerin.report_contract_custom</field>
-        <field name="print_report_name">"Report"</field>  
-        <field name="paperformat_id" ref="paperformat_contract_report"/>
-        <field name="binding_model_id" ref="model_maneerincode_code"/>
-        <field name="binding_type">report</field>
-    </record>
 </odoo>
