@@ -62,8 +62,10 @@
         <t t-call="web.basic_layout">
             <div class="page">
                 <style>
-                    @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
-                    .page, .footer, .header, * {font-family: 'Sarabun', sans-serif;}
+                @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
+                .page, .footer, .header, * {
+                    font-family: 'Sarabun', sans-serif;
+                }
                 </style>
                 <!-- Header Section -->
                 <h2></h2>
