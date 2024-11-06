@@ -85,16 +85,8 @@
                         <th style="border: none; text-align: left;">ศิริ ผู้มีอำนาจลงนามผูกพันบริษัท ซึ่งไปในสัญญานี้เรียกว่า "ผู้จะขาย" ฝ่ายหนึ่งกับ</th>
                     </tr>
                     <tr>
-                        <t t-foreach="doc.buyer_ids" t-as="buyer">
-                            <tr>
-                                <td><span t-field="buyer.partner_id.name"/></td>
-                                <td><span t-field="buyer.age"/></td> 
-                                <td><span t-field="buyer.nation"/></td> 
-                                <td><span t-field="buyer.street"/></td> 
-                                <td><span t-field="buyer.phone"/></td> 
-                            </tr>
-                        </t>
-                    </t>
+                        <th style="border: none; text-align: left;">2. <t t-esc="docs[0].buyer_ids"/> อายุ </th>
+                    </tr>
                 </table>
             </div>
         </t>
