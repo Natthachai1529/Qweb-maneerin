@@ -62,7 +62,7 @@
         <t t-call="web.basic_layout">
             <div class="page">
                 <style>
-                    .page, .footer, .header, * {font-family: 'Arial', sans-serif;}
+                    .page, .footer, .header, * {font-family: 'Sarabun', sans-serif;}
                 </style>
                 <!-- Header Section -->
                 <h2></h2>
