@@ -25,23 +25,23 @@
                 <table class="table">
                     <tr>
                         <th>ชื่อสัญญา</th>
-                        <td><span t-field="doc.name"/></td>
+                        <td><span t-field="record.name"/></td>
                     </tr>
                     <tr>
                         <th>วันที่เริ่มต้น</th>
-                        <td><span t-field="doc.start_date"/></td>
+                        <td><span t-field="record.start_date"/></td>
                     </tr>
                     <tr>
                         <th>วันที่สิ้นสุด</th>
-                        <td><span t-field="doc.end_date"/></td>
+                        <td><span t-field="record.end_date"/></td>
                     </tr>
                     <tr>
                         <th>จำนวนเงิน</th>
-                        <td><span t-field="doc.amount"/></td>
+                        <td><span t-field="record.amount"/></td>
                     </tr>
                     <tr>
                         <th>สถานะ</th>
-                        <td><span t-field="doc.status"/></td>
+                        <td><span t-field="record.status"/></td>
                     </tr>
                 </table>
             </div>
@@ -55,7 +55,7 @@
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">qweb_maneerin.report_contract_custom</field>
         <field name="report_file">qweb_maneerin.report_contract_custom</field>
-        <field name="print_report_name">'สัญญา - ' + doc.name</field>
+        <field name="print_report_name">'สัญญา - ' + record.name</field>
         <field name="paperformat_id" ref="paperformat_contract_report"/>
         <field name="binding_model_id" ref="model_maneerincode_code"/>
         <field name="binding_type">report</field>
