@@ -71,7 +71,7 @@
                     <strong>บันทึกข้อตกลงแนบท้ายสัญญาซื้อขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างโครงการ มิดทาวน์ ซอย12</strong>
                 </div>
                 <div style="text-align: center;">
-                    <strong>สัญญาเลขที่ <span t-field="doc.contract_no"/>ลงวันที่ 9 กุมภาพันธ์ 2567</strong>
+                    <strong>สัญญาเลขที่  <t t-esc="docs[0].contract_no"/> ลงวันที่ 9 กุมภาพันธ์ 2567</strong>
                 </div>
                 <div>
                     <strong>บันทึกข้อตกลงฉบับนี้ทำขึ้นเมื่อวันที่ ระหว่าง:</strong>
