@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <!-- Paper Format Definition -->
-        <record id="paperformat_contract_report" model="report.paperformat">
+        <record id="paper_format_report" model="report.paperformat">
             <field name="name">Contract A4 Format</field>
             <field name="default" eval="True"/>
             <field name="format">A4</field>
