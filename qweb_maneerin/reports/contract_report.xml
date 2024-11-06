@@ -75,7 +75,6 @@
                     <tr>
                         <th style="border: none; text-align: right; display: inline-block; width: auto;">219 หมู่ 2 ตำบลบางพระ อำเภอศรีราชา จังหวัดชลบุรี 20110</th>
                     </tr>
-
                         <th style="border: none; text-align: left;">บันทึกข้อตกลงฉบับนี้ทำขึ้นเมื่อวันที่ <t t-esc="docs[0].contact_date"/> ระหว่าง</th>
                     </tr>
                     <tr>
