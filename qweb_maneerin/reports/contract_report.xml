@@ -61,10 +61,10 @@
    <template id="report_contract_custom">
        <t t-call="web.basic_layout">
            <div class="page">
-               <h2>รายงานสัญญา</h2>
+               <h2></h2>
                <table class="table">
                    <tr>
-                       <th>ชื่อสัญญา</th>
+                       <th>บันทึกข้อตกลงแนบท้ายสัญญาซื้อขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างโครงการ มิดทาวน์ ซอย12</th>
                        <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
                    </tr>
                    <tr>
