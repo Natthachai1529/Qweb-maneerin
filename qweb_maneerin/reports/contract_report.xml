@@ -1,60 +1,75 @@
 <odoo>
-   <!-- Paper Format Definition -->
-   <record id="paper_format_custom_report" model="report.paperformat">
-       <field name="name">Report Custom Size</field>
-       <field name="default" eval="True"/>
-       <field name="page_width">210</field>  <!-- ความกว้างของกระดาษ -->
-       <field name="page_height">297</field> <!-- ความสูงของกระดาษ -->
-       <field name="margin_top">15</field>   <!-- ระยะห่างจากขอบบน -->
-       <field name="margin_bottom">15</field> <!-- ระยะห่างจากขอบล่าง -->
-       <field name="margin_left">15</field>   <!-- ระยะห่างจากขอบซ้าย -->
-       <field name="margin_right">15</field>  <!-- ระยะห่างจากขอบขวา -->
-       <field name="header_line" eval="False"/>
-       <field name="header_spacing">0</field>
-       <field name="dpi">90</field>
-   </record>
+    <!-- Paper Format Definition -->
+    <record id="paper_format_custom_report12" model="report.paperformat">
+        <!-- กำหนดชื่อของกระดาษที่ถูกสร้างขึ้น -->
+        <field name="name">Report Custom Size</field>
+        <!-- กำหนดเป็นค่าเริ่มต้น -->
+        <field name="default" eval="True"/>
+        <!-- ลบฟิลด์ page_width และ page_height และใช้ format แทน -->
+        <field name="format">A4</field>  <!-- ใช้ format แทนการตั้งค่า page_width และ page_height -->
+        <!-- ความกว้างของกระดาษในมิลลิเมตร -->
+        <!-- <field name="page_width">210</field> -->  
+        <!-- ความสูงของกระดาษในมิลลิเมตร -->
+        <!-- <field name="page_height">297</field> -->  
+        <!-- กำหนดรูปแบบกระดาษ แนวตั้ง (Portrait) หรือแนวนอน (Landscape) -->
+        <field name="orientation">Portrait</field> 
+        <!-- ระยะห่างจากขอบด้านบน -->
+        <field name="margin_top">15</field> 
+        <!-- ระยะห่างจากขอบด้านล่าง -->
+        <field name="margin_bottom">15</field>
+        <!-- ระยะห่างจากขอบด้านซ้าย -->
+        <field name="margin_left">15</field> 
+        <!-- ระยะห่างจากขอบด้านขวา -->
+        <field name="margin_right">15</field>
+        <!-- ไม่แสดงเส้นหัวบนกระดาษ --> 
+        <field name="header_line" eval="False"/>
+        <!-- ระยะห่างระหว่างส่วนหัวกับเนื้อหาเป็น 0 -->
+        <field name="header_spacing">0</field>
+        <!-- ความละเอียดของภาพ (DPI) -->
+        <field name="dpi">90</field> 
+    </record>
 
-   <!-- Report Action -->
-   <record id="action_report_contract" model="ir.actions.report">
-       <field name="name">พิมพ์สัญญา</field>
-       <field name="model">maneerincode.code</field>
-       <field name="report_type">qweb-pdf</field>
-       <field name="report_name">qweb_maneerin.report_contract_custom</field>
-       <field name="report_file">qweb_maneerin.report_contract_custom</field>
-       <field name="print_report_name">"Report"</field>
-       <field name="paperformat_id" ref="paper_format_custom_report"/>
-       <field name="binding_model_id" ref="model_maneerincode_code"/>
-       <field name="binding_type">report</field>
-   </record>
+    <!-- Report Action -->
+    <record id="action_report_contract" model="ir.actions.report">
+        <field name="name">พิมพ์สัญญา</field>
+        <field name="model">maneerincode.code</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">qweb_maneerin.report_contract_custom</field>
+        <field name="report_file">qweb_maneerin.report_contract_custom</field>
+        <field name="print_report_name">"Report"</field>  
+        <field name="paperformat_id" ref="paper_format_custom_report12"/>
+        <field name="binding_model_id" ref="model_maneerincode_code"/>
+        <field name="binding_type">report</field>
+    </record>
 
-   <!-- Template Report -->
-   <template id="report_contract_custom">
-       <t t-call="web.basic_layout">
-           <div class="page">
-               <h2>รายงานสัญญา</h2>
-               <table class="table">
-                   <tr>
-                       <th>ชื่อสัญญา</th>
-                       <td></td>
-                   </tr>
-                   <tr>
-                       <th>วันที่เริ่มต้น</th>
-                       <td></td>
-                   </tr>
-                   <tr>
-                       <th>วันที่สิ้นสุด</th>
-                       <td></td>
-                   </tr>
-                   <tr>
-                       <th>จำนวนเงิน</th>
-                       <td></td>
-                   </tr>
-                   <tr>
-                       <th>สถานะ</th>
-                       <td></td>
-                   </tr>
-               </table>
-           </div>
-       </t>
-   </template>
+    <!-- Template Report -->
+    <template id="report_contract_custom">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <h2>รายงานสัญญา</h2>
+                <table class="table">
+                    <tr>
+                        <th>ชื่อสัญญา</th>
+                        <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                    </tr>
+                    <tr>
+                        <th>วันที่เริ่มต้น</th>
+                        <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                    </tr>
+                    <tr>
+                        <th>วันที่สิ้นสุด</th>
+                        <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                    </tr>
+                    <tr>
+                        <th>จำนวนเงิน</th>
+                        <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                    </tr>
+                    <tr>
+                        <th>สถานะ</th>
+                        <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                    </tr>
+                </table>
+            </div>
+        </t>
+    </template>
 </odoo>
