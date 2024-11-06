@@ -8,8 +8,8 @@
             <field name="report_name">qweb_maneerin.report_maneerin_template</field>
             <field name="report_file">qweb_maneerin.report_maneerin_template</field>
             <field name="print_report_name">"report"</field>
-            <field name="paperformat_id" ref="paper_format_report"/>
-            <field name="binding_model_id" ref="model_maneerincode_code"/>
+            <field name="paperformat_id" ref=paper_format_report/>
+            <field name="binding_model_id" ref=model_maneerincode_code/>
             <field name="binding_type">report</field>
         </record>
     </data>
