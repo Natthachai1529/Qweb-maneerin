@@ -5,12 +5,10 @@
         <field name="name">Report Custom Size</field>
         <!-- กำหนดเป็นค่าเริ่มต้น -->
         <field name="default" eval="True"/>
-        <!-- ลบฟิลด์ page_width และ page_height และใช้ format แทน -->
-        <field name="format">A4</field>  <!-- ใช้ format แทนการตั้งค่า page_width และ page_height -->
         <!-- ความกว้างของกระดาษในมิลลิเมตร -->
-        <!-- <field name="page_width">210</field> -->  
+        <field name="page_width">210</field>  <!-- ขนาดกว้างที่ต้องการ -->
         <!-- ความสูงของกระดาษในมิลลิเมตร -->
-        <!-- <field name="page_height">297</field> -->  
+        <field name="page_height">297</field>  <!-- ขนาดสูงที่ต้องการ -->
         <!-- กำหนดรูปแบบกระดาษ แนวตั้ง (Portrait) หรือแนวนอน (Landscape) -->
         <field name="orientation">Portrait</field> 
         <!-- ระยะห่างจากขอบด้านบน -->
