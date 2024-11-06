@@ -34,10 +34,26 @@
          <t t-call="web.basic_layout">
             <div class="page">
                 <style>
-                    @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
-                    .page, .footer, .header, * {
-                        font-family: 'Sarabun', sans-serif;
-                    }
+                        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&amp;family=IBM+Plex+Sans+Thai:wght@400;700&amp;display=swap');
+                        .page {
+                            font-family: 'Sarabun', 'IBM Plex Sans Thai', sans-serif;
+                        }
+                        .footer {
+                            font-family: 'Sarabun', 'IBM Plex Sans Thai', sans-serif;
+                        }
+                        .header {
+                            font-family: 'Sarabun', 'IBM Plex Sans Thai', sans-serif;
+                        }
+                        * {
+                            font-family: 'Sarabun', 'IBM Plex Sans Thai', sans-serif;
+                        }
+                        .date-space {
+                            display: inline-block;
+                            width: 50ch;
+                            text-align: center;
+                            margin: 0 10px;
+                        }
+                        
                 </style>
 
                 <!-- Header Section -->
