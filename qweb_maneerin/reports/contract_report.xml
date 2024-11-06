@@ -1,41 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Paper Format Definition -->
+    <!-- กำหนดรูปแบบกระดาษ -->
     <record id="paperformat_contract_report" model="report.paperformat">
-        <field name="name">Contract A4 Format</field>
+        <field name="name">Contract A4</field>
         <field name="default" eval="True"/>
         <field name="format">A4</field>
+        <field name="page_height">297</field>
+        <field name="page_width">210</field>
         <field name="orientation">Portrait</field>
         <field name="margin_top">15</field>
-        <field name="margin_bottom">25</field>
+        <field name="margin_bottom">15</field>
         <field name="margin_left">15</field>
         <field name="margin_right">15</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
     </record>
 
-    <!-- QWeb Report Template -->
+    <!-- Template สำหรับรายงาน -->
     <template id="report_contract_custom">
         <t t-call="web.basic_layout">
             <div class="page">
-                <h2>Contract Report</h2>
+                <h2>รายงานสัญญา</h2>
                 <table class="table">
                     <tr>
-                        <th>Name</th>
+                        <th>ชื่อสัญญา</th>
                         <td><span t-field="doc.name"/></td>
                     </tr>
                     <tr>
-                        <th>Start Date</th>
+                        <th>วันที่เริ่มต้น</th>
                         <td><span t-field="doc.start_date"/></td>
                     </tr>
                     <tr>
-                        <th>End Date</th>
+                        <th>วันที่สิ้นสุด</th>
                         <td><span t-field="doc.end_date"/></td>
                     </tr>
                     <tr>
-                        <th>Amount</th>
+                        <th>จำนวนเงิน</th>
                         <td><span t-field="doc.amount"/></td>
                     </tr>
                     <tr>
-                        <th>Status</th>
+                        <th>สถานะ</th>
                         <td><span t-field="doc.status"/></td>
                     </tr>
                 </table>
@@ -43,14 +48,14 @@
         </t>
     </template>
 
-    <!-- Report Action -->
+    <!-- การตั้งค่ารายงาน -->
     <record id="action_report_contract" model="ir.actions.report">
-        <field name="name">Print Contract</field>
+        <field name="name">พิมพ์สัญญา</field>
         <field name="model">maneerincode.code</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">report_contract_custom</field>
         <field name="report_file">report_contract_custom</field>
-        <field name="print_report_name">'Contract - ' + doc.name</field>
+        <field name="print_report_name">'สัญญา - ' + doc.name</field>
         <field name="paperformat_id" ref="paperformat_contract_report"/>
         <field name="binding_model_id" ref="model_maneerincode_code"/>
         <field name="binding_type">report</field>
