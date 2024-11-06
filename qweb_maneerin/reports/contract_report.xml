@@ -65,14 +65,14 @@
                 <table class="table" style="border-collapse: collapse;">
                     <tr>
                         <th style="border: none;">บันทึกข้อตกลงแนบท้ายสัญญาซื้อขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างโครงการ มิดทาวน์ ซอย12</th>
-                        <td style="border: none;"></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                        <td style="border: none;"></td>
                     </tr>
                     <tr>
                         <th style="border: none;">สัญญาเลขที่ <t t-esc="o.contract_no"/> ลงวันที่ 9 กุมภาพันธ์ 2567</th>
-                        <td style="border: none;"></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                        <td style="border: none;"></td>
                     </tr>
                     <tr>
-                        <th style="border: none;">วันที่สิ้นสุด</th>
+                        <th style="border: none;">บันทึกข้อตกลงฉบับนี้ทำขึ้นเมื่อวันที่ <t t-esc="o.contact_date"/> ระหว่าง</th>
                         <td style="border: none;"></td>  <!-- ไม่มีการแสดงข้อมูล -->
                     </tr>
                     <tr>
