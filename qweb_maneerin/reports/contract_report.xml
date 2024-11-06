@@ -5,292 +5,41 @@
         <field name="name">Contract A4 Format</field>
         <field name="default" eval="True"/>
         <field name="format">A4</field>
-        <field name="page_height">0</field>
-        <field name="page_width">0</field>
         <field name="orientation">Portrait</field>
         <field name="margin_top">15</field>
         <field name="margin_bottom">25</field>
         <field name="margin_left">15</field>
         <field name="margin_right">15</field>
-        <field name="header_line" eval="False"/>
-        <field name="header_spacing">0</field>
-        <field name="dpi">90</field>
     </record>
 
+    <!-- QWeb Report Template -->
     <template id="report_contract_custom">
-        <t t-foreach="docs" t-as="doc">
-            <t t-call="web.html_container">
-                <t t-call="web.basic_layout">
-                    <!-- Add Sarabun font style -->
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&amp;family=IBM+Plex+Sans+Thai:wght@400;700&amp;display=swap');
-                        .page {
-                            font-family: 'Sarabun', 'IBM Plex Sans Thai', sans-serif;
-                        }
-                        .footer {
-                            font-family: 'Sarabun', 'IBM Plex Sans Thai', sans-serif;
-                        }
-                        .header {
-                            font-family: 'Sarabun', 'IBM Plex Sans Thai', sans-serif;
-                        }
-                        * {
-                            font-family: 'Sarabun', 'IBM Plex Sans Thai', sans-serif;
-                        }
-                        .date-space {
-                            display: inline-block;
-                            width: 50ch;
-                            text-align: center;
-                            margin: 0 10px;
-                        }
-                        
-                    </style>
-                    <div class="page">
-                        <main>
-                            <!-- Header Section -->
-                            <div style="text-align: right;">
-                                <span class="text-muted" style="margin-right: 10px;">(การโอนสิทธิ์)</span>
-                                <span>ต้นฉบับ</span>
-                            </div>
-                            <div style="text-align: center; margin: 20px 0;">
-                                <strong>
-                                    <p>
-                                        บันทึกข้อตกลงแนบท้ายสัญญาจะซื้อจะขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างโครงการ 
-                                        <span t-field="doc.project_name"/>
-                                    </p>
-                                </strong>
-                                <strong style="margin-top: 5px;">
-                                    สัญญาเลขที่ <span t-field="doc.name"/> 
-                                    ลงวันที่ <span t-esc="doc.get_thai_date(doc.contract_date)"/>
-                                </strong>
-                            </div>
-
-                            <div style="text-align: right;">
-                                <div style="display: inline-block; text-align: left;">
-                                    <p style="margin: 0;">ทำที่ บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด</p>
-                                    <p style="margin: 0;">219 หมู่ 2 ตำบลบางพระ อำเภอศรีราชา จังหวัดชลบุรี 20110</p>
-                                </div>
-                            </div>
-
-                            <div style="margin-top: 30px;">
-                                <p>บันทึกข้อตกลงฉบับนี้ทำขึ้นเมื่อวันที่<span class="date-space"><span t-esc="doc.get_thai_date(doc.contract_date)"/></span>ระหว่าง</p>
-                                <p style="margin-top:30px;">
-                                    1. บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จํากัด สํานักงานตั้งอยู่เลขที่ 219 หมู่ 2 &#x200B;
-                                    ตําบลบางพระ อําเภอศรีราชา จังหวัดชลบุรี 20110 โดย <span t-field="doc.seller_id.title.name"/><span t-field="doc.seller_id.name"/> ผู้มีอำนาจลงนามผูกพันบริษัท &#x200B;
-                                    ซึ่งต่อไปในสัญญานี้จะเรียกว่า "ผู้จะขาย" ฝ่ายหนึ่งกับ
-                                </p>
-
-                                <!-- Buyer Section -->
-                                <t t-foreach="doc.buyer_ids.filtered(lambda r: r.active)" t-as="buyer">
-                                    <p style="margin-top: 20px; ">
-                                        <t t-if="buyer_index == 0">2.</t> 
-                                        <span t-field="buyer.title.name"/><span t-field="buyer.partner_id.name"/>
-                                        อายุ <span t-field="buyer.age"/> ปี สัญชาติ <span t-field="buyer.nation"/>
-                                        เลขประจำตัวประชาชน <span t-field="buyer.partner_id.thai_id"/>
-                                        ที่อยู่ <span t-field="buyer.street"/> ตำบล<span t-field="buyer.partner_id.street2"/> อำเภอ<span t-field="buyer.partner_id.city"/> 
-                                        จังหวัด<span t-field="buyer.partner_id.state_id.name"/> <span t-field="buyer.partner_id.zip"/><br/>
-                                        หมายเลขโทรศัพท์ <span t-field="buyer.phone"/> 
-                                        <t t-if="buyer_index != len(doc.buyer_ids.filtered(lambda r: r.active)) - 1">และ</t>
-                                        <t t-if="buyer_index == len(doc.buyer_ids.filtered(lambda r: r.active)) - 1">ซึ่งต่อไปในสัญญานี้จะเรียกว่า "ผู้จะซื้อ" ฝ่ายหนึ่งกับ</t>
-                                        
-                                    </p>
-                                </t>
-
-                                <!-- Transferee Section -->
-                                <t t-foreach="doc.transferee_ids.filtered(lambda r: r.active)" t-as="transferee">
-                                    <p style="margin-top: 20px; ">
-                                        <t t-if="transferee_index == 0">3.</t> 
-                                        <span t-field="transferee.title.name"/><span t-field="transferee.partner_id.name"/>
-                                        อายุ <span t-field="transferee.age"/> ปี สัญชาติ <span t-field="transferee.nation"/>
-                                        เลขประจำตัวประชาชน <span t-field="transferee.partner_id.thai_id"/>
-                                        ที่อยู่ <span t-field="transferee.street"/> ตำบล<span t-field="transferee.partner_id.street2"/> อำเภอ<span t-field="transferee.partner_id.city"/> 
-                                        จังหวัด<span t-field="transferee.partner_id.state_id.name"/> <span t-field="transferee.partner_id.zip"/> <br/>
-                                        หมายเลขโทรศัพท์ <span t-field="transferee.phone"/>
-                                        <t t-if="transferee_index != len(doc.transferee_ids.filtered(lambda r: r.active)) - 1">และ</t>
-                                        <t t-if="transferee_index == len(doc.transferee_ids.filtered(lambda r: r.active)) - 1">ซึ่งต่อไปในสัญญานี้จะเรียกว่า "ผู้รับโอนสิทธิ" ฝ่ายหนึ่ง</t>
-                                    </p>
-                                </t>
-                            </div>
-                        </main>
-                    </div>
-                    <div style="margin-top: 20px; text-indent: 40px;">
-                        <p style="line-height: 1.8;">
-                            เนื่องจากผู้จะซื้อประสงค์จะโอนสิทธิและหน้าที่ตามสัญญาจะซื้อจะขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างในโครงการ 
-                            <span t-field="doc.project_name"/>
-                            แปลงที่ <span t-field="doc.land_id"/> ให้แก่ผู้รับโอนสิทธิเพื่อให้ผู้รับโอนสิทธิมีกรรมสิทธิ์ร่วมกันในที่ดินจัดสรรพร้อมสิ่งปลูกสร้างที่ซื้อขายตาม 
-                            สัญญาจะซื้อจะขายเลขที่ <span t-field="doc.name"/> ลงวันที่ <span t-esc="doc.get_thai_date(doc.contract_date)"/> 
-                            โดยผู้รับโอนสิทธิและผู้จะขายตกลงยินยอมด้วย ทั้งสามฝ่ายจึงได้ทําบันทึกข้อตกลงฉบับนี้ขึ้นมีข้อความดังต่อไปนี้
-                        </p>
-                    </div>
-                    <div style="margin-top: 10px;">
-                            <!-- หัวข้อ "ข้อ 1." -->
-                            <span class="float-left">ข้อ 1.</span> 
-                            <!-- เนื้อหาทั้งหมด -->
-                            <span style="margin-left: 40px; line-height: 1.8;">
-                                <!-- ย่อหน้าที่ 1 -->
-                                <p>
-                                    ผู้จะซื้อตกลงโอนสิทธิและหน้าที่ตามสัญญาจะซื้อจะขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างในโครงการ 
-                                    <span t-field="doc.project_name"/> แปลงที่ <span t-field="doc.land_id"/> ตาม
-                                    สัญญาจะซื้อจะขายเลขที่ <span t-field="doc.name"/> ลงวันที่ <span t-esc="doc.get_thai_date(doc.contract_date)"/>
-                                    ให้แก่ผู้รับโอนสิทธิ เพื่อให้ผู้รับโอนสิทธิ มีกรรมสิทธิ์ร่วมกันในที่ดินจัดสรรพร้อมสิ่งปลูกสร้างที่ซื้อขายและผู้รับโอนสิทธิตกลงยอมรับโอนสิทธิและหน้าที่ตามสัญญาดังกล่าว
-                                    นับแต่วันที่ทำบันทึกฉบับนี้เป็นต้นไป
-                                </p>
-                    
-                                <!-- ย่อหน้าที่ 2 -->
-                                <div style="line-height: 1.8; margin-top: 20px;">
-                                    ผู้รับโอนสิทธิ์เข้าใจโดยชัดแจ้งแล้วว่า การที่ผู้รับโอนสิทธิ์ตกลงรับโอนทั้งสิทธิ์และหน้าที่ตามสัญญาจาก
-                                    ผู้จะซื้อตามบันทึกข้อตกลงฉบับนี้ได้รวมถึงในกรณีที่ผู้จะซื้อได้เข้าทำการตรวจรับมอบที่ดินจัดสรรพร้อมสิ่งปลูกสร้าง
-                                    ที่ซื้อขายก่อนการโอนสิทธิ์ตามสัญญาและผู้จะซื้อได้รับมอบที่ดินจัดสรรพร้อมสิ่งปลูกสร้างโดยไม่มีรายการแก้ไขข้อชำรุดบกพร่อง
-                                    หรือได้ขอให้ผู้จะขายแก้ไขรายการชำรุดบกพร่องบางรายการผู้รับโอนสิทธิ์ตกลงยอมรับผลการตรวจรับมอบที่ดินจัดสรรพร้อมสิ่งปลูกสร้าง
-                                    ที่ผู้จะซื้อได้ดำเนินการไปแล้วทั้งสิ้นผู้รับโอนสิทธิ์ไม่มีสิทธิ์เข้าตรวจและ/หรือแจ้งรายการแก้ไขข้อชำรุดบกพร่องเพิ่มเติมจากรายการที่ผู้จะซื้อ
-                                    ได้ดำเนินการไปแล้วแต่อย่างใดอย่างไรก็ตามหลังจากที่ผู้รับโอนสิทธิได้รับโอนกรรมสิทธิ์ที่ดินจัดสรรพร้อมสิ่งปลูกสร้างที่ซื้อขายแล้วผู้จะขายยังคง&#x200B;
-                                    รับประกันผลงานอันเนื่องจากความชำรุดบกพร่องของที่ดินจัดสรรพร้อมสิ่งปลูกสร้างตามเงื่อนไขในสัญญาทุกประการ
-                                </div>
-                            </span>  
-                    </div>
-
-                    <div style="margin-top: 10px;">
-                        <!-- หัวข้อ "ข้อ 2." -->
-                        <span class="float-left">ข้อ 2.</span> 
-                        <!-- เนื้อหาทั้งหมด -->
-                        <span style="margin-left: 40px; line-height: 1.8;">
-                            <!-- ย่อหน้าที่ 1 -->
-                            <p>
-                                ในการโอนสิทธิและหน้าที่ตามสัญญาดังกล่าวตามข้อ 1. 
-                                ผู้จะซื้อและผู้รับโอนสิทธิตกลงจะปฏิบัติตามระเบียบและเงื่อนไขเรื่องการโอนสิทธิการ 
-                                ซื้อขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างของผู้จะขายทุกประการ 
-                            </p>
-                        </span>  
-                    </div>
-                    <div style="margin-top: 10px;">
-                        <!-- หัวข้อ "ข้อ 3." -->
-                        <span class="float-left">ข้อ 3.</span> 
-                        <!-- เนื้อหาทั้งหมด -->
-                        <span style="margin-left: 40px; line-height: 1.8;">
-                            <!-- ย่อหน้าที่ 1 -->
-                            <p>
-                                เงื่อนไขอื่นที่ไม่ได้แก้ไขเพิ่มเติมโดยบันทึกข้อตกลงฉบับนี้ ผู้รับโอนสิทธิ และผู้จะขาย 
-                                ตกลงให้ใช้บังคับตามสัญญาจะซื้อจะขายที่ดินจัดสรร พร้อมสิ่งปลูกสร้างโครงการ <span t-field="doc.project_name"/> 
-                                แปลงที่ <span t-field="doc.land_id"/>ตามสัญญาเลขที่ <span t-field="doc.name"/>
-                                ลงวัน <span t-esc="doc.get_thai_date(doc.contract_date)"/>ทุกประการ และให้บันทึกข้อตกลง
-                                ฉบับนี้เป็นส่วนหนึ่งของสัญญาจะซื้อจะขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างฉบับดังกล่าวด้วย 
-                            </p>
-                
-                            <!-- ย่อหน้าที่ 2 -->
-                            <div style="line-height: 1.8; margin-top: 20px;">
-                                บันทึกข้อตกลงฉบับนี้ทำขึ้นเป็นสามฉบับมีข้อความถูกต้องตรงกัน คู่สัญญาได้อ่านและเข้าใจข้อความในสัญญาโดยตลอดดีแล้ว 
-                                เห็นว่าถูกต้อง ตรงตามความประสงค์ จึงลงลายมือชื่อพร้อมทั้งประทับตรา (ถ้ามี) ไว้เป็นสำคัญต่อหน้าพยาน และต่างเก็บไว้ฝ่ายละหนึ่งฉบับ
-                            </div>
-                        </span>  
-                    </div>
-                   
-                    <!-- ลงชื่อผู้จะขาย และผู้จะซื้อ -->
-                    <div class="container">
-                        <div class="row">
-                            <!-- คอลัมน์ซ้าย ลงชื่อผู้จะขาย-->
-                            <div class="col-6 p-3">
-                                <div class="w-100 text-center">
-                                    <div style="display: flex; align-items: center; line-height: 2;">
-                                        <span style="text-align: left;">ลงชื่อ</span>
-                                        <span style="flex-grow: 1; text-align: center;">......................................</span>
-                                        <span style="text-align: right;">ผู้จะขาย</span>
-                                    </div>
-                                    <!-- บรรทัดที่ 2 -->
-                                     <div>
-                                        <span style="text-align: left;">(</span>
-                                        <span style="flex-grow: 1; text-align: center;">
-                                            <span t-field="doc.seller_id.title"/><span t-field="doc.seller_id.name"/>
-                                        </span>
-                                        <span style="text-align: right;">)</span>
-                                    </div>
-                            
-                                    <!-- บรรทัดที่ 3  -->
-                                    <div style="display: flex; align-items: center; line-height: 2; justify-content: center;">
-                                        <span>บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- คอลัมน์ขวา ลงชื่อผู้จะซื้อ-->
-                            <div class="col-6 p-3">
-                                <div class="w-100 text-center" t-foreach="doc.buyer_ids.filtered(lambda r: r.active)" t-as="buyer">
-                                        <span style="text-align: left;">ลงชื่อ</span>
-                                        <span style="flex-grow: 1; text-align: center;">......................................</span>
-                                        <span style="text-align: right;">ผู้จะซื้อ</span>
-                                        <p style="margin-bottom: 50px">
-                                            <span style="text-align: left;">(</span>
-                                                <span style="margin-top: 20px; ">
-                                                    <span t-field="buyer.title.name"/><span t-field="buyer.partner_id.name"/>
-                                                </span>
-                                            <span style="text-align: right;">)</span>
-                                        </p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- ลงชื่อผู้รับโอน สิทธิ -->
-                    <div class="text-center" t-foreach="doc.transferee_ids.filtered(lambda r: r.active)" t-as="transferee">
-                        <span style="text-align: left;">ลงชื่อ</span>
-                        <span style="flex-grow: 1; text-align: center;">......................................</span>
-                        <span style="text-align: right;">ผู้รับโอนสิทธิ</span>
-                        <p style="margin-bottom: 50px">
-                            <span style="text-align: left;">(</span>
-                                <span style="margin-top: 20px; ">
-                                    <span t-field="transferee.title.name"/><span t-field="transferee.partner_id.name"/>
-                                </span>
-                            <span style="text-align: right;">)</span>
-                        </p>
-                    </div>
-
-                    <!-- ลงชื่อพยาน -->
-                    <div class="container">
-                        <div class="row">
-                            <!-- คอลัมน์ซ้าย -->
-                            <div class="col-6 p-3">
-                                
-                                <div class="w-100 text-center">
-                                    <div style="display: flex; align-items: center; line-height: 2;">
-                                        <span style="text-align: left;">ลงชื่อ</span>
-                                        <span style="flex-grow: 1; text-align: center;">......................................</span>
-                                        <span style="text-align: right;">พยาน</span>
-                                    </div>
-                                    <!-- บรรทัดที่ 2 -->
-                                     <div>
-                                        <span style="text-align: left;">(......................................)</span>
-                                    </div> 
-                                </div>
-                            </div>
-                            <!-- คอลัมน์ขวา -->
-                            <div class="col-6 p-3">
-
-                                <div class="w-100 text-center">
-                                    <div style="display: flex; align-items: center; line-height: 2;">
-                                        <span style="text-align: left;">ลงชื่อ</span>
-                                        <span style="flex-grow: 1; text-align: center;">......................................</span>
-                                        <span style="text-align: right;">พยาน</span>
-                                    </div>
-                                    <!-- บรรทัดที่ 2 -->
-                                     <div>
-                                        <span style="text-align: left;">(......................................)</span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-
-
-
-                    <!-- Footer -->
-                    <div class="footer">
-                        <div style="text-align: center;">
-                            <span>หน้า </span><span class="page"/> จาก <span class="topage"/>
-                        </div>
-                    </div>
-                </t>
-            </t>
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <h2>Contract Report</h2>
+                <table class="table">
+                    <tr>
+                        <th>Name</th>
+                        <td><span t-field="doc.name"/></td>
+                    </tr>
+                    <tr>
+                        <th>Start Date</th>
+                        <td><span t-field="doc.start_date"/></td>
+                    </tr>
+                    <tr>
+                        <th>End Date</th>
+                        <td><span t-field="doc.end_date"/></td>
+                    </tr>
+                    <tr>
+                        <th>Amount</th>
+                        <td><span t-field="doc.amount"/></td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td><span t-field="doc.status"/></td>
+                    </tr>
+                </table>
+            </div>
         </t>
     </template>
 
@@ -299,11 +48,11 @@
         <field name="name">Print Contract</field>
         <field name="model">maneerincode.code</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">qweb_maneerin.report_contract_custom</field>
-        <field name="report_file">qweb_maneerin.report_contract_custom</field>
-        <field name="print_report_name">'Contract - %s' % (object.name)</field>
+        <field name="report_name">report_contract_custom</field>
+        <field name="report_file">report_contract_custom</field>
+        <field name="print_report_name">'Contract - ' + doc.name</field>
         <field name="paperformat_id" ref="paperformat_contract_report"/>
-        <field name="binding_model_id" ref="model_contract_contract"/>
+        <field name="binding_model_id" ref="model_maneerincode_code"/>
         <field name="binding_type">report</field>
     </record>
 </odoo>
