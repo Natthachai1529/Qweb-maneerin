@@ -62,6 +62,7 @@
         <t t-call="web.basic_layout">
             <div class="page">
                 <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
                     .page, .footer, .header, * {font-family: 'Sarabun', sans-serif;}
                 </style>
                 <!-- Header Section -->
@@ -89,10 +90,11 @@
                     <strong>1. บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด สำนักงานตั้งอยู่เลขที่ 219 หมู่ 2 ตำบลบางพระ อำเภอศรีราชา จังหวัดชลบุรี 20110 โดยนายธีรพร ชั้น</strong>
                 </div>
                 <div>
-                    <strong>ศิริ ผู้มีอำนาจลงนามผูกพันบริษัท ซึ่งไปในสัญญานี้เรียกว่า "ผู้จะขาย" ฝ่ายหนึ่งกับ</strong>
+                <strong>ศิริ ผู้มีอำนาจลงนามผูกพันบริษัท ซึ่งไปในสัญญานี้เรียกว่า "ผู้จะขาย" ฝ่ายหนึ่งกับ</strong>
                 </div>
             </div>
         </t>
     </template>
+
 
 </odoo>
