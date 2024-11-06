@@ -66,31 +66,32 @@
                         font-family: 'Sarabun', sans-serif;
                     }
                 </style>
-
                 <!-- Header Section -->
-                <div class="contract-title">
+                <h2></h2>
+                <!-- Contract Information -->
+                <div style="text-align: right;">
+                    <strong>(การโอนสิทธิ์) ต้นฉบับ</strong>
+                </div>
+                <div style="text-align: center;">
                     <strong>บันทึกข้อตกลงแนบท้ายสัญญาซื้อขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างโครงการ มิดทาวน์ ซอย12</strong>
                 </div>
-
-                <!-- Contract Information -->
-                <div class="contract-detail">
+                <div style="text-align: center;">
                     <strong>สัญญาเลขที่ <t t-esc="docs[0].contract_no"/> ลงวันที่ 9 กุมภาพันธ์ 2567</strong>
                 </div>
-
-                <div class="contract-detail">
+                <div style="text-align: right;">
                     <strong>ทำที่บริษัทมณีรินพร็อพเพอร์ตี้จำกัด</strong>
                 </div>
-
-                <div class="contract-detail">
+                <div style="text-align: right;">
                     <strong>219 หมู่ 2 ตำบลบางพระอำเภอศรีราชาจังหวัดชลบุรี 20110</strong>
                 </div>
-
-                <div class="contract-body">
+                <div>
                     <strong>บันทึกข้อตกลงฉบับนี้ทำขึ้นเมื่อวันที่ <t t-esc="docs[0].contact_date"/> ระหว่าง:</strong>
                 </div>
-
-                <div class="contract-body">
-                    <strong>1. บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด สำนักงานตั้งอยู่เลขที่ 219 หมู่ 2 ตำบลบางพระ อำเภอศรีราชา จังหวัดชลบุรี 20110 โดยนายธีรพร ชั้นศิริ ผู้มีอำนาจลงนามผูกพันบริษัท ซึ่งไปในสัญญานี้เรียกว่า "ผู้จะขาย" ฝ่ายหนึ่งกับ</strong>
+                <div>
+                    <strong>1. บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด สำนักงานตั้งอยู่เลขที่ 219 หมู่ 2 ตำบลบางพระ อำเภอศรีราชา จังหวัดชลบุรี 20110 โดยนายธีรพร ชั้น</strong>
+                </div>
+                <div>
+                    <strong>ศิริ ผู้มีอำนาจลงนามผูกพันบริษัท ซึ่งไปในสัญญานี้เรียกว่า "ผู้จะขาย" ฝ่ายหนึ่งกับ</strong>
                 </div>
             </div>
         </t>
