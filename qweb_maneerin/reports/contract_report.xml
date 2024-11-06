@@ -1,17 +1,28 @@
 <odoo>
     <!-- Paper Format Definition -->
     <!-- id สามารถตั้งเป็นชื่ออะไรก็ได้ และจะทําไปใช้อ้างอิงใน Report Action -->
+    <!-- model ไม่สามารถตั้งเปลี่ยชื่อได้ เนื่องจาก Odoo มีการใช้โมเดลนี้ในการจัดการกับการตั้งค่ากระดาษสำหรับรายงาน -->
     <record id="paper_format_custom_report" model="report.paperformat">
+        <!-- กําหนดชื่อของกระดาษที่ถูกสร้างขึ้น -->
         <field name="name">Report Custom Size</field>
+        <!-- กำหนดเป็นค่าเริ่มต้น -->
         <field name="default" eval="True"/>
-        <field name="page_width">210</field>  <!-- ความกว้างของกระดาษในมิลลิเมตร -->
-        <field name="page_height">297</field>  <!-- ความสูงของกระดาษในมิลลิเมตร -->
-        <field name="orientation">Portrait</field> <!-- แนวตั้ง (Portrait) หรือแนวนอน (Landscape) -->
-        <field name="margin_top">15</field> <!-- ระยะห่างจากขอบด้านบน -->
-        <field name="margin_bottom">15</field> <!-- ระยะห่างจากขอบด้านล่าง -->
-        <field name="margin_left">15</field> <!-- ระยะห่างจากขอบด้านซ้าย -->
-        <field name="margin_right">15</field> <!-- ระยะห่างจากขอบด้านขวา -->
-        <field name="header_line" eval="False"/>
+        <!-- ความกว้างของกระดาษในมิลลิเมตร -->
+        <field name="page_width">210</field>  
+        <!-- ความสูงของกระดาษในมิลลิเมตร -->
+        <field name="page_height">297</field>  
+        <!--กําหนดรูปแบบกระดาษ แนวตั้ง (Portrait) หรือแนวนอน (Landscape) -->
+        <field name="orientation">Portrait</field> 
+        <!-- ระยะห่างจากขอบด้านบน -->
+        <field name="margin_top">15</field> 
+        <!-- ระยะห่างจากขอบด้านล่าง -->
+        <field name="margin_bottom">15</field>
+        <!-- ระยะห่างจากขอบด้านซ้าย -->
+        <field name="margin_left">15</field> 
+        <!-- ระยะห่างจากขอบด้านขวา -->
+        <field name="margin_right">15</field>
+        <!-- ไม่แสดงเส้นหัวบนกระดาษ --> 
+        <field name="header_line" eval="True"/>
         <field name="header_spacing">0</field>
         <field name="dpi">90</field> <!-- ความละเอียดของภาพ (DPI) -->
     </record>
