@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
    <data>
-       <record id="paperformat_report" model="report.paperformat">
+        <field name="paperformat_id" ref="paperformat_report"/>
            <field name="name">Contract A4 Format</field>
            <field name="default" eval="True"/>
            <field name="format">A4</field>
@@ -15,6 +15,6 @@
            <field name="header_line" eval="False"/>
            <field name="header_spacing">0</field>
            <field name="dpi">300</field>
-       </record>
+        </record>
    </data>
 </odoo>

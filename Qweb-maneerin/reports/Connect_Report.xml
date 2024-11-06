@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
    <data>
-       <record id="action_report_contract" model="ir.actions.report">
+        <record id="action_report_contract" model="ir.actions.report">
            <field name="name">Print Report</field>
            <field name="model">maneerincode.code</field>
            <field name="report_type">qweb-pdf</field>
@@ -11,6 +11,6 @@
            <field name="paperformat_id" ref="paperformat_report"/>
            <field name="binding_model_id" ref="model_maneerincode_code"/>
            <field name="binding_type">report</field>
-       </record>
+        </record>
    </data>
 </odoo>
