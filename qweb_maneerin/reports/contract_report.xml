@@ -68,7 +68,7 @@
                         <td style="border: none;"></td>  <!-- ไม่มีการแสดงข้อมูล -->
                     </tr>
                     <tr>
-                        <th style="border: none;">สัญญาเลขที่ ลงวันที่ 9 กุมภาพันธ์ 2567</th>
+                        <th style="border: none;">สัญญาเลขที่ <t t-esc="o.contract_no"/> ลงวันที่ 9 กุมภาพันธ์ 2567</th>
                         <td style="border: none;"></td>  <!-- ไม่มีการแสดงข้อมูล -->
                     </tr>
                     <tr>
