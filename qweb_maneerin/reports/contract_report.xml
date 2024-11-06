@@ -57,39 +57,34 @@
    </record>
 
 
-   <!-- Template Report -->
-   <template id="report_contract_custom">
+    <!-- Template Report -->
+    <template id="report_contract_custom">
         <t t-call="web.basic_layout">
             <div class="page">
-                <h2></h2>
-                <table class="table" style="border-collapse: collapse;">
-                    <tr>
-                        <th style="border: none;">บันทึกข้อตกลงแนบท้ายสัญญาซื้อขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างโครงการ มิดทาวน์ ซอย12</th>
-                    </tr>
-                    <tr>
-                        <th style="border: none;">สัญญาเลขที่ <t t-esc="docs[0].contract_no"/> ลงวันที่ 9 กุมภาพันธ์ 2567</th>
-                    </tr>
-                    <tr>
-                        <th style="border: none; text-align: right; padding-right: 0;">ทำที่บริษัทมณีรินพร็อพเพอร์ตี้จำกัด</th>
-                    </tr>
-                    <tr>
-                        <th style="border: none; text-align: right; padding-right: 0;">219 หมู่ 2 ตำบลบางพระ อำเภอศรีราชา จังหวัดชลบุรี 20110</th>
-                    </tr>
-                    <tr>
-                        <th style="border: none; text-align: left;">บันทึกข้อตกลงฉบับนี้ทำขึ้นเมื่อวันที่ <t t-esc="docs[0].contact_date"/> ระหว่าง</th>
-                    </tr>
-                    <tr>
-                        <th style="border: none; text-align: left;">1.บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด สำนักงานตั้งอยู่เลขที่ 219 หมู่ 2 ตำบลบางพระ อำเภอศรีราชา จังหวัดชลบุรี 20110 โดยนายธีรพร ชั้น</th>
-                    </tr>
-                    <tr>
-                        <th style="border: none; text-align: left;">ศิริ ผู้มีอำนาจลงนามผูกพันบริษัท ซึ่งไปในสัญญานี้เรียกว่า "ผู้จะขาย" ฝ่ายหนึ่งกับ</th>
-                    </tr>
-                    <tr>
-                        <th style="border: none; text-align: left;">2. <t t-esc="docs[0].buyer_ids"/> อายุ </th>
-                    </tr>
-                </table>
+                <!-- Header Section -->
+                <h2>ข้อมูลสัญญา</h2>
+                <!-- Contract Information -->
+                <div>
+                    <strong>บันทึกข้อตกลงแนบท้ายสัญญาซื้อขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างโครงการ มิดทาวน์ ซอย12</strong>
+                </div>
+                <div>
+                    <strong>สัญญาเลขที่ ลงวันที่ 9 กุมภาพันธ์ 2567</strong>
+                </div>
+                <div>
+                    <strong>บันทึกข้อตกลงฉบับนี้ทำขึ้นเมื่อวันที่ ระหว่าง:</strong>
+                </div>
+                <div>
+                    <strong>1. บริษัทมณีรินพร็อพเพอร์ตี้จำกัดสำนักงานตั้งอยู่เลขที่ 219 หมู่ 2 ตำบลบางพระอำเภอศรีราชาจังหวัดชลบุรี</strong>
+                </div>
+                <div>
+                    <strong>20110 โดยนายธีราพรชั้นสิผู้มีอำนาจลงนาม ผูกพันบริษัทซึ่งไปในสัญญานี้เรียกว่าผู้จะขายฝ่ายหนึ่งกับ</strong>
+                </div>
+                <!-- Footer Section -->
+                <div class="footer">
+                    <p>รายงานนี้จัดทำโดยระบบ Odoo</p>
+                </div>
             </div>
         </t>
-    </template>
+</template>
 
 </odoo>
