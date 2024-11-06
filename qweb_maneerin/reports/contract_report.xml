@@ -62,34 +62,39 @@
         <t t-call="web.basic_layout">
             <div class="page">
                 <style>
-                    .page, .footer, .header, * {font-family: 'Sarabun', sans-serif;}
+                    .page, .footer, .header, * {
+                        font-family: 'Sarabun', sans-serif;
+                    }
                 </style>
+
                 <!-- Header Section -->
-                <h2></h2>
-                <!-- Contract Information -->
-                <div style="text-align: right;">
-                    <strong>(การโอนสิทธิ์) ต้นฉบับ</strong>
-                </div>
-                <div style="text-align: center;">
+                <div class="contract-title">
                     <strong>บันทึกข้อตกลงแนบท้ายสัญญาซื้อขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างโครงการ มิดทาวน์ ซอย12</strong>
                 </div>
-                <div style="text-align: center;">
+
+                <!-- Contract Information -->
+                <div class="contract-detail">
                     <strong>สัญญาเลขที่ <t t-esc="docs[0].contract_no"/> ลงวันที่ 9 กุมภาพันธ์ 2567</strong>
                 </div>
-                <div style="text-align: right;">
+
+                <div class="contract-detail">
                     <strong>ทำที่บริษัทมณีรินพร็อพเพอร์ตี้จำกัด</strong>
                 </div>
-                <div style="text-align: right;">
+
+                <div class="contract-detail">
                     <strong>219 หมู่ 2 ตำบลบางพระอำเภอศรีราชาจังหวัดชลบุรี 20110</strong>
                 </div>
-                <div>
+
+                <div class="contract-body">
                     <strong>บันทึกข้อตกลงฉบับนี้ทำขึ้นเมื่อวันที่ <t t-esc="docs[0].contact_date"/> ระหว่าง:</strong>
                 </div>
-                <div>
-                    <strong>1. บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด สำนักงานตั้งอยู่เลขที่ 219 หมู่ 2 ตำบลบางพระ อำเภอศรีราชา จังหวัดชลบุรี 20110 โดยนายธีรพร ชั้น</strong>
+
+                <div class="contract-body">
+                    <strong>1. บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด สำนักงานตั้งอยู่เลขที่ 219 หมู่ 2 ตำบลบางพระ อำเภอศรีราชา จังหวัดชลบุรี 20110 โดยนายธีรพร ชั้นศิริ ผู้มีอำนาจลงนามผูกพันบริษัท ซึ่งไปในสัญญานี้เรียกว่า "ผู้จะขาย" ฝ่ายหนึ่งกับ</strong>
                 </div>
-                <div>
-                    <strong>ศิริ ผู้มีอำนาจลงนามผูกพันบริษัท ซึ่งไปในสัญญานี้เรียกว่า "ผู้จะขาย" ฝ่ายหนึ่งกับ</strong>
+
+                <div class="contract-body">
+                    <strong>2. <t t-esc="docs[0].buyer_name"/> (ผู้จะซื้อ) ซึ่งไปในสัญญานี้เรียกว่า "ผู้จะซื้อ"</strong>
                 </div>
             </div>
         </t>
