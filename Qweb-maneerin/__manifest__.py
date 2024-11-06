@@ -10,7 +10,7 @@
         'views/view_addon_contact.xml',
         'reports/Connect_Report.xml',
         'reports/Format_Report.xml',
-        'reports/Report_Maneerin_Template.xml',
+        'reports/report_maneerin_template.xml',
     ],
     'application': True,
     'installable': True,
