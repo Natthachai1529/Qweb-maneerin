@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
    <data>
-        <field name="paperformat_id" ref="paperformat_report"/>
+        <record name="paperformat_id" ref="paperformat_report">
            <field name="name">Contract A4 Format</field>
            <field name="default" eval="True"/>
            <field name="format">A4</field>
