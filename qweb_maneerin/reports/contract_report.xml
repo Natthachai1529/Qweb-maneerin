@@ -98,6 +98,10 @@
                     เลขประชาชน <t t-esc="docs[0].buyer_ids.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="docs[0].buyer_ids.partner_id.street"/> โทรศัพท์ <t t-esc="docs[0].buyer_ids.partner_id.phone"/>  </strong>
                 </div>
                 <div>
+                    <strong>2. <t t-esc="docs[0].beneficiary_ids.partner_id.name"/> อายุ <t t-esc="docs[0].beneficiary_ids.age"/> ปี สัญชาติ <t t-esc="docs[0].beneficiary_ids.nation"/> 
+                    เลขประชาชน <t t-esc="docs[0].beneficiary_ids.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="docs[0].beneficiary_ids.partner_id.street"/> โทรศัพท์ <t t-esc="docs[0].beneficiary_ids.partner_id.phone"/>  </strong>
+                </div>
+                <div>
                     <strong>เนื่องจากผู้จะซื้อประสงค์จะโอนสิทธิและหน้าที่ตามสัญญาจะซื้อจะขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างในโครงการ มิตทาวน์ ซอย12
                             แปลงที่ xxx ให้แก่ผู้รับโอนสิทธิเพื่อให้ผู้รับโอนสิทธิมีกรรมสิทธิ์ร่วมกันในที่ดินจัดสรรพร้อมสิ่งปลูกสร้างที่ซื้อขายตาม 
                             สัญญาจะซื้อจะขายเลขที่ xxx ลงวันที่ 9 กุมภาพันธ์ 2567 โดยผู้รับโอนสิทธิและผู้จะขายตกลงยินยอมด้วย 
