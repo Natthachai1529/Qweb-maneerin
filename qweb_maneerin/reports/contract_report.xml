@@ -51,8 +51,8 @@
         <field name="name">พิมพ์สัญญา</field>
         <field name="model">maneerincode.code</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">report_contract_custom</field>
-        <field name="report_file">report_contract_custom</field>
+        <field name="report_name">qweb_maneerin.report_contract_custom</field>
+        <field name="report_file">qweb_maneerin.report_contract_custom</field>
         <field name="print_report_name">"Report"</field>  
         <field name="paperformat_id" ref="paperformat_contract_report"/>
         <field name="binding_model_id" ref="model_maneerincode_code"/>
