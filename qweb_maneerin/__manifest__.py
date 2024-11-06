@@ -8,7 +8,6 @@
         'security/ir.model.access.csv',
         'views/views.xml',
         'views/view_addon_contact.xml',
-        'reports/button_tag_report.xml',
         'reports/contract_report.xml',
     ],
     'application': True,
