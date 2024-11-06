@@ -59,33 +59,33 @@
 
    <!-- Template Report -->
    <template id="report_contract_custom">
-       <t t-call="web.basic_layout">
-           <div class="page">
-               <h2></h2>
-               <table class="table">
-                   <tr>
-                       <th>บันทึกข้อตกลงแนบท้ายสัญญาซื้อขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างโครงการ มิดทาวน์ ซอย12</th>
-                       <th>สัญญาเลขที่ ลงวันที่ 9 กุมภาพันธ์ 2567</th>
-                       <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
-                   </tr>
-                   <tr>
-                       <th>วันที่เริ่มต้น</th>
-                       <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
-                   </tr>
-                   <tr>
-                       <th>วันที่สิ้นสุด</th>
-                       <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
-                   </tr>
-                   <tr>
-                       <th>จำนวนเงิน</th>
-                       <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
-                   </tr>
-                   <tr>
-                       <th>สถานะ</th>
-                       <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
-                   </tr>
-               </table>
-           </div>
-       </t>
-   </template>
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <h2></h2>
+                <table class="table" style="border-collapse: collapse;">
+                    <tr>
+                        <th style="border: none;">บันทึกข้อตกลงแนบท้ายสัญญาซื้อขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างโครงการ มิดทาวน์ ซอย12</th>
+                        <td style="border: none;"></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                    </tr>
+                    <tr>
+                        <th style="border: none;">สัญญาเลขที่ ลงวันที่ 9 กุมภาพันธ์ 2567</th>
+                        <td style="border: none;"></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                    </tr>
+                    <tr>
+                        <th style="border: none;">วันที่สิ้นสุด</th>
+                        <td style="border: none;"></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                    </tr>
+                    <tr>
+                        <th style="border: none;">จำนวนเงิน</th>
+                        <td style="border: none;"></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                    </tr>
+                    <tr>
+                        <th style="border: none;">สถานะ</th>
+                        <td style="border: none;"></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                    </tr>
+                </table>
+            </div>
+        </t>
+    </template>
+
 </odoo>
