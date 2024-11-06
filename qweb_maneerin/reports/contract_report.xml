@@ -2,7 +2,7 @@
     <!-- Paper Format Definition -->
     <!-- id สามารถตั้งเป็นชื่ออะไรก็ได้ แต่ต้องไม่ซ้ำกับ id อื่นในโมดูลเดียวกัน และจะทําไปใช้อ้างอิงใน Report Action -->
     <!-- model ไม่สามารถตั้งเปลี่ยชื่อได้ เนื่องจาก Odoo มีการใช้โมเดลนี้ในการจัดการกับการตั้งค่ากระดาษสำหรับรายงาน -->
-    <record id="paper_format_custom_report" model="report.paperformat">
+    <record id="paper_format_custom_report12" model="report.paperformat">
         <!-- กําหนดชื่อของกระดาษที่ถูกสร้างขึ้น -->
         <field name="name">Report Custom Size</field>
         <!-- กำหนดเป็นค่าเริ่มต้น -->
@@ -48,7 +48,7 @@
         <field name="print_report_name">"Report"</field>  
         <!-- กำหนดรูปแบบกระดาษที่ใช้เป็น paperformat_contract_report -->
         <!-- Ref คือ id ของ format paper ที่เรากําหนด -->
-        <field name="paperformat_id" ref="paper_format_custom_report"/>
+        <field name="paperformat_id" ref="paper_format_custom_report12"/>
         <!-- กำหนดโมเดลที่ทำการผูกไว้สำหรับการพิมพ์เป็น model_maneerincode_code model + _name ใน python เปลี่ยน . เป็น _ -->
         <field name="binding_model_id" ref="model_maneerincode_code"/>
          <!-- กำหนดประเภทการผูกไว้เป็น report *Fixed -->
