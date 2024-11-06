@@ -61,6 +61,9 @@
     <template id="report_contract_custom">
         <t t-call="web.basic_layout">
             <div class="page">
+                <style>
+                    .page, .footer, .header, * {font-family: 'Arial', sans-serif;}
+                </style>
                 <!-- Header Section -->
                 <h2></h2>
                 <!-- Contract Information -->
