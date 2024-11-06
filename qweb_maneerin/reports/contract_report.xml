@@ -1,58 +1,52 @@
 <odoo>
-    <!-- Customize the paper size -->
+    <!-- Define the custom paper format (if using paperformat_id) -->
     <record id="paper_format_custom_report" model="report.paperformat">
-        <field name="name">Report Custom Size</field>
+        <field name="name">Custom Paper Format</field>
         <field name="default" eval="True"/>
-        <field name="page_width">210</field>
-        <field name="page_height">297</field>
         <field name="orientation">Portrait</field>
         <field name="margin_top">15</field>
         <field name="margin_bottom">15</field>
         <field name="margin_left">15</field>
         <field name="margin_right">15</field>
+        <field name="dpi">90</field>
         <field name="header_line" eval="False"/>
         <field name="header_spacing">0</field>
-        <field name="dpi">90</field>
     </record>
 
-    <!-- Customize the Action -->
+    <!-- Define the action to use the custom paper format -->
     <record id="action_report_contract" model="ir.actions.report">
-        <field name="name">พิมพ์สัญญา</field>
+        <field name="name">Contract Report</field>
         <field name="model">maneerincode.code</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">qweb_maneerin.report_contract_custom</field>
         <field name="report_file">qweb_maneerin.report_contract_custom</field>
-        <field name="print_report_name">"Report"</field>  
-        <field name="paperformat_id" ref="paper_format_custom_report"/>
+        <field name="print_report_name">"Contract Report"</field>  
+        <field name="paperformat_id" ref="paper_format_custom_report"/> <!-- Reference the custom paper format -->
         <field name="binding_model_id" ref="model_maneerincode_code"/>
         <field name="binding_type">report</field>
     </record>
 
-    <!-- Customize the Template -->
+    <!-- Your QWeb template -->
     <template id="report_contract_custom">
         <t t-call="web.basic_layout">
             <div class="page">
-                <h2>รายงานสัญญา</h2>
+                <h2>Contract Report</h2>
                 <table class="table">
                     <tr>
-                        <th>ชื่อสัญญา</th>
-                        <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                        <th>Contract Name</th>
+                        <td></td>
                     </tr>
                     <tr>
-                        <th>วันที่เริ่มต้น</th>
-                        <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                        <th>Start Date</th>
+                        <td></td>
                     </tr>
                     <tr>
-                        <th>วันที่สิ้นสุด</th>
-                        <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                        <th>End Date</th>
+                        <td></td>
                     </tr>
                     <tr>
-                        <th>จำนวนเงิน</th>
-                        <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
-                    </tr>
-                    <tr>
-                        <th>สถานะ</th>
-                        <td></td>  <!-- ไม่มีการแสดงข้อมูล -->
+                        <th>Amount</th>
+                        <td></td>
                     </tr>
                 </table>
             </div>
