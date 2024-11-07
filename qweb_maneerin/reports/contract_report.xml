@@ -74,12 +74,12 @@
                 <div style="text-align: center;">
                     <strong>บันทึกข้อตกลงแนบท้ายสัญญาซื้อขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างโครงการ มิดทาวน์ ซอย12</strong>
                 </div>
-                <div style="text-align: center;">
+                <p style="text-align: center;">
                     <strong>สัญญาเลขที่ <t t-esc="docs[0].contract_no"/> ลงวันที่ 9 กุมภาพันธ์ 2567</strong>
-                </div>
-                <p style="text-align: right;">
-                    <strong>ทำที่บริษัทมณีรินพร็อพเพอร์ตี้จำกัด</strong>
                 </p>
+                <div style="text-align: right;">
+                    <strong>ทำที่บริษัทมณีรินพร็อพเพอร์ตี้จำกัด</strong>
+                </div>
                 <div style="text-align: right;">
                     <strong>219 หมู่ 2 ตำบลบางพระอำเภอศรีราชาจังหวัดชลบุรี 20110</strong>
                 </div>
