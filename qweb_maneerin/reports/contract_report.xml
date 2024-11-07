@@ -56,7 +56,6 @@
        <field name="binding_type">report</field>
    </record>
 
-
     <!-- Template Report -->
     <template id="report_contract_custom">
         <t t-call="web.basic_layout">
@@ -78,33 +77,33 @@
                 <div style="text-align: center;">
                     <strong>สัญญาเลขที่ <t t-esc="docs[0].contract_no"/> ลงวันที่ 9 กุมภาพันธ์ 2567</strong>
                 </div>
-                <div style="text-align: right;">
+                <p style="text-align: right;">
                     <strong>ทำที่บริษัทมณีรินพร็อพเพอร์ตี้จำกัด</strong>
-                </div>
+                </p>
                 <div style="text-align: right;">
                     <strong>219 หมู่ 2 ตำบลบางพระอำเภอศรีราชาจังหวัดชลบุรี 20110</strong>
                 </div>
-                <div>
+                <p>
                     <strong>บันทึกข้อตกลงฉบับนี้ทำขึ้นเมื่อวันที่ <t t-esc="docs[0].contact_date"/> ระหว่าง:</strong>
-                </div>
-                <div>
+                </p>
+                <p>
                     <strong>1. บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด สำนักงานตั้งอยู่เลขที่ 219 หมู่ 2 ตำบลบางพระ อำเภอศรีราชา จังหวัดชลบุรี 20110 โดยนายธีรพร ชั้นศิริ ผู้มีอำนาจลงนามผูกพันบริษัท ซึ่งไปในสัญญานี้เรียกว่า "ผู้จะขาย" ฝ่ายหนึ่งกับ</strong>
-                </div>
-                <div>
+                </p>
+                <p>
                     <strong>2. <t t-esc="docs[0].buyer_ids.partner_id.name"/> อายุ <t t-esc="docs[0].buyer_ids.age"/> ปี สัญชาติ <t t-esc="docs[0].buyer_ids.nation"/> 
                     เลขประชาชน <t t-esc="docs[0].buyer_ids.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="docs[0].buyer_ids.partner_id.street"/> โทรศัพท์ <t t-esc="docs[0].buyer_ids.partner_id.phone"/>  </strong>
-                </div>
-                <div>
+                </p>
+                <p>
                     <strong>2. <t t-esc="docs[0].beneficiary_ids.partner_id.name"/> อายุ <t t-esc="docs[0].beneficiary_ids.age"/> ปี สัญชาติ <t t-esc="docs[0].beneficiary_ids.nation"/> 
                     เลขประชาชน <t t-esc="docs[0].beneficiary_ids.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="docs[0].beneficiary_ids.partner_id.street"/> โทรศัพท์ <t t-esc="docs[0].beneficiary_ids.partner_id.phone"/> ซึ่งต่อไปในสัญญานี้จะเรียกว่า "ผู้รับสิทธิ" ฝ่ายหนึ่ง </strong>
-                </div>
-                <div>
+                </p>
+                <p>
                     <strong>เนื่องจากผู้จะซื้อประสงค์จะโอนสิทธิและหน้าที่ตามสัญญาจะซื้อจะขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างในโครงการ มิตทาวน์ ซอย12
                             แปลงที่ xxx ให้แก่ผู้รับโอนสิทธิเพื่อให้ผู้รับโอนสิทธิมีกรรมสิทธิ์ร่วมกันในที่ดินจัดสรรพร้อมสิ่งปลูกสร้างที่ซื้อขายตาม 
                             สัญญาจะซื้อจะขายเลขที่ xxx ลงวันที่ 9 กุมภาพันธ์ 2567 โดยผู้รับโอนสิทธิและผู้จะขายตกลงยินยอมด้วย 
                             ทั้งสามฝ่ายจึงได้ทําบันทึกข้อตกลงฉบับนี้ขึ้นมีข้อความดังต่อไปนี้
                     </strong>
-                </div>
+                </p>
                 <div>
                     <strong>บันทึกข้อตกลงฉบับนี้ทำขึ้นเป็นสามฉบับมีข้อความถูกต้องตรงกัน คู่สัญญาได้อ่านและเข้าใจข้อความในสัญญาโดยตลอดดีแล้ว 
                             เห็นว่าถูกต้อง ตรงตามความประสงค์ จึงลงลายมือชื่อพร้อมทั้งประทับตรา (ถ้ามี) ไว้เป็นสำคัญต่อหน้าพยาน และต่างเก็บไว้ฝ่ายละหนึ่งฉบับ</strong>
@@ -112,5 +111,4 @@
             </div>
         </t>
     </template>
-
 </odoo>
