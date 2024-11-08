@@ -88,7 +88,7 @@
 
                 <p>
                     <span style="position: absolute; left: 0;">(..........................................................)</span>
-                    <span style="position: absolute; left: 0; padding-left: 10px;">นายธีรพร ชั้นศิริ</span>
+                    <span style="pclear: both; position: absolute; left: 0; padding-left: 30px;">นายธีรพร ชั้นศิริ</span>
                     <span style="float: right;">(......................................................)</span>
                 </p>
 
