@@ -97,46 +97,43 @@
 
                 <p style="text-indent: 30px; text-align: right;">
                    <span>ลงชื่อ......................................ผู้จะซื้อ</span>  
-               </p>
-               <p style="text-indent: 30px; text-align: right;">
+                </p>
+                <p style="text-indent: 30px; text-align: right;">
                    <span>(......................................................)</span>
-               </p>
-               <p style="text-indent: 30px; text-align: right;">
+                </p>
+                <p style="text-indent: 30px; text-align: right;">
                    <span>ลงชื่อ......................................ผู้จะซื้อ</span> 
-               </p>
-               <p style="text-indent: 30px; text-align: right;">
+                </p>
+                <p style="text-indent: 30px; text-align: right;">
                    <span>(......................................................)</span>
-               </p>
-               <p style="text-indent: 30px; text-align: right;">
+                </p>
+                <p style="text-indent: 30px; text-align: right;">
                    <span>ลงชื่อ......................................ผู้จะซื้อ</span> 
-               </p>
-               <p style="text-indent: 30px; text-align: right;">
+                </p>
+                <p style="text-indent: 30px; text-align: right;">
                    <span>(......................................................)</span>
-               </p>
-               <p style="text-align: center;">
+                </p>
+                <p style="text-align: center;">
                    <span>ลงชื่อ......................................ผู้รับโอนสิทธิ</span>
-               </p>
-               <p style="text-align: center;">
+                </p>
+                <p style="text-align: center;">
                    <span>(...............................................................)</span>
-               </p>
-               <p style="text-align: center;">
+                </p>
+                <p style="text-align: center;">
                    <span>ลงชื่อ......................................ผู้รับโอนสิทธิ</span>
-               </p>
-               <p style="text-align: center;">
+                </p>
+                <p style="text-align: center;">
                    <span>(...............................................................)</span>
-               </p>
+                </p>
 
-               <p>
+                <p>
                     <span style="float: left;">ลงชื่อ......................................พยาน</span>
                     <span style="float: right;">ลงชื่อ.....................................พยาน</span>
-               </p>
-               <p>
+                </p>
+                <p>
                     <span style="float: left;">(......................................................)</span>
                     <span style="float: right;">(....................................................)</span>
-               </p>
-
-
-
+                </p>
            </div>
        </t>
    </template>
