@@ -118,17 +118,18 @@
                     <span style="flex-grow: 1; display: inline-flex; text-align: center;">......................................</span>
                     <strong>ผู้จะซื้อ</strong>
                 </p>
-                <p style="text-indent: 30px;">
+                
+                <p style="text-indent: right :30px;">
                     <strong>ลงชื่อ</strong>
                     <span style="flex-grow: 1; display: inline-flex; text-align: center;">......................................</span>
                     <strong>ผู้จะซื้อ</strong>   
                 </p>
-                <p style="text-indent: 30px;">
+                <p style="text-indent: right :30px;">
                     <strong>ลงชื่อ</strong>
                     <span style="flex-grow: 1; display: inline-flex; text-align: center;">......................................</span>
                     <strong>ผู้จะซื้อ</strong>   
                 </p>
-                <p style="text-indent: 30px;">
+                <p style="text-indent: right :30px;">
                     <strong>ลงชื่อ</strong>
                     <span style="flex-grow: 1; display: inline-flex; text-align: center;">......................................</span>
                     <strong>ผู้จะซื้อ</strong>   
