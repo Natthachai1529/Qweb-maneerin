@@ -89,7 +89,16 @@
                        <span style="float: right;">ลงชื่อ.....................................ผู้จะซื้อ</span>
                    </span>
                </p>
-               <span>(....................................................)</span>
+
+               <p style="display: flex; justify-content: space-between; text-align: right; text-indent: 30px;">
+                   <span style="display: flex; align-items: center;">
+                       <span style="float: left;">(......................................................)</span>
+                   </span>
+                   <span style="display: flex; align-items: center; justify-content: flex-end;">
+                       <span style="float: right;">(......................................................)</span>
+                   </span>
+               </p>
+
                <p style="text-indent: 30px; text-align: left;">
                    <span>บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด</span>
                </p>
@@ -138,7 +147,7 @@
 
                <p style="display: flex; justify-content: space-between; text-align: right; text-indent: 30px;">
                    <span style="display: flex; align-items: center;">
-                       <span style="float: left;">(....................................................)</span>
+                       <span style="float: left;">(......................................................)</span>
                    </span>
                    <span style="display: flex; align-items: center; justify-content: flex-end;">
                        <span style="float: right;">(....................................................)</span>
