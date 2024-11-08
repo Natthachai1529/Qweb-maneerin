@@ -109,14 +109,19 @@
                             เห็นว่าถูกต้อง ตรงตามความประสงค์ จึงลงลายมือชื่อพร้อมทั้งประทับตรา (ถ้ามี) ไว้เป็นสำคัญต่อหน้าพยาน และต่างเก็บไว้ฝ่ายละหนึ่งฉบับ
                     </strong>
                 </p>
-                <p style="text-indent: 30px;">
+                <p style="display: flex; justify-content: space-between; text-align: right; text-indent: 30px;">
+                    <span style="display: inline-flex; align-items: center;">
                     <strong>ลงชื่อ</strong>
-                    <span style="flex-grow: 1; display: inline-flex; text-align: center;">......................................</span>
+                    <span style="flex-grow: 1; text-align: center;">......................................</span>
                     <strong>ผู้รับโอนสิทธิ</strong>
+                    </span>
+                    <span style="display: inline-flex; align-items: center;">
                     <strong>ลงชื่อ</strong>
-                    <span style="flex-grow: 1; display: inline-flex; text-align: center;">......................................</span>
+                    <span style="flex-grow: 1; text-align: center;">......................................</span>
                     <strong>ผู้จะซื้อ</strong>
+                    </span>
                 </p>
+
                 <p style="text-indent: 30px; text-align: right;">
                     <strong>
                     (.........................................................)
