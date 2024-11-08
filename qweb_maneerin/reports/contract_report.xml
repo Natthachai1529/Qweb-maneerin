@@ -87,9 +87,12 @@
                 </p>
 
                 <p>
-                    <span style="float: left;">(..........................................................)</span>
-                    <span style="float: right;">(......................................................)</span>
+                    <span style="position: absolute; left: 0; top: 0;">(..........................................................)</span>
+                    <span style="position: absolute; left: 0; top: 0;">นายธีรพร ชั้นศิริ</span>
+                    <span style="position: absolute; right: 0; top: 0;">(..........................................................)</span>
+                    <span style="position: absolute; right: 0; top: 0;">นางสาวธนัชพร อรัญศีรี</span>
                 </p>
+
 
                 <p style="clear: both; text-indent: 10px;text-align: left;">
                     <span>บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด</span>
