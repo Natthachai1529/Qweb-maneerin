@@ -28,65 +28,123 @@
        <field name="binding_type">report</field>
    </record>
 
-    <!-- Template Report -->
-    <template id="report_contract_custom">
-        <t t-call="web.basic_layout">
-            <div class="page">
-                <style>
-                    .page, .footer, .header, * {
-                        font-family: 'Sarabun', sans-serif;
-                    }
-                </style>
-                <div style="text-align: right;">
-                    <span>(การโอนสิทธิ์) ต้นฉบับ</span>
-                </div>
-                <div style="text-align: center;">
-                    <strong>บันทึกข้อตกลงแนบท้ายสัญญาซื้อขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างโครงการ มิดทาวน์ ซอย12</strong>
-                </div>
-                <p style="text-align: center;">
-                    <strong>สัญญาเลขที่ <t t-esc="docs[0].contract_no"/> ลงวันที่ 9 กุมภาพันธ์ 2567</strong>
-                </p>
-                <div style="text-align: right;">
-                    <span>ทำที่บริษัทมณีรินทร์พร็อพเพอร์ตี้จำกัด</span>
-                </div>
-                <p style="text-align: right;">
-                    <span>219 หมู่ 2 ตำบลบางพระอำเภอศรีราชาจังหวัดชลบุรี 20110</span>
-                </p>
-                <p><span>บันทึกข้อตกลงฉบับนี้ทำขึ้นเมื่อวันที่ <t t-esc="docs[0].contact_date"/> ระหว่าง:</span></p>
-                <p>
-                    <span>1. บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด สำนักงานตั้งอยู่เลขที่ 219 หมู่ 2 ตำบลบางพระ อำเภอศรีราชา จังหวัดชลบุรี 20110 โดยนายธีรพร ชั้นศิริ ผู้มีอำนาจลงนามผูกพันบริษัท ซึ่งไปในสัญญานี้เรียกว่า "ผู้จะขาย" ฝ่ายหนึ่งกับ</span>
-                </p>
-                <p>
-                    <span>2. <t t-esc="docs[0].buyer_ids.partner_id.name"/> อายุ <t t-esc="docs[0].buyer_ids.age"/> ปี สัญชาติ <t t-esc="docs[0].buyer_ids.nation"/> 
-                    เลขประชาชน <t t-esc="docs[0].buyer_ids.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="docs[0].buyer_ids.partner_id.street"/> โทรศัพท์ <t t-esc="docs[0].buyer_ids.partner_id.phone"/>  </span>
-                </p>
-                <p>
-                    <span>3. <t t-esc="docs[0].beneficiary_ids.partner_id.name"/> อายุ <t t-esc="docs[0].beneficiary_ids.age"/> ปี สัญชาติ <t t-esc="docs[0].beneficiary_ids.nation"/> 
-                    เลขประชาชน <t t-esc="docs[0].beneficiary_ids.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="docs[0].beneficiary_ids.partner_id.street"/> โทรศัพท์ <t t-esc="docs[0].beneficiary_ids.partner_id.phone"/> ซึ่งต่อไปในสัญญานี้จะเรียกว่า "ผู้รับสิทธิ" ฝ่ายหนึ่ง </span>
-                </p>
-                <p style="text-indent: 30px;">
-                    <span>เนื่องจากผู้จะซื้อประสงค์จะโอนสิทธิและหน้าที่ตามสัญญาจะซื้อจะขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างในโครงการ มิตทาวน์ ซอย12
-                            แปลงที่ xxx ให้แก่ผู้รับโอนสิทธิเพื่อให้ผู้รับโอนสิทธิมีกรรมสิทธิ์ร่วมกันในที่ดินจัดสรรพร้อมสิ่งปลูกสร้างที่ซื้อขายตาม 
-                            สัญญาจะซื้อจะขายเลขที่ xxx ลงวันที่ 9 กุมภาพันธ์ 2567 โดยผู้รับโอนสิทธิและผู้จะขายตกลงยินยอมด้วย 
-                            ทั้งสามฝ่ายจึงได้ทําบันทึกข้อตกลงฉบับนี้ขึ้นมีข้อความดังต่อไปนี้
-                    </span>
-                </p>
-                <p style="text-indent: 30px;">
-                    <span>บันทึกข้อตกลงฉบับนี้ทำขึ้นเป็นสามฉบับมีข้อความถูกต้องตรงกัน คู่สัญญาได้อ่านและเข้าใจข้อความในสัญญาโดยตลอดดีแล้ว 
-                            เห็นว่าถูกต้อง ตรงตามความประสงค์ จึงลงลายมือชื่อพร้อมทั้งประทับตรา (ถ้ามี) ไว้เป็นสำคัญต่อหน้าพยาน และต่างเก็บไว้ฝ่ายละหนึ่งฉบับ
-                    </span>
-                </p>
-                <!-- Signatures Section -->
-                <p style="display: flex; justify-content: space-between; text-align: right; text-indent: 30px;">
-                    <span>ลงชื่อ......................................ผู้จะขาย</span>
-                    <span>ลงชื่อ.....................................ผู้จะซื้อ</span>
-                </p>
-                <p style="text-align: center;">ลงชื่อ......................................ผู้รับโอนสิทธิ</p>
-                <p style="display: flex; justify-content: space-between; text-align: right;">
-                    <span>ลงชื่อ......................................พยาน</span>
-                    <span>ลงชื่อ......................................พยาน</span>
-                </p>
-            </div>
-        </t>
-    </template>
+   <!-- Template Report -->
+   <template id="report_contract_custom">
+       <t t-call="web.basic_layout">
+           <div class="page">
+               <style>
+                   .page, .footer, .header, * {
+                       font-family: 'Sarabun', sans-serif;
+                   }
+               </style>
+               <!-- Header Section -->
+               <h2></h2>
+               <!-- Contract Information -->
+               <div style="text-align: right;">
+                   <span>(การโอนสิทธิ์) ต้นฉบับ</span>
+               </div>
+               <div style="text-align: center;">
+                   <strong>บันทึกข้อตกลงแนบท้ายสัญญาซื้อขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างโครงการ มิดทาวน์ ซอย12</strong>
+               </div>
+               <p style="text-align: center;">
+                   <strong>สัญญาเลขที่ <t t-esc="docs[0].contract_no"/> ลงวันที่ 9 กุมภาพันธ์ 2567</strong>
+               </p>
+               <div style="text-align: right;">
+                   <span>ทำที่บริษัทมณีรินทร์พร็อพเพอร์ตี้จำกัด</span>
+               </div>
+               <p style="text-align: right;">
+                   <span>219 หมู่ 2 ตำบลบางพระอำเภอศรีราชาจังหวัดชลบุรี 20110</span>
+               </p>
+               <p>
+                   <span>บันทึกข้อตกลงฉบับนี้ทำขึ้นเมื่อวันที่ <t t-esc="docs[0].contact_date"/> ระหว่าง:</span>
+               </p>
+               <p>
+                   <span>1. บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด สำนักงานตั้งอยู่เลขที่ 219 หมู่ 2 ตำบลบางพระ อำเภอศรีราชา จังหวัดชลบุรี 20110 โดยนายธีรพร ชั้นศิริ ผู้มีอำนาจลงนามผูกพันบริษัท ซึ่งไปในสัญญานี้เรียกว่า "ผู้จะขาย" ฝ่ายหนึ่งกับ</span>
+               </p>
+               <p>
+                   <span>2. <t t-esc="docs[0].buyer_ids.partner_id.name"/> อายุ <t t-esc="docs[0].buyer_ids.age"/> ปี สัญชาติ <t t-esc="docs[0].buyer_ids.nation"/> 
+                   เลขประชาชน <t t-esc="docs[0].buyer_ids.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="docs[0].buyer_ids.partner_id.street"/> โทรศัพท์ <t t-esc="docs[0].buyer_ids.partner_id.phone"/>  </span>
+               </p>
+               <p>
+                   <span>3. <t t-esc="docs[0].beneficiary_ids.partner_id.name"/> อายุ <t t-esc="docs[0].beneficiary_ids.age"/> ปี สัญชาติ <t t-esc="docs[0].beneficiary_ids.nation"/> 
+                   เลขประชาชน <t t-esc="docs[0].beneficiary_ids.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="docs[0].beneficiary_ids.partner_id.street"/> โทรศัพท์ <t t-esc="docs[0].beneficiary_ids.partner_id.phone"/> ซึ่งต่อไปในสัญญานี้จะเรียกว่า "ผู้รับสิทธิ" ฝ่ายหนึ่ง </span>
+               </p>
+               <p style="text-indent: 30px;">
+                   <span>เนื่องจากผู้จะซื้อประสงค์จะโอนสิทธิและหน้าที่ตามสัญญาจะซื้อจะขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างในโครงการ มิตทาวน์ ซอย12
+                           แปลงที่ xxx ให้แก่ผู้รับโอนสิทธิเพื่อให้ผู้รับโอนสิทธิมีกรรมสิทธิ์ร่วมกันในที่ดินจัดสรรพร้อมสิ่งปลูกสร้างที่ซื้อขายตาม 
+                           สัญญาจะซื้อจะขายเลขที่ xxx ลงวันที่ 9 กุมภาพันธ์ 2567 โดยผู้รับโอนสิทธิและผู้จะขายตกลงยินยอมด้วย 
+                           ทั้งสามฝ่ายจึงได้ทําบันทึกข้อตกลงฉบับนี้ขึ้นมีข้อความดังต่อไปนี้
+                   </span>
+               </p>
+               <p style="text-indent: 30px;">
+                   <span>บันทึกข้อตกลงฉบับนี้ทำขึ้นเป็นสามฉบับมีข้อความถูกต้องตรงกัน คู่สัญญาได้อ่านและเข้าใจข้อความในสัญญาโดยตลอดดีแล้ว 
+                           เห็นว่าถูกต้อง ตรงตามความประสงค์ จึงลงลายมือชื่อพร้อมทั้งประทับตรา (ถ้ามี) ไว้เป็นสำคัญต่อหน้าพยาน และต่างเก็บไว้ฝ่ายละหนึ่งฉบับ
+                   </span>
+               </p>
+               <p style="display: flex; justify-content: space-between; text-align: right; text-indent: 30px;">
+                   <span style="display: flex; align-items: center;">
+                       <span style="float: left;">ลงชื่อ......................................ผู้จะขาย</span>
+                   </span>
+                   <span style="display: flex; align-items: center; justify-content: flex-end;">
+                       <span style="float: right;">ลงชื่อ.....................................ผู้จะซื้อ</span>
+                   </span>
+               </p>
+               <span>(....................................................)</span>
+               <p style="text-indent: 30px; text-align: right;">
+                   <span>บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด</span>
+               </p>
+               <p style="text-indent: 30px; text-align: right;">
+                   <span>(......................................................)</span>
+               </p>
+               <p style="text-indent: 30px; text-align: right;">
+                   <span>ลงชื่อ......................................ผู้จะซื้อ</span>  
+               </p>
+               <p style="text-indent: 30px; text-align: right;">
+                   <span>(......................................................)</span>
+               </p>
+               <p style="text-indent: 30px; text-align: right;">
+                   <span>ลงชื่อ......................................ผู้จะซื้อ</span> 
+               </p>
+               <p style="text-indent: 30px; text-align: right;">
+                   <span>(......................................................)</span>
+               </p>
+               <p style="text-indent: 30px; text-align: right;">
+                   <span>ลงชื่อ......................................ผู้จะซื้อ</span> 
+               </p>
+               <p style="text-indent: 30px; text-align: right;">
+                   <span>(......................................................)</span>
+               </p>
+               <p style="text-align: center;">
+                   <span>ลงชื่อ......................................ผู้รับโอนสิทธิ</span>
+               </p>
+               <p style="text-align: center;">
+                   <span>(.................................................)</span>
+               </p>
+               <p style="text-align: center;">
+                   <span>ลงชื่อ......................................ผู้รับโอนสิทธิ</span>
+               </p>
+               <p style="text-align: center;">
+                   <span>(.................................................)</span>
+               </p>
+
+               <p style="display: flex; justify-content: space-between; text-align: right; text-indent: 30px;">
+                   <span style="display: flex; align-items: center;">
+                       <span style="float: left;">ลงชื่อ......................................พยาน</span>
+                   </span>
+                   <span style="display: flex; align-items: center; justify-content: flex-end;">
+                       <span style="float: right;">ลงชื่อ.....................................พยาน</span>
+                   </span>
+               </p>
+
+               <p style="display: flex; justify-content: space-between; text-align: right; text-indent: 30px;">
+                   <span style="display: flex; align-items: center;">
+                       <span style="float: left;">(......................................................)</span>
+                   </span>
+                   <span style="display: flex; align-items: center; justify-content: flex-end;">
+                       <span style="float: right;">(......................................................)</span>
+                   </span>
+               </p>
+           </div>
+       </t>
+   </template>
 </odoo>
