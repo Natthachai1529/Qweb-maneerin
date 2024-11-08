@@ -110,17 +110,18 @@
                     </strong>
                 </p>
                 <p style="display: flex; justify-content: space-between; text-align: right; text-indent: 30px;">
-                    <span style="display: inline-flex; align-items: center;">
+                    <span style="display: flex; align-items: center;">
                     <strong>ลงชื่อ</strong>
                     <span style="flex-grow: 1; text-align: center;">......................................</span>
                     <strong>ผู้รับโอนสิทธิ</strong>
                     </span>
-                    <span style="display: inline-flex; align-items: center;">
+                    <span style="display: flex; align-items: center; justify-content: flex-end;">
                     <strong>ลงชื่อ</strong>
                     <span style="flex-grow: 1; text-align: center;">......................................</span>
                     <strong>ผู้จะซื้อ</strong>
                     </span>
                 </p>
+
 
                 <p style="text-indent: 30px; text-align: right;">
                     <strong>
