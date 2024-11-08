@@ -81,18 +81,15 @@
                            เห็นว่าถูกต้อง ตรงตามความประสงค์ จึงลงลายมือชื่อพร้อมทั้งประทับตรา (ถ้ามี) ไว้เป็นสำคัญต่อหน้าพยาน และต่างเก็บไว้ฝ่ายละหนึ่งฉบับ
                    </span>
                </p>
-               <p style="display: flex; justify-content: space-between; text-align: right; text-indent: 30px;">
-                   <span style="display: flex; align-items: center;">
-                       <span style="float: left;">ลงชื่อ......................................ผู้จะขาย</span>
-                   </span>
-                   <span style="display: flex; align-items: center; justify-content: flex-end;">
-                       <span style="float: right;">ลงชื่อ.....................................ผู้จะซื้อ</span>
-                   </span>
+               <p>
+                    <span style="float: left;">ลงชื่อ......................................ผู้จะขาย</span>
+                    <span style="float: right;">ลงชื่อ.....................................ผู้จะซื้อ</span>
+   
                </p>
 
-               <p style="display: flex; justify-content: space-between; text-align: right; text-indent: 30px;">
-                       <span style="float: left;">(...........................................................)</span>
-                       <span style="float: right;">(......................................................)</span>
+               <p>
+                    <span style="float: left;">(...........................................................)</span>
+                    <span style="float: right;">(......................................................)</span>
                </p>
 
                <p style="text-indent: 30px; text-align: left;">
@@ -132,22 +129,13 @@
                    <span>(...............................................................)</span>
                </p>
 
-               <p style="display: flex; justify-content: space-between; text-align: right; text-indent: 30px;">
-                   <span style="display: flex; align-items: center;">
-                       <span style="float: left;">ลงชื่อ......................................พยาน</span>
-                   </span>
-                   <span style="display: flex; align-items: center; justify-content: flex-end;">
-                       <span style="float: right;">ลงชื่อ.....................................พยาน</span>
-                   </span>
+               <p>
+                    <span style="float: left;">ลงชื่อ......................................พยาน</span>
+                    <span style="float: right;">ลงชื่อ.....................................พยาน</span>
                </p>
-
-               <p style="display: flex; justify-content: space-between; text-align: right; text-indent: 30px;">
-                   <span style="display: flex; align-items: center;">
-                       <span style="float: left;">(......................................................)</span>
-                   </span>
-                   <span style="display: flex; align-items: center; justify-content: flex-end;">
-                       <span style="float: right;">(....................................................)</span>
-                   </span>
+               <p>
+                    <span style="float: left;">(......................................................)</span>
+                    <span style="float: right;">(....................................................)</span>
                </p>
            </div>
        </t>
