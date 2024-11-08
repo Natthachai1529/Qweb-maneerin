@@ -81,68 +81,19 @@
                            เห็นว่าถูกต้อง ตรงตามความประสงค์ จึงลงลายมือชื่อพร้อมทั้งประทับตรา (ถ้ามี) ไว้เป็นสำคัญต่อหน้าพยาน และต่างเก็บไว้ฝ่ายละหนึ่งฉบับ
                    </span>
                </p>
-               <p style="display: flex; justify-content: space-between; text-align: right; text-indent: 30px;">
-                   <span style="display: flex; align-items: center;">
-                       <span style="float: left;">ลงชื่อ......................................ผู้จะขาย</span>
-                   </span>
-                   <span style="display: flex; align-items: center; justify-content: flex-end;">
-                       <span style="float: right;">ลงชื่อ.....................................ผู้จะซื้อ</span>
-                   </span>
+               <p style="display: flex; justify-content: space-between;">
+                   <span>ลงชื่อ......................................ผู้จะขาย</span>
+                   <span>ลงชื่อ.....................................ผู้จะซื้อ</span>
                </p>
-               <span>(....................................................)</span>
-               <p style="text-indent: 30px; text-align: right;">
-                   <span>บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด</span>
-               </p>
-               <p style="text-indent: 30px; text-align: right;">
-                   <span>(......................................................)</span>
-               </p>
-               <p style="text-indent: 30px; text-align: right;">
-                   <span>ลงชื่อ......................................ผู้จะซื้อ</span>  
-               </p>
-               <p style="text-indent: 30px; text-align: right;">
-                   <span>(......................................................)</span>
-               </p>
-               <p style="text-indent: 30px; text-align: right;">
-                   <span>ลงชื่อ......................................ผู้จะซื้อ</span> 
-               </p>
-               <p style="text-indent: 30px; text-align: right;">
-                   <span>(......................................................)</span>
-               </p>
-               <p style="text-indent: 30px; text-align: right;">
-                   <span>ลงชื่อ......................................ผู้จะซื้อ</span> 
-               </p>
-               <p style="text-indent: 30px; text-align: right;">
-                   <span>(......................................................)</span>
+               <p style="display: flex; justify-content: space-between;">
+                   <span>(....................................................)</span>
+                   <span>(....................................................)</span>
                </p>
                <p style="text-align: center;">
                    <span>ลงชื่อ......................................ผู้รับโอนสิทธิ</span>
                </p>
                <p style="text-align: center;">
                    <span>(.................................................)</span>
-               </p>
-               <p style="text-align: center;">
-                   <span>ลงชื่อ......................................ผู้รับโอนสิทธิ</span>
-               </p>
-               <p style="text-align: center;">
-                   <span>(.................................................)</span>
-               </p>
-
-               <p style="display: flex; justify-content: space-between; text-align: right; text-indent: 30px;">
-                   <span style="display: flex; align-items: center;">
-                       <span style="float: left;">(................................................................)</span>
-                   </span>
-                   <span style="display: flex; align-items: center; justify-content: flex-end;">
-                       <span style="float: right;">(................................................................)</span>
-                   </span>
-               </p>
-
-               <p style="display: flex; justify-content: space-between; text-align: right; text-indent: 30px;">
-                   <span style="display: flex; align-items: center;">
-                       <span style="float: left;">(......................................................)<</span>
-                   </span>
-                   <span style="display: flex; align-items: center; justify-content: flex-end;">
-                       <span style="float: right;"(......................................................)<</span>
-                   </span>
                </p>
            </div>
        </t>
