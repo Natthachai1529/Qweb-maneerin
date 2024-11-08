@@ -113,7 +113,7 @@
                     <strong>ลงชื่อ</strong>
                     <span style="flex-grow: 1; display: inline-flex; text-align: center;">......................................</span>
                     <strong>ผู้รับโอนสิทธิ</strong>   
-                    <span style="text-align: right;"></span>
+                    <span style="text-indent: 30px; text-align: left;"></span>
                     <strong>ลงชื่อ</strong>
                     <span style="flex-grow: 1; display: inline-flex; text-align: center;">......................................</span>
                     <strong>ผู้จะซื้อ</strong>
