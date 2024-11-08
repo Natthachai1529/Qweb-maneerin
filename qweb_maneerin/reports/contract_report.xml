@@ -124,32 +124,32 @@
                     </strong>
                 </p>
                 
-                <p style="text-indent: right :30px;">
+                <p style="text-indent: 30px; text-align: right;">
                     <strong>ลงชื่อ</strong>
                     <span style="flex-grow: 1; display: inline-flex; text-align: right;">......................................</span>
                     <strong>ผู้จะซื้อ</strong>   
                 </p>
-                <p>
+                <p style="text-indent: 30px; text-align: right;">
                     <strong>
                     (......................................)
                     </strong>
                 </p>
-                <p style="text-indent: right :30px;">
+                <p style="text-indent: 30px; text-align: right;">
                     <strong>ลงชื่อ</strong>
                     <span style="flex-grow: 1; display: inline-flex; text-align: right;">......................................</span>
                     <strong>ผู้จะซื้อ</strong>   
                 </p>
-                <p>
+                <p style="text-indent: 30px; text-align: right;">
                     <strong>
                     (......................................)
                     </strong>
                 </p>
-                <p style="text-indent: right :30px;">
+                <p style="text-indent: 30px; text-align: right;">
                     <strong>ลงชื่อ</strong>
                     <span style="flex-grow: 1; display: inline-flex; text-align: right;">......................................</span>
                     <strong>ผู้จะซื้อ</strong>   
                 </p>
-                <p>
+                <p style="text-indent: 30px; text-align: right;">
                     <strong>
                     (......................................)
                     </strong>
