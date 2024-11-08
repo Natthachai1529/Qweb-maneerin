@@ -111,14 +111,10 @@
                 </p>
                 <p style="display: flex; justify-content: space-between; text-align: right; text-indent: 30px;">
                     <span style="display: flex; align-items: center;">
-                    <span style="float: left;">ลงชื่อ</span>
-                    <span style="float: left;">......................................</span>
-                    <span style="float: left;">ผู้รับโอนสิทธิ</span>
+                    <span style="float: left;">ลงชื่อ......................................ผู้รับโอนสิทธิ</span>
                     </span>
                     <span style="display: flex; align-items: center; justify-content: flex-end;">
-                    <span style="float: right;">ลงชื่อ</span>
-                    <span style="float: right;">......................................</span>
-                    <span style="float: right;">ผู้จะซื้อ</span>
+                    <span style="float: right;">ลงชื่อ.....................................ผู้จะซื้อ</span>
                     </span>
                 </p>
                 <p style="text-indent: 30px; text-align: right;">
