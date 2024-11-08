@@ -111,15 +111,13 @@
                 </p>
                 <p style="text-indent: 30px;">
                     <strong>ลงชื่อ</strong>
-                    <span style="flex-grow: 1; display: inline-flex; text-align: right;">&nbsp;</span>
                     <span style="flex-grow: 1; display: inline-flex; text-align: center;">......................................</span>
-                    <strong>ผู้รับโอนสิทธิ</strong>
-                    <span style="flex-grow: 1; display: inline-flex; text-align: center;">......................................</span>
+                    <strong>ผู้รับโอนสิทธิ</strong>   
+                    <span style="text-indent: 30px; text-align: right;"></span>
                     <strong>ลงชื่อ</strong>
-                    <span style="flex-grow: 1; display: inline-flex; text-align: center;">......................................</span>
+                    <span style="flex-grow: 1; display: inline-flex; text-align: right;">......................................</span>
                     <strong>ผู้จะซื้อ</strong>
                 </p>
-
             </div>
         </t>
     </template>
