@@ -108,11 +108,7 @@
                    <span>(.......................................................)</span>
                 </p>
 
-                <p style="text-align: center;">
-                   <span></span>
-                </p>
-
-                <p style="text-align: center;">
+                <p style="clear: both;text-align: center;">
                    <span>ลงชื่อ......................................ผู้รับโอนสิทธิ</span>
                 </p>
                 <p style="text-align: center;">
