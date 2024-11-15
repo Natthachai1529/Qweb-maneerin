@@ -115,7 +115,7 @@
             </p>
 
             <!-- ลายเซ็นผู้ซื้อหลายคน (วนลูปผู้ซื้อ) -->
-            <t t-foreach="docs[1].buyer_ids" t-as="buyer">
+            <t t-foreach="docs[0].buyer_ids[1:]" t-as="buyer">
                 <p style="clear: both; text-align: right;">
                     <span>ลงชื่อ......................................ผู้ซื้อ</span>
                 </p>
