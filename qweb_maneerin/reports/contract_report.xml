@@ -39,7 +39,6 @@
             </style>
             <!-- Header Section -->
             <h2></h2>
-            <!-- Contract Information -->
             <div style="text-align: right;">
                 <span>(การโอนสิทธิ์) ต้นฉบับ</span>
             </div>
@@ -77,14 +76,14 @@
             </p>
 
             <!-- Signature Section -->
-            <p style="text-align: right;">
-                <t t-foreach="docs[0].buyer_ids" t-as="buyer">
+            <t t-foreach="docs[0].buyer_ids" t-as="buyer">
+                <p style="text-align: right;">
                     <span>ลงชื่อ......................................ผู้จะซื้อ</span>
-                    <br>
+                </p>
+                <p style="text-align: right;">
                     <span>(<t t-esc="buyer.partner_id.name"/>)</span>
-                    <br><br>
-                </t>
-            </p>
+                </p>
+            </t>
 
             <p style="clear: both; text-indent: 10px;text-align: left;">
                 <span>บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด</span>
@@ -92,17 +91,18 @@
 
             <p style="text-align: center;">
                 <span>ลงชื่อ......................................ผู้รับโอนสิทธิ</span>
-                <br>
+                <br/>
                 <span>(...............................................................)</span>
             </p>
 
             <p style="text-align: right;">
                 <span>ลงชื่อ......................................พยาน</span>
-                <br>
+                <br/>
                 <span>(....................................................)</span>
             </p>
         </div>
     </t>
 </template>
+
 
 </odoo>
