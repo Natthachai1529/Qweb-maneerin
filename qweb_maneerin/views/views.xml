@@ -50,7 +50,7 @@
     </record>
 
     <record id="action_maneerincode" model="ir.actions.act_window">
-        <field name="name">Maneerin Codes</field>
+        <field name="name">Maneerin</field>
         <field name="res_model">maneerincode.code</field>
         <field name="view_mode">tree,form</field>
     </record>
