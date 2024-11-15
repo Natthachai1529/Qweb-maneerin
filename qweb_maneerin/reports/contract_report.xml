@@ -76,15 +76,16 @@
             </p>
             
             <!-- วนลูปผู้รับสิทธิ -->
-            <p>
+            
                 <span>3.</span>
                
                     <t t-foreach="docs[0].beneficiary_ids" t-as="beneficiary">
-                        <t t-esc="beneficiary.partner_id.name"/> อายุ <t t-esc="beneficiary.age"/> ปี สัญชาติ <t t-esc="beneficiary.nation"/> 
+                        <t t-esc="beneficiary.partner_id.name"/> <p>อายุ <t t-esc="beneficiary.age"/> ปี สัญชาติ <t t-esc="beneficiary.nation"/> 
                         เลขประชาชน <t t-esc="beneficiary.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="beneficiary.partner_id.street"/> โทรศัพท์ <t t-esc="beneficiary.partner_id.phone"/>
+                    </p>
                     </t>
                
-            </p>
+            
 
             <!-- ส่วนที่เหลือเหมือนเดิม -->
             <p>
