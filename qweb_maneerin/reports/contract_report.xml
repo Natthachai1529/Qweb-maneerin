@@ -113,25 +113,25 @@
             <p style="clear: both; text-indent: 10px;text-align: left;">
                 <span>บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด</span>
             </p>
-            <t t-set="buyer_count" t-value="len(docs[0].buyer_ids) - 1"/>
-            <t t-if="buyer_count > 0">
-                <t t-foreach="range(buyer_count)" t-as="buyer">
-                    <p style="text-align: right;">
-                        <span>ลงชื่อ......................................ผู้จะซื้อ</span>  
-                    </p>
-                    <p style="text-align: right;">
-                        <span>(.......................................................)</span>
-                    </p>
-                </t>
+             <!-- ส่วนการลงลายมือชื่อ -->
+            <t t-foreach="docs[0].buyer_ids" t-as="buyer">
+                <p style="text-align: right;">
+                    <span>ลงชื่อ......................................ผู้จะซื้อ</span>  
+                </p>
+                <p style="text-align: right;">
+                    <span>(<t t-esc="buyer.partner_id.name"/>)</span>
+                </p>
             </t>
+
             <t t-foreach="docs[0].beneficiary_ids" t-as="beneficiary">
                 <p style="clear: both; text-align: center;">
                     <span>ลงชื่อ......................................ผู้รับโอนสิทธิ</span>
                 </p>
                 <p style="text-align: center;">
-                    <span>(...............................................................)</span>
+                    <span>(<t t-esc="beneficiary.partner_id.name"/>)</span>
                 </p>
             </t>
+            
             <p>
                 <span style="float: left;">ลงชื่อ......................................พยาน</span>
                 <span style="float: right;">ลงชื่อ.....................................พยาน</span>
