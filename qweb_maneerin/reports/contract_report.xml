@@ -40,7 +40,7 @@
 
             <!-- Header Section -->
             <h2></h2>
-            
+
             <!-- Contract Information -->
             <div style="text-align: right;">
                 <span>(การโอนสิทธิ์) ต้นฉบับ</span>
@@ -67,25 +67,24 @@
             <!-- วนลูปผู้ซื้อ -->
             <p>
                 <span>2.</span>
-                <p>
-                    <t t-foreach="docs[0].buyer_ids" t-as="buyer">
+                <t t-foreach="docs[0].buyer_ids" t-as="buyer">
+                    <p>
                         <t t-esc="buyer.partner_id.name"/> อายุ <t t-esc="buyer.age"/> ปี สัญชาติ <t t-esc="buyer.nation"/> 
                         เลขประชาชน <t t-esc="buyer.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="buyer.partner_id.street"/> โทรศัพท์ <t t-esc="buyer.partner_id.phone"/>
-                    </t>
-                </p>
+                    </p>
+                </t>
             </p>
-            
+
             <!-- วนลูปผู้รับสิทธิ -->
-            
+            <p>
                 <span>3.</span>
-               
-                    <t t-foreach="docs[0].beneficiary_ids" t-as="beneficiary">
-                        <t t-esc="beneficiary.partner_id.name"/> <p>อายุ <t t-esc="beneficiary.age"/> ปี สัญชาติ <t t-esc="beneficiary.nation"/> 
+                <t t-foreach="docs[0].beneficiary_ids" t-as="beneficiary">
+                    <p>
+                        <t t-esc="beneficiary.partner_id.name"/> อายุ <t t-esc="beneficiary.age"/> ปี สัญชาติ <t t-esc="beneficiary.nation"/> 
                         เลขประชาชน <t t-esc="beneficiary.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="beneficiary.partner_id.street"/> โทรศัพท์ <t t-esc="beneficiary.partner_id.phone"/>
                     </p>
-                    </t>
-               
-            
+                </t>
+            </p>
 
             <!-- ส่วนที่เหลือเหมือนเดิม -->
             <p>
