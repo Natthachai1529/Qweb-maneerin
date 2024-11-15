@@ -55,6 +55,6 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_maneerincode_root" name="Maneerin Code"/>
-    <menuitem id="menu_maneerincode" name="Maneerin App" parent="menu_maneerincode_root" action="action_maneerincode"/>
+    <menuitem id="menu_maneerincode_root" name="Maneerin App"/>
+    <menuitem id="menu_maneerincode" name="Maneerin list" parent="menu_maneerincode_root" action="action_maneerincode"/>
 </odoo>
