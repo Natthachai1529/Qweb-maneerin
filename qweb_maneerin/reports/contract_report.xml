@@ -114,16 +114,6 @@
                 <span style="float: right;">(<t t-esc="docs[0].buyer_ids[0].partner_id.name"/>)</span>
             </p>
 
-            <!-- ลายเซ็นผู้ซื้อหลายคน (วนลูปผู้ซื้อ) -->
-            <t t-foreach="docs[0].buyer_ids" t-as="buyer">
-                <p style="clear: both; text-align: center;">
-                    <span>ลงชื่อ......................................ผู้ซื้อ</span>
-                </p>
-                <p style="text-align: center;">
-                    <span>(<t t-esc="buyer.partner_id.name"/>)</span>
-                </p>
-            </t>
-
             <!-- ลายเซ็นผู้รับสิทธิ (วนลูปผู้รับสิทธิ) -->
             <t t-foreach="docs[0].beneficiary_ids" t-as="beneficiary">
                 <p style="clear: both; text-align: center;">
@@ -140,4 +130,10 @@
                 <span style="float: right;">ลงชื่อ.....................................พยาน</span>
             </p>
             <p style="clear: both;">
-                <span style
+                <span style="float: left;">(......................................................)</span>
+                <span style="float: right;">(....................................................)</span>
+            </p>
+         </div>
+      </t>
+   </template>
+</odoo>
