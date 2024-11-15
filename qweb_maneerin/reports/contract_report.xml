@@ -65,8 +65,9 @@
             </p>
             
             <!-- วนลูปผู้ซื้อ -->
-            <p>
+            
                 <span>2.</span>
+            <p>
                 <t t-foreach="docs[0].buyer_ids" t-as="buyer"> 
                         <t t-esc="buyer.partner_id.name"/> อายุ <t t-esc="buyer.age"/> ปี สัญชาติ <t t-esc="buyer.nation"/> 
                         เลขประชาชน <t t-esc="buyer.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="buyer.partner_id.street"/> โทรศัพท์ <t t-esc="buyer.partner_id.phone"/>
@@ -74,8 +75,9 @@
             </p>
 
             <!-- วนลูปผู้รับสิทธิ -->
-            <p>
+            
                 <span>3.</span>
+            <p>
                 <t t-foreach="docs[0].beneficiary_ids" t-as="beneficiary">  
                         <t t-esc="beneficiary.partner_id.name"/> อายุ <t t-esc="beneficiary.age"/> ปี สัญชาติ <t t-esc="beneficiary.nation"/> 
                         เลขประชาชน <t t-esc="beneficiary.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="beneficiary.partner_id.street"/> โทรศัพท์ <t t-esc="beneficiary.partner_id.phone"/>   
