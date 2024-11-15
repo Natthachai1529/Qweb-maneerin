@@ -28,8 +28,9 @@
        <field name="binding_type">report</field>
    </record>
 
+
    <!-- Template Report -->
-   <!-- Template Report -->
+<!-- Template Report -->
 <template id="report_contract_custom">
     <t t-call="web.basic_layout">
         <div class="page">
