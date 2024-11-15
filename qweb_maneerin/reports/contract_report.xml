@@ -3,8 +3,8 @@
    <record id="paper_format_custom_report" model="report.paperformat">
        <field name="name">Report Custom Size</field>
        <field name="default" eval="True"/>
-       <field name="page_width">210</field>
-       <field name="page_height">297</field>
+       <field name="page_width">210</field> 
+       <field name="page_height">297</field> 
        <field name="orientation">Portrait</field>
        <field name="margin_top">15</field>
        <field name="margin_bottom">15</field>
@@ -102,38 +102,30 @@
                     เห็นว่าถูกต้อง ตรงตามความประสงค์ จึงลงลายมือชื่อพร้อมทั้งประทับตรา (ถ้ามี) ไว้เป็นสำคัญต่อหน้าพยาน และต่างเก็บไว้ฝ่ายละหนึ่งฉบับ
                 </span>
             </p>
-            <p>
-                <span style="float: left;">ลงชื่อ......................................ผู้จะขาย</span>
-                <span style="float: right;">ลงชื่อ.....................................ผู้จะซื้อ</span>
-            </p>
-            <p>
-                <span style="flex: 1;">(..........................................................)</span>
-                <span style="float: right;">(......................................................)</span>
-            </p>
-            <p style="clear: both; text-indent: 10px;text-align: left;">
-                <span>บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด</span>
-            </p>
-<t t-set="buyer_count" t-value="len(docs[0].buyer_ids) - 1"/>
-<t t-if="buyer_count > 0">
-    <t t-foreach="docs[0].buyer_ids" t-as="buyer">
-        <p style="text-align: right;">
-            <span>ลงชื่อ......................................ผู้จะซื้อ</span>  
-        </p>
-        <p style="text-align: right;">
-            <span>(<t t-esc="buyer.partner_id.name"/>)</span>
-        </p>
-    </t>
-</t>
 
-<t t-foreach="docs[0].beneficiary_ids" t-as="beneficiary">
-    <p style="clear: both; text-align: center;">
-        <span>ลงชื่อ......................................ผู้รับโอนสิทธิ</span>
-    </p>
-    <p style="text-align: center;">
-        <span>(<t t-esc="beneficiary.partner_id.name"/>)</span>
-    </p>
-</t>
+            <!-- ลายเซ็นผู้จะขายและผู้จะซื้อ -->
+            <t t-foreach="docs[0].buyer_ids" t-as="buyer">
+                <p>
+                    <span style="float: left;">ลงชื่อ......................................ผู้จะขาย</span>
+                    <span style="float: right;">ลงชื่อ.....................................ผู้จะซื้อ</span>
+                </p>
+                <p>
+                    <span style="flex: 1;">(..........................................................)</span>
+                    <span style="float: right;">(<t t-esc="buyer.partner_id.name"/>)</span>
+                </p>
+            </t>
 
+            <!-- ลายเซ็นผู้รับสิทธิ -->
+            <t t-foreach="docs[0].beneficiary_ids" t-as="beneficiary">
+                <p style="clear: both; text-align: center;">
+                    <span>ลงชื่อ......................................ผู้รับโอนสิทธิ</span>
+                </p>
+                <p style="text-align: center;">
+                    <span>(<t t-esc="beneficiary.partner_id.name"/>)</span>
+                </p>
+            </t>
+
+            <!-- ลายเซ็นพยาน -->
             <p>
                 <span style="float: left;">ลงชื่อ......................................พยาน</span>
                 <span style="float: right;">ลงชื่อ.....................................พยาน</span>
