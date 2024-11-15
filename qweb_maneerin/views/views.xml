@@ -3,7 +3,7 @@
         <field name="name">maneerincode.code.form</field>
         <field name="model">maneerincode.code</field>
         <field name="arch" type="xml">
-            <form string="Maneerin Code">
+            <form string="Maneerin">
                 <sheet>
                     <group>
                         <field name="contract_no" string="เลขที่สัญญา"/>
