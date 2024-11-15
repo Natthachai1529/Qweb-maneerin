@@ -123,6 +123,14 @@
         </p>
     </t>
 </t>
+<t t-foreach="docs[0].beneficiary_ids" t-as="beneficiary">
+    <p style="clear: both; text-align: center;">
+        <span>ลงชื่อ......................................ผู้รับโอนสิทธิ</span>
+    </p>
+    <p style="text-align: center;">
+        <span>(...............................................................)</span>
+    </p>
+</t>
 
         </div>
       </t>
