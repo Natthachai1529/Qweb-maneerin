@@ -28,16 +28,14 @@
        <field name="binding_type">report</field>
    </record>
 
-
    <!-- Template Report -->
-
-<template id="report_contract_custom">
-    <t t-call="web.basic_layout">
-        <div class="page">
+   <template id="report_contract_custom">
+      <t t-call="web.basic_layout">
+         <div class="page">
             <style>
-                .page, .footer, .header, * {
-                    font-family: 'Sarabun', sans-serif;
-                }
+               .page, .footer, .header, * {
+                   font-family: 'Sarabun', sans-serif;
+               }
             </style>
             <!-- Header Section -->
             <h2></h2>
@@ -64,22 +62,25 @@
                 <span>1. บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด สำนักงานตั้งอยู่เลขที่ 219 หมู่ 2 ตำบลบางพระ อำเภอศรีราชา จังหวัดชลบุรี 20110 โดยนายธีรพร ชั้นศิริ ผู้มีอำนาจลงนามผูกพันบริษัท ซึ่งไปในสัญญานี้เรียกว่า "ผู้จะขาย" ฝ่ายหนึ่งกับ</span>
             </p>
             <!-- วนลูปผู้ซื้อ -->
-            
-                <p>
-                    <span>2.</span> 
-                    <t t-foreach="docs[0].buyer_ids" t-as="buyer">
+            <p>
+                <span>2.</span> 
+                <t t-foreach="docs[0].buyer_ids" t-as="buyer">
                     <span><t t-esc="buyer.partner_id.name"/> อายุ <t t-esc="buyer.age"/> ปี สัญชาติ <t t-esc="buyer.nation"/> 
-                    เลขประชาชน <t t-esc="buyer.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="buyer.partner_id.street"/> โทรศัพท์ <t t-esc="buyer.partner_id.phone"/>  </span>
-                    </t>
-                </p>
+                    เลขประชาชน <t t-esc="buyer.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="buyer.partner_id.street"/> โทรศัพท์ <t t-esc="buyer.partner_id.phone"/> </span>
+                    <br/>
+                </t>
+            </p>
             
             <!-- วนลูปผู้รับสิทธิ -->
-            <t t-foreach="docs[0].beneficiary_ids" t-as="beneficiary">
-                <p>
-                    <span>3. <t t-esc="beneficiary.partner_id.name"/> อายุ <t t-esc="beneficiary.age"/> ปี สัญชาติ <t t-esc="beneficiary.nation"/> 
-                    เลขประชาชน <t t-esc="beneficiary.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="beneficiary.partner_id.street"/> โทรศัพท์ <t t-esc="beneficiary.partner_id.phone"/> ซึ่งต่อไปในสัญญานี้จะเรียกว่า "ผู้รับสิทธิ" ฝ่ายหนึ่ง </span>
-                </p>
-            </t>
+            <p>
+                <span>3.</span>
+                <t t-foreach="docs[0].beneficiary_ids" t-as="beneficiary">
+                    <span><t t-esc="beneficiary.partner_id.name"/> อายุ <t t-esc="beneficiary.age"/> ปี สัญชาติ <t t-esc="beneficiary.nation"/> 
+                    เลขประชาชน <t t-esc="beneficiary.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="beneficiary.partner_id.street"/> โทรศัพท์ <t t-esc="beneficiary.partner_id.phone"/> </span>
+                    <br/>
+                </t>
+            </p>
+            
             <!-- ส่วนที่เหลือเหมือนเดิม -->
             <p style="text-indent: 30px;">
                 <span>เนื่องจากผู้จะซื้อประสงค์จะโอนสิทธิและหน้าที่ตามสัญญาจะซื้อจะขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างในโครงการ มิตทาวน์ ซอย12
@@ -94,11 +95,6 @@
                 </span>
             </p>
         </div>
-    </t>
-</template>
-
-
-
-
-
+      </t>
+   </template>
 </odoo>
