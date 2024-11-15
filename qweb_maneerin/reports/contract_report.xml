@@ -119,7 +119,7 @@
                 <p style="clear: both; text-align: right;">
                     <span>ลงชื่อ......................................ผู้ซื้อ</span>
                 </p>
-                <p style="text-align: center;">
+                <p style="text-align: right;">
                     <span>(<t t-esc="buyer.partner_id.name"/>)</span>
                 </p>
             </t>
