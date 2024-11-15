@@ -30,7 +30,6 @@
 
 
    <!-- Template Report -->
-<!-- Template Report -->
 <template id="report_contract_custom">
     <t t-call="web.basic_layout">
         <div class="page">
@@ -64,11 +63,12 @@
                 <span>1. บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด สำนักงานตั้งอยู่เลขที่ 219 หมู่ 2 ตำบลบางพระ อำเภอศรีราชา จังหวัดชลบุรี 20110 โดยนายธีรพร ชั้นศิริ ผู้มีอำนาจลงนามผูกพันบริษัท ซึ่งไปในสัญญานี้เรียกว่า "ผู้จะขาย" ฝ่ายหนึ่งกับ</span>
             </p>
             <!-- วนลูปผู้ซื้อ -->
+            <p>2.</p>
             <t t-foreach="docs[0].buyer_ids" t-as="buyer">
-                <p>
+                <div>
                     <span>2. <t t-esc="buyer.partner_id.name"/> อายุ <t t-esc="buyer.age"/> ปี สัญชาติ <t t-esc="buyer.nation"/> 
                     เลขประชาชน <t t-esc="buyer.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="buyer.partner_id.street"/> โทรศัพท์ <t t-esc="buyer.partner_id.phone"/>  </span>
-                </p>
+                </div>
             </t>
             <!-- วนลูปผู้รับสิทธิ -->
             <t t-foreach="docs[0].beneficiary_ids" t-as="beneficiary">
