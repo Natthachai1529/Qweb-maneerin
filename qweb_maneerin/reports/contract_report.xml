@@ -3,8 +3,8 @@
    <record id="paper_format_custom_report" model="report.paperformat">
        <field name="name">Report Custom Size</field>
        <field name="default" eval="True"/>
-       <field name="page_width">210</field>
-       <field name="page_height">297</field>
+       <field name="page_width">210</field> 
+       <field name="page_height">297</field> 
        <field name="orientation">Portrait</field>
        <field name="margin_top">15</field>
        <field name="margin_bottom">15</field>
@@ -37,10 +37,8 @@
                    font-family: 'Sarabun', sans-serif;
                }
             </style>
-
             <!-- Header Section -->
             <h2></h2>
-
             <!-- Contract Information -->
             <div style="text-align: right;">
                 <span>(การโอนสิทธิ์) ต้นฉบับ</span>
@@ -63,38 +61,37 @@
             <p>
                 <span>1. บริษัท มณีรินทร์ พร็อพเพอร์ตี้ จำกัด สำนักงานตั้งอยู่เลขที่ 219 หมู่ 2 ตำบลบางพระ อำเภอศรีราชา จังหวัดชลบุรี 20110 โดยนายธีรพร ชั้นศิริ ผู้มีอำนาจลงนามผูกพันบริษัท ซึ่งไปในสัญญานี้เรียกว่า "ผู้จะขาย" ฝ่ายหนึ่งกับ</span>
             </p>
-            
             <!-- วนลูปผู้ซื้อ -->
-            
-                <span>2.</span>
             <p>
-                <t t-foreach="docs[0].buyer_ids" t-as="buyer"> 
-                        <t t-esc="buyer.partner_id.name"/> อายุ <t t-esc="buyer.age"/> ปี สัญชาติ <t t-esc="buyer.nation"/> 
-                        เลขประชาชน <t t-esc="buyer.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="buyer.partner_id.street"/> โทรศัพท์ <t t-esc="buyer.partner_id.phone"/>
+                <span>2.</span> 
+                <t t-foreach="docs[0].buyer_ids" t-as="buyer">
+                    <span style="text-indent: 30px;"><t t-esc="buyer.partner_id.name"/> อายุ <t t-esc="buyer.age"/> ปี สัญชาติ <t t-esc="buyer.nation"/> 
+                    เลขประชาชน <t t-esc="buyer.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="buyer.partner_id.street"/> โทรศัพท์ <t t-esc="buyer.partner_id.phone"/> </span>
+                    <br/>
                 </t>
             </p>
-
+            
             <!-- วนลูปผู้รับสิทธิ -->
-            
-                <span>3.</span>
             <p>
-                <t t-foreach="docs[0].beneficiary_ids" t-as="beneficiary">  
-                        <t t-esc="beneficiary.partner_id.name"/> อายุ <t t-esc="beneficiary.age"/> ปี สัญชาติ <t t-esc="beneficiary.nation"/> 
-                        เลขประชาชน <t t-esc="beneficiary.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="beneficiary.partner_id.street"/> โทรศัพท์ <t t-esc="beneficiary.partner_id.phone"/>   
+                <span>3.</span>
+                <t t-foreach="docs[0].beneficiary_ids" t-as="beneficiary">
+                    <span style="text-indent: 30px;"><t t-esc="beneficiary.partner_id.name"/> อายุ <t t-esc="beneficiary.age"/> ปี สัญชาติ <t t-esc="beneficiary.nation"/> 
+                    เลขประชาชน <t t-esc="beneficiary.partner_id.identification_number"/> ที่อยู่เลขที่ <t t-esc="beneficiary.partner_id.street"/> โทรศัพท์ <t t-esc="beneficiary.partner_id.phone"/> </span>
+                    <br/>
                 </t>
             </p>
-
+            
             <!-- ส่วนที่เหลือเหมือนเดิม -->
-            <p>
+            <p style="text-indent: 30px;">
                 <span>เนื่องจากผู้จะซื้อประสงค์จะโอนสิทธิและหน้าที่ตามสัญญาจะซื้อจะขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างในโครงการ มิตทาวน์ ซอย12
-                    แปลงที่ xxx ให้แก่ผู้รับโอนสิทธิเพื่อให้ผู้รับโอนสิทธิมีกรรมสิทธิ์ร่วมกันในที่ดินจัดสรรพร้อมสิ่งปลูกสร้างที่ซื้อขายตาม 
-                    สัญญาจะซื้อจะขายเลขที่ xxx ลงวันที่ 9 กุมภาพันธ์ 2567 โดยผู้รับโอนสิทธิและผู้จะขายตกลงยินยอมด้วย 
-                    ทั้งสามฝ่ายจึงได้ทําบันทึกข้อตกลงฉบับนี้ขึ้นมีข้อความดังต่อไปนี้
+                        แปลงที่ xxx ให้แก่ผู้รับโอนสิทธิเพื่อให้ผู้รับโอนสิทธิมีกรรมสิทธิ์ร่วมกันในที่ดินจัดสรรพร้อมสิ่งปลูกสร้างที่ซื้อขายตาม 
+                        สัญญาจะซื้อจะขายเลขที่ xxx ลงวันที่ 9 กุมภาพันธ์ 2567 โดยผู้รับโอนสิทธิและผู้จะขายตกลงยินยอมด้วย 
+                        ทั้งสามฝ่ายจึงได้ทําบันทึกข้อตกลงฉบับนี้ขึ้นมีข้อความดังต่อไปนี้
                 </span>
             </p>
-            <p>
+            <p style="text-indent: 30px;">
                 <span>บันทึกข้อตกลงฉบับนี้ทำขึ้นเป็นสามฉบับมีข้อความถูกต้องตรงกัน คู่สัญญาได้อ่านและเข้าใจข้อความในสัญญาโดยตลอดดีแล้ว 
-                    เห็นว่าถูกต้อง ตรงตามความประสงค์ จึงลงลายมือชื่อพร้อมทั้งประทับตรา (ถ้ามี) ไว้เป็นสำคัญต่อหน้าพยาน และต่างเก็บไว้ฝ่ายละหนึ่งฉบับ
+                        เห็นว่าถูกต้อง ตรงตามความประสงค์ จึงลงลายมือชื่อพร้อมทั้งประทับตรา (ถ้ามี) ไว้เป็นสำคัญต่อหน้าพยาน และต่างเก็บไว้ฝ่ายละหนึ่งฉบับ
                 </span>
             </p>
         </div>
