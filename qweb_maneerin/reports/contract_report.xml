@@ -29,47 +29,63 @@
    </record>
 
    <!-- Template Report -->
-   <template id="report_contract_custom">
-      <t t-call="web.basic_layout">
-         <div class="page">
-            <style>
-               .page, .footer, .header, * {
-                   font-family: 'Sarabun', sans-serif;
-               }
-            </style>
-            <!-- Header Section -->
-            <h2></h2>
-            <p>
-                <span>รายละเอียดการชำระเงิน/Payment details</span>
-            </p>
-            <p>
-                <span>ช่องทางการชำระเงิน/Payment method: ◯เงินสด/Cash   ◯เช็ค/Cheque    ◯โอนเงิน/Tranfer    ◯บัตรเครดิต/Credit card</span>
-            </p>
-            <p>
-                <span>ธนาคาร/Bank_______________เลขที่/No._______________วันที่ชำระ/Payment date_______________</span>
-            </p>
-            <p>
-                <span>ยอดชำระ/Amount paid_____________________หัก ณ ที่จ่าย/Amount withheld_____________________</span>
-            </p>
+<template id="report_contract_custom">
+   <t t-call="web.basic_layout">
+      <div class="page">
+         <style>
+            .page, .footer, .header, * {
+                font-family: 'Sarabun', sans-serif;
+            }
+         </style>
 
+         <!-- Header Section -->
+         <h2></h2>
 
-<p>
-    <span style="display: inline-block; width: 33%; text-align: left;">ผู้รับเงิน/Received by</span>
-    <span style="display: inline-block; width: 33%; text-align: center;">ผู้จัดทำ/Prepared by</span>
-    <span style="display: inline-block; width: 33%; text-align: right;">ผู้อนุมัติ/Approved by</span>
-</p>
+         <p>
+            <span>รายละเอียดการชำระเงิน/Payment details</span>
+         </p>
 
-<p>
-    <span style="display: inline-block; width: 33%; text-align: left;">_________________</span>
-    <span style="display: inline-block; width: 33%; text-align: center;">_________________</span>
-    <span style="display: inline-block; width: 33%; text-align: right;">_________________</span>
-</p>
-<p>
-    <span style="display: inline-block; width: 33%; text-align: left;">(_________________)</span>
-    <span style="display: inline-block; width: 33%; text-align: center;">(_________________)</span>
-    <span style="display: inline-block; width: 33%; text-align: right;">(_________________)</span>
-</p>
-         </div>
-      </t>
-   </template>
+         <p>
+            <span>
+               ช่องทางการชำระเงิน/Payment method: ◯เงินสด/Cash   
+               ◯เช็ค/Cheque    
+               ◯โอนเงิน/Transfer    
+               ◯บัตรเครดิต/Credit card
+            </span>
+         </p>
+
+         <p>
+            <span>
+               ธนาคาร/Bank_______________เลขที่/No._______________วันที่ชำระ/Payment date_______________
+            </span>
+         </p>
+
+         <p>
+            <span>
+               ยอดชำระ/Amount paid_____________________หัก ณ ที่จ่าย/Amount withheld_____________________
+            </span>
+         </p>
+
+         <p>
+            <span style="display: inline-block; width: 33%; text-align: left;">&#160;ผู้รับเงิน/Received by</span>
+            <span style="display: inline-block; width: 33%; text-align: center;">ผู้จัดทำ/Prepared by</span>
+            <span style="display: inline-block; width: 33%; text-align: right;">&#160;ผู้อนุมัติ/Approved by</span>
+         </p>
+
+         <p>
+            <span style="display: inline-block; width: 33%; text-align: left;">_________________</span>
+            <span style="display: inline-block; width: 33%; text-align: center;">_________________</span>
+            <span style="display: inline-block; width: 33%; text-align: right;">_________________</span>
+         </p>
+
+         <p>
+            <span style="display: inline-block; width: 33%; text-align: left;">&#160;(_________________)</span>
+            <span style="display: inline-block; width: 33%; text-align: center;">(_________________)</span>
+            <span style="display: inline-block; width: 33%; text-align: right;">&#160;(_________________)</span>
+         </p>
+
+      </div>
+   </t>
+</template>
+
 </odoo>
