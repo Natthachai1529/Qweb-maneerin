@@ -36,90 +36,54 @@
             .page, .footer, .header, * {
                 font-family: 'Sarabun', sans-serif;
             }
-
-            .signature-row {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin: 10px 0;
-            }
-
-            .signature-col {
-                width: 45%;
-                text-align: center;
-            }
          </style>
 
          <!-- Header Section -->
          <h2></h2>
+         <!-- Contract Information -->
 
-         <!-- Content -->
-         <p style="text-indent: 30px;">
-            เนื่องจากผู้จะซื้อประสงค์จะโอนสิทธิและหน้าที่ตามสัญญาจะซื้อจะขายที่ดินจัดสรรพร้อมสิ่งปลูกสร้างในโครงการ...
+
+         <!-- ลายเซ็นผู้จะขาย (ผู้ขายคนเดียว) -->
+         <p>
+            <span style="display: inline-block; width: 50%; text-align: center;">ลงชื่อ......................................ผู้จะขาย</span>
+            <span style="display: inline-block; width: 50%; text-align: center;">ลงชื่อ.....................................ผู้จะซื้อ</span>
+         </p>
+         <p>
+            <span style="display: inline-block; width: 50%; text-align: center;">(..........................................................)</span>
+            <span style="display: inline-block; width: 50%; text-align: center;">(<t t-esc="docs[0].buyer_ids[0].partner_id.name"/>)</span>
          </p>
 
-         <!-- ลายเซ็น -->
-         <div class="signature-row">
-            <div class="signature-col">
-               <span>ลงชื่อ......................................ผู้จะขาย</span>
-            </div>
-            <div class="signature-col">
-               <span>ลงชื่อ.....................................ผู้จะซื้อ</span>
-            </div>
-         </div>
-         <div class="signature-row">
-            <div class="signature-col">
-               <span>(..........................................................)</span>
-            </div>
-            <div class="signature-col">
-               <span>(<t t-esc="docs[0].buyer_ids[0].partner_id.name"/>)</span>
-            </div>
-         </div>
-
-         <!-- ผู้ซื้อเพิ่มเติม -->
+         <!-- ลายเซ็นผู้ซื้อหลายคน (วนลูปผู้ซื้อ) -->
          <t t-foreach="docs[0].buyer_ids[1:]" t-as="buyer">
-            <div class="signature-row">
-               <div class="signature-col">
-                  <span>ลงชื่อ......................................ผู้จะซื้อ</span>
-               </div>
-               <div class="signature-col">
-                  <span>(<t t-esc="buyer.partner_id.name"/>)</span>
-               </div>
-            </div>
+            <p style="clear: both; text-align: center;">
+                <span style="display: inline-block; width: 50%; text-align: center;">ลงชื่อ......................................ผู้จะซื้อ</span>
+            </p>
+            <p style="text-align: center;">
+                <span style="display: inline-block; width: 50%; text-align: center;">(<t t-esc="buyer.partner_id.name"/>)</span>
+            </p>
          </t>
 
-         <!-- ผู้รับสิทธิ -->
+         <!-- ลายเซ็นผู้รับสิทธิ (วนลูปผู้รับสิทธิ) -->
          <t t-foreach="docs[0].beneficiary_ids" t-as="beneficiary">
-            <div class="signature-row">
-               <div class="signature-col">
-                  <span>ลงชื่อ......................................ผู้รับโอนสิทธิ</span>
-               </div>
-               <div class="signature-col">
-                  <span>(<t t-esc="beneficiary.partner_id.name"/>)</span>
-               </div>
-            </div>
+            <p style="clear: both; text-align: center;">
+                <span style="display: inline-block; width: 50%; text-align: center;">ลงชื่อ......................................ผู้รับโอนสิทธิ</span>
+            </p>
+            <p style="text-align: center;">
+                <span style="display: inline-block; width: 50%; text-align: center;">(<t t-esc="beneficiary.partner_id.name"/>)</span>
+            </p>
          </t>
 
-         <!-- พยาน -->
-         <div class="signature-row">
-            <div class="signature-col">
-               <span>ลงชื่อ......................................พยาน</span>
-            </div>
-            <div class="signature-col">
-               <span>ลงชื่อ.....................................พยาน</span>
-            </div>
-         </div>
-         <div class="signature-row">
-            <div class="signature-col">
-               <span>(......................................................)</span>
-            </div>
-            <div class="signature-col">
-               <span>(....................................................)</span>
-            </div>
-         </div>
+         <!-- ลายเซ็นพยาน -->
+         <p>
+            <span style="display: inline-block; width: 50%; text-align: left;">ลงชื่อ......................................พยาน</span>
+            <span style="display: inline-block; width: 50%; text-align: left;">ลงชื่อ.....................................พยาน</span>
+         </p>
+         <p style="clear: both;">
+            <span style="display: inline-block; width: 50%; text-align: left;">(......................................................)</span>
+            <span style="display: inline-block; width: 50%; text-align: left;">(....................................................)</span>
+         </p>
       </div>
    </t>
 </template>
-
 
 </odoo>
