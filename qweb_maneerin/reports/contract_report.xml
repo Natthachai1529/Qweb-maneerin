@@ -29,13 +29,13 @@
    </record>
 
    <!-- Template Report -->
-   <template id="report_contract_custom">
-      <t t-call="web.basic_layout">
-         <div class="page">
+<template id="report_contract_custom">
+    <t t-call="web.basic_layout">
+        <div class="page">
             <style>
-               .page, .footer, .header, * {
-                   font-family: 'Sarabun', sans-serif;
-               }
+                .page, .footer, .header, * {
+                    font-family: 'Sarabun', sans-serif;
+                }
             </style>
             <!-- Header Section -->
             <h2></h2>
@@ -106,8 +106,8 @@
 
             <!-- ลายเซ็นผู้จะขาย (ผู้ขายคนเดียว) -->
             <p>
-                <span style="display: inline-block; width: 50%; text-align: center;">ลงชื่อ......................................ผู้จะขาย</span>
-                <span style="display: inline-block; width: 50%; text-align: center;">ลงชื่อ.....................................ผู้จะซื้อ</span>
+                <span style="display: inline-block; width: 50%; text-align: center; padding-right: 10px;">ลงชื่อ......................................ผู้จะขาย</span>
+                <span style="display: inline-block; width: 50%; text-align: center; padding-left: 10px;">ลงชื่อ.....................................ผู้จะซื้อ</span>
             </p>
 
             <p>
@@ -116,7 +116,7 @@
             </p>
 
             <!-- ลายเซ็นผู้ซื้อหลายคน (วนลูปผู้ซื้อ) -->
-            <t t-foreach="docs[0].buyer_ids[1:]" t-as="buyer">
+            <t t-foreach="docs[0].buyer_ids" t-as="buyer">
                 <p style="clear: both; text-align: right;">
                     <span>ลงชื่อ......................................ผู้จะซื้อ</span>
                 </p>
@@ -139,13 +139,13 @@
             <p>
                 <span style="display: inline-block; width: 50%; text-align: center;">ลงชื่อ......................................พยาน</span>
                 <span style="display: inline-block; width: 50%; text-align: center;">ลงชื่อ......................................พยาน</span>
-       
             </p>
             <p>
                 <span style="display: inline-block; width: 50%; text-align: center;">(......................................................)</span>
                 <span style="display: inline-block; width: 50%; text-align: center;">(......................................................)</span>
             </p>
-         </div>
-      </t>
-   </template>
+        </div>
+    </t>
+</template>
+
 </odoo>
