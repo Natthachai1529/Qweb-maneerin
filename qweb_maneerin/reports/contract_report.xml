@@ -86,9 +86,9 @@
             <span style="display: inline-block; width: 33%; text-align: center;">(_________________)</span>
          </p>
         <p>
-            <span style="display: inline-block; width: 33%; text-align: center;">วันที่/date</span>
-            <span style="display: inline-block; width: 33%; text-align: center;">วันที่/date</span>
-            <span style="display: inline-block; width: 33%; text-align: center;">วันที่/date</span>
+            <span style="display: inline-block; width: 33%; text-align: left;">วันที่/date</span>
+            <span style="display: inline-block; width: 33%; text-align: left;">วันที่/date</span>
+            <span style="display: inline-block; width: 33%; text-align: left;">วันที่/date</span>
         </p>
 
 
