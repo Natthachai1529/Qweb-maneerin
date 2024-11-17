@@ -51,21 +51,44 @@
             <p>
                 <span>ยอดชำระ/Amount paid_____________________หัก ณ ที่จ่าย/Amount withheld_____________________</span>
             </p>
-            <p>
-                <span style="float: left;">ผู้รับเงิน/Received by</span>
-                <span style="text-align: center;">ผู้จัดทำ/Prepared by</span>
-                <span style="float: right;">ผู้อนุมัติ/Approved by</span>
-            </p>
-            <p>
-                <span style="float: left;">_________________</span>
-                <span style="text-align: center;">_________________</span>
-                <span style="float: right;">_________________</span>
-            </p>
-            <p>
-                <span style="float: left;">(_________________)</span>
-                <span style="text-align: center;">(_________________)</span>
-                <span style="float: right;">(_________________)</span>
-            </p>
+<style>
+    .row {
+        display: flex;
+        justify-content: space-between; /* กระจายให้ซ้าย ขวา กลาง */
+        align-items: center; /* จัดแนวตั้งให้ตรงกลาง */
+        margin-bottom: 10px;
+    }
+
+    .center {
+        text-align: center;
+        flex: 1; /* ให้พื้นที่เท่า ๆ กัน */
+    }
+
+    .left {
+        text-align: left;
+    }
+
+    .right {
+        text-align: right;
+    }
+</style>
+
+<p class="row">
+    <span class="left">ผู้รับเงิน/Received by</span>
+    <span class="center">ผู้จัดทำ/Prepared by</span>
+    <span class="right">ผู้อนุมัติ/Approved by</span>
+</p>
+<p class="row">
+    <span class="left">_________________</span>
+    <span class="center">_________________</span>
+    <span class="right">_________________</span>
+</p>
+<p class="row">
+    <span class="left">(_________________)</span>
+    <span class="center">(_________________)</span>
+    <span class="right">(_________________)</span>
+</p>
+
          </div>
       </t>
    </template>
