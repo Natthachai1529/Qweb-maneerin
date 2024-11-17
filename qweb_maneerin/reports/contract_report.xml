@@ -139,10 +139,11 @@
                 <span style="float: left;">ลงชื่อ......................................พยาน</span>
                 <span style="float: right;">ลงชื่อ.....................................พยาน</span>
             </p>
-            <p style="clear: both;">
-                <span style="float: left;">(......................................................)</span>
-                <span style="float: right;">(....................................................)</span>
+            <p>
+                <span style="display: inline-block; width: 50%; text-align: center;">(......................................................)</span>
+                <span style="display: inline-block; width: 50%; text-align: center;">(....................................................)</span>
             </p>
+
          </div>
       </t>
    </template>
