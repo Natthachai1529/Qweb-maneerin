@@ -49,9 +49,9 @@
             <span>
                ช่องทางการชำระเงิน/Payment method: 
                <p>
-               ◯&#160;เงินสด/Cash   
-               ◯&#160;เช็ค/Cheque    
-               ◯&#160;โอนเงิน/Transfer    
+               ◯&#160;เงินสด/Cash&#160;   
+               ◯&#160;เช็ค/Cheque&#160;    
+               ◯&#160;โอนเงิน/Transfer&#160;    
                ◯&#160;บัตรเครดิต/Credit card
                </p>
             </span>
@@ -68,6 +68,8 @@
                ยอดชำระ/Amount paid_____________________หัก ณ ที่จ่าย/Amount withheld_____________________
             </span>
          </p>
+         <br>
+         <br>
 
          <p>
             <span style="display: inline-block; width: 33%; text-align: left;">ผู้รับเงิน/Received by</span>
