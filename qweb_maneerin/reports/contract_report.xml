@@ -39,41 +39,48 @@
             </style>
             <!-- Header Section -->
             <h2></h2>
+            <p>
+                <span>รายละเอียดการชำระเงิน/Payment details</span>
+            </p>
+            <p>
+                <span>ช่องทางการชำระเงิน/Payment method: เงินสด/Cash   เช็ค/Cheque    โอนเงิน/Tranfer    บัตรเครดิต/Credit card</span>
+            </p>
+            <p>
+                <span>ธนาคาร/Bank_________________เลขที่/No._________________วันที่ชำระ/Payment date_________________</span>
+            </p>
+            <p>
+                <span>ยอดชำระ/Amount paid__________________________________หัก ณ ที่จ่าย/Amount withheld__________________________________</span>
+            </p>
+
             <!-- Contract Information -->
 <div class="row" style="position:absolute;top:80mm;width:100%;">
-<!-- ส่วนถึง -->
-<div class="text-center">
-    <span>ถึง: </span>
-    <span style="border-bottom: 1px solid black; width: 80mm; display: inline-block;"></span>
+    <!-- ผู้รับเงิน -->
+    <div class="col-4 text-center">
+        <span style="border-bottom: 1px solid black; width: 40mm; display: inline-block;"/><br/>
+        <span>ผู้รับเงิน/Received by</span><br/>
+        <span>_________________</span><br/>
+        <span>(_________________)</span><br/>
+        <span>วันที่/Date:</span>
+    </div>
+    
+    <!-- ผู้จัดทำ -->
+    <div class="col-4 text-center">
+        <span style="border-bottom: 1px solid black; width: 40mm; display: inline-block;"/><br/>
+        <span>ผู้จัดทำ/Prepared by</span><br/>
+        <span>_________________</span><br/>
+        <span>(_________________)</span><br/>
+        <span>วันที่/Date:</span>
+    </div>
+    
+    <!-- ผู้อนุมัติ -->
+    <div class="col-4 text-center">
+        <span style="border-bottom: 1px solid black; width: 40mm; display: inline-block;"/><br/>
+        <span>ผู้อนุมัติ/Approved by</span><br/>
+        <span>_________________</span><br/>
+        <span>(_________________)</span><br/>
+        <span>วันที่/Date:</span>
+    </div>
 </div>
-
-<!-- ผู้รับเงิน -->
-<div class="col-4 text-center">
-    <span style="border-bottom: 1px solid black; width: 40mm; display: inline-block;"></span><br/>
-    <span>ผู้รับเงิน/Received by</span><br/>
-    <span>_________________</span><br/>
-    <span>(_________________)</span><br/>
-    <span>วันที่/Date:</span>
-</div>
-
-<!-- ผู้จัดทำ -->
-<div class="col-4 text-center">
-    <span style="border-bottom: 1px solid black; width: 40mm; display: inline-block;"></span><br/>
-    <span>ผู้จัดทำ/Prepared by</span><br/>
-    <span>_________________</span><br/>
-    <span>(_________________)</span><br/>
-    <span>วันที่/Date:</span>
-</div>
-
-<!-- ผู้อนุมัติ -->
-<div class="col-4 text-center">
-    <span style="border-bottom: 1px solid black; width: 40mm; display: inline-block;"></span><br/>
-    <span>ผู้อนุมัติ/Approved by</span><br/>
-    <span>_________________</span><br/>
-    <span>(_________________)</span><br/>
-    <span>วันที่/Date:</span>
-</div>
-
          </div>
       </t>
    </template>
