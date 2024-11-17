@@ -52,19 +52,19 @@
                 <span>ยอดชำระ/Amount paid_____________________หัก ณ ที่จ่าย/Amount withheld_____________________</span>
             </p>
             <p>
-                <span style="float: left;">ผู้รับเงิน/Received by</span>
+                <span style="text-align: left;">ผู้รับเงิน/Received by</span>
                 <span style="text-align: center;">ผู้จัดทำ/Prepared by</span>
-                <span style="float: right;">ผู้อนุมัติ/Approved by</span>
+                <span style="text-align: right;">ผู้อนุมัติ/Approved by</span>
             </p>
             <p>
-                <span style="float: left;">_________________</span>
+                <span style="text-align: left;">_________________</span>
                 <span style="text-align: center;">_________________</span>
-                <span style="float: right;">_________________</span>
+                <span style="text-align: right;">_________________</span>
             </p>
             <p>
-                <span style="float: left;">(_________________)</span>
+                <span style="text-align: left;">(_________________)</span>
                 <span style="text-align: center;">(_________________)</span>
-                <span style="float: right;">(_________________)</span>
+                <span style="text-align: right;">(_________________)</span>
             </p>
          </div>
       </t>
