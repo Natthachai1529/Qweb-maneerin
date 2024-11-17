@@ -49,10 +49,10 @@
             <span>
                ช่องทางการชำระเงิน/Payment method: 
                <p>
-               &#160;◯เงินสด/Cash   
-               &#160;◯เช็ค/Cheque    
-               &#160;◯โอนเงิน/Transfer    
-               &#160;◯บัตรเครดิต/Credit card
+               ◯&#160;เงินสด/Cash   
+               ◯&#160;เช็ค/Cheque    
+               ◯&#160;โอนเงิน/Transfer    
+               ◯&#160;บัตรเครดิต/Credit card
                </p>
             </span>
          </p>
@@ -70,9 +70,9 @@
          </p>
 
          <p>
-            <span style="display: inline-block; width: 33%; text-align: left;">&#160;ผู้รับเงิน/Received by</span>
+            <span style="display: inline-block; width: 33%; text-align: left;">ผู้รับเงิน/Received by</span>
             <span style="display: inline-block; width: 33%; text-align: center;">ผู้จัดทำ/Prepared by</span>
-            <span style="display: inline-block; width: 33%; text-align: right;">&#160;ผู้อนุมัติ/Approved by</span>
+            <span style="display: inline-block; width: 33%; text-align: right;">ผู้อนุมัติ/Approved by</span>
          </p>
 
          <p>
@@ -82,9 +82,14 @@
          </p>
 
          <p>
-            <span style="display: inline-block; width: 33%; text-align: left;">&#160;(_________________)</span>
+            <span style="display: inline-block; width: 33%; text-align: left;">(_________________)</span>
             <span style="display: inline-block; width: 33%; text-align: center;">(_________________)</span>
-            <span style="display: inline-block; width: 33%; text-align: right;">&#160;(_________________)</span>
+            <span style="display: inline-block; width: 33%; text-align: right;">(_________________)</span>
+         </p>
+        <p>
+            <span style="display: inline-block; width: 33%; text-align: left;">วันที่/date</span>
+            <span style="display: inline-block; width: 33%; text-align: center;">วันที่/date</span>
+            <span style="display: inline-block; width: 33%; text-align: right;">วันที่/date</span>
          </p>
 
       </div>
