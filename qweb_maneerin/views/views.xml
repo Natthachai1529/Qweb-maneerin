@@ -1,0 +1,60 @@
+<odoo>
+    <record id="maneerincode_view_form" model="ir.ui.view">
+        <field name="name">maneerincode.code.form</field>
+        <field name="model">maneerincode.code</field>
+        <field name="arch" type="xml">
+            <form string="Maneerin form">
+                <sheet>
+                    <group>
+                        <field name="contract_no" string="เลขที่สัญญา"/>
+                        <field name="contact_date" string="Contact Date"/>
+                        <field name="seller" string="ผู้จะขาย"/>
+                    </group>
+                    <group>
+                        <field name="buyer_ids" widget="one2many_list" options="{'no_create': True}">
+                            <tree editable="bottom">
+                                <field name="partner_id" string="Name" options="{'no_open': True}"/>
+                                <field name="age" string="Age"/>
+                                <field name="nation" string="Nation"/>
+                                <field name="street" string="Street"/>
+                                <field name="phone" string="Phone"/> 
+                            </tree>
+                        </field>
+                    </group>
+                    <group>
+                        <field name="beneficiary_ids" widget="one2many_list" options="{'no_create': True}">
+                            <tree editable="bottom">
+                                <field name="partner_id" string="Name" options="{'no_open': True}"/>
+                                <field name="age" string="Age"/>
+                                <field name="nation" string="Nation"/>
+                                <field name="street" string="Street"/>
+                                <field name="phone" string="Phone"/>  
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="maneerincode_view_tree" model="ir.ui.view">
+        <field name="name">maneerincode.code.tree</field>
+        <field name="model">maneerincode.code</field>
+        <field name="arch" type="xml">
+            <tree string="Maneerin list">
+                <field name="contract_no" string="เลขที่สัญญา"/>
+                <field name="contact_date" string="Contact Date"/>
+                <field name="seller" string="ผู้จะขาย"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_maneerincode" model="ir.actions.act_window">
+        <field name="name">Maneerin action</field>
+        <field name="res_model">maneerincode.code</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_maneerincode_root" name="Maneerin App"/>
+    <menuitem id="menu_maneerincode" name="Maneerin list" parent="menu_maneerincode_root" action="action_maneerincode"/>
+</odoo>
