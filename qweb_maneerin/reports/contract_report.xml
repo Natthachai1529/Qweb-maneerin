@@ -87,10 +87,10 @@
             <span style="display: inline-block; width: 33%; text-align: right;">(_________________)</span>
          </p>
         <p>
-    <span style="display: inline-block; width: 33%; text-align: left;">วันที่/date</span>
-    <span style="display: inline-block; width: 33%; text-align: left;">วันที่/date</span>
-    <span style="display: inline-block; width: 33%; text-align: left;">วันที่/date</span>
-</p>
+            <span style="display: inline-block; width: 33%; text-align: left;">วันที่/date</span>
+            <span style="display: inline-block; width: 33%; text-align: left;">วันที่/date</span>
+            <span style="display: inline-block; width: 33%; text-align: left;">วันที่/date</span>
+        </p>
 
 
       </div>
