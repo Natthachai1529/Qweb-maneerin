@@ -106,12 +106,12 @@
 
          <!-- ลายเซ็นผู้จะขาย (ผู้ขายคนเดียว) -->
          <p>
-            <span style="display: inline-block; width: 100%; text-align: center;">ลงชื่อ......................................ผู้จะขาย</span>
-            <span style="display: inline-block; width: 100%; text-align: center;">ลงชื่อ.....................................ผู้จะซื้อ</span>
+            <span style="display: inline-block; width: 50%; text-align: center;">ลงชื่อ......................................ผู้จะขาย</span>
+            <span style="display: inline-block; width: 50%; text-align: center;">ลงชื่อ.....................................ผู้จะซื้อ</span>
          </p>
          <p>
-            <span style="display: inline-block; width: 100%; text-align: center;">(..........................................................)</span>
-            <span style="display: inline-block; width: 100%; text-align: center;">(<t t-esc="docs[0].buyer_ids[0].partner_id.name"/>)</span>
+            <span style="display: inline-block; width: 50%; text-align: center;">(..........................................................)</span>
+            <span style="display: inline-block; width: 50%; text-align: center;">(<t t-esc="docs[0].buyer_ids[0].partner_id.name"/>)</span>
          </p>
 
          <!-- ลายเซ็นผู้ซื้อหลายคน (วนลูปผู้ซื้อ) -->
@@ -136,15 +136,16 @@
 
          <!-- ลายเซ็นพยาน -->
          <p>
-            <span style="display: inline-block; width: 100%; text-align: center;">ลงชื่อ......................................พยาน</span>
-            <span style="display: inline-block; width: 100%; text-align: center;">ลงชื่อ.....................................พยาน</span>
+            <span style="display: inline-block; width: 50%; text-align: center;">ลงชื่อ......................................พยาน</span>
+            <span style="display: inline-block; width: 50%; text-align: center;">ลงชื่อ.....................................พยาน</span>
          </p>
          <p style="clear: both;">
-            <span style="display: inline-block; width: 100%; text-align: center;">(......................................................)</span>
-            <span style="display: inline-block; width: 100%; text-align: center;">(....................................................)</span>
+            <span style="display: inline-block; width: 50%; text-align: center;">(......................................................)</span>
+            <span style="display: inline-block; width: 50%; text-align: center;">(....................................................)</span>
          </p>
       </div>
    </t>
 </template>
+
 
 </odoo>
