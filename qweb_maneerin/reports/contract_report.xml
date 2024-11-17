@@ -46,10 +46,10 @@
                 <span>ช่องทางการชำระเงิน/Payment method: เงินสด/Cash   เช็ค/Cheque    โอนเงิน/Tranfer    บัตรเครดิต/Credit card</span>
             </p>
             <p>
-                <span>ธนาคาร/Bank_________________เลขที่/No._________________วันที่ชำระ/Payment date_________________</span>
+                <span>ธนาคาร/Bank_______________เลขที่/No._______________วันที่ชำระ/Payment date_______________</span>
             </p>
             <p>
-                <span>ยอดชำระ/Amount paid__________________________________หัก ณ ที่จ่าย/Amount withheld__________________________________</span>
+                <span>ยอดชำระ/Amount paid_____________________หัก ณ ที่จ่าย/Amount withheld_____________________</span>
             </p>
 
             <!-- Contract Information -->
