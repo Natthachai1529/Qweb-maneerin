@@ -73,26 +73,26 @@
          </p>
 
          <p>
-            <span style="display: inline-block; width: 33%; text-align: left;">ผู้รับเงิน/Received by</span>
+            <span style="display: inline-block; width: 33%; text-align: center;">ผู้รับเงิน/Received by</span>
             <span style="display: inline-block; width: 33%; text-align: center;">ผู้จัดทำ/Prepared by</span>
-            <span style="display: inline-block; width: 33%; text-align: right;">ผู้อนุมัติ/Approved by</span>
+            <span style="display: inline-block; width: 33%; text-align: center;">ผู้อนุมัติ/Approved by</span>
          </p>
 
          <p>
-            <span style="display: inline-block; width: 33%; text-align: left;">_________________</span>
             <span style="display: inline-block; width: 33%; text-align: center;">_________________</span>
-            <span style="display: inline-block; width: 33%; text-align: right;">_________________</span>
+            <span style="display: inline-block; width: 33%; text-align: center;">_________________</span>
+            <span style="display: inline-block; width: 33%; text-align: center;">_________________</span>
          </p>
 
          <p>
-            <span style="display: inline-block; width: 33%; text-align: left;">(_________________)</span>
             <span style="display: inline-block; width: 33%; text-align: center;">(_________________)</span>
-            <span style="display: inline-block; width: 33%; text-align: right;">(_________________)</span>
+            <span style="display: inline-block; width: 33%; text-align: center;">(_________________)</span>
+            <span style="display: inline-block; width: 33%; text-align: center;">(_________________)</span>
          </p>
         <p>
-            <span style="display: inline-block; width: 33%; text-align: left;">วันที่/date</span>
-            <span style="display: inline-block; width: 33%; text-align: left;">วันที่/date</span>
-            <span style="display: inline-block; width: 33%; text-align: left;">วันที่/date</span>
+            <span style="display: inline-block; width: 33%; text-align: center;">วันที่/date</span>
+            <span style="display: inline-block; width: 33%; text-align: center;">วันที่/date</span>
+            <span style="display: inline-block; width: 33%; text-align: center;">วันที่/date</span>
         </p>
 
 
