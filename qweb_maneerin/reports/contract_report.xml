@@ -68,8 +68,10 @@
                ยอดชำระ/Amount paid_____________________หัก ณ ที่จ่าย/Amount withheld_____________________
             </span>
          </p>
-         <br>
-         <br>
+         <p>
+            <br>
+            <br>
+         </p>
 
          <p>
             <span style="display: inline-block; width: 33%; text-align: left;">ผู้รับเงิน/Received by</span>
