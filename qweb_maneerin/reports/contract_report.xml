@@ -43,7 +43,7 @@
                 <span>รายละเอียดการชำระเงิน/Payment details</span>
             </p>
             <p>
-                <span>ช่องทางการชำระเงิน/Payment method: เงินสด/Cash   เช็ค/Cheque    โอนเงิน/Tranfer    บัตรเครดิต/Credit card</span>
+                <span>ช่องทางการชำระเงิน/Payment method: ◯เงินสด/Cash   ◯เช็ค/Cheque    ◯โอนเงิน/Tranfer    ◯บัตรเครดิต/Credit card</span>
             </p>
             <p>
                 <span>ธนาคาร/Bank_______________เลขที่/No._______________วันที่ชำระ/Payment date_______________</span>
@@ -51,11 +51,16 @@
             <p>
                 <span>ยอดชำระ/Amount paid_____________________หัก ณ ที่จ่าย/Amount withheld_____________________</span>
             </p>
+            <br>
+            <br>
+
 <p>
     <span style="display: inline-block; width: 33%; text-align: left;">ผู้รับเงิน/Received by</span>
     <span style="display: inline-block; width: 33%; text-align: center;">ผู้จัดทำ/Prepared by</span>
     <span style="display: inline-block; width: 33%; text-align: right;">ผู้อนุมัติ/Approved by</span>
 </p>
+<br>
+<br>
 <p>
     <span style="display: inline-block; width: 33%; text-align: left;">_________________</span>
     <span style="display: inline-block; width: 33%; text-align: center;">_________________</span>
