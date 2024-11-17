@@ -47,10 +47,13 @@
 
          <p>
             <span>
-               ช่องทางการชำระเงิน/Payment method: &#160;◯เงินสด/Cash   
+               ช่องทางการชำระเงิน/Payment method: 
+               <p>
+               &#160;◯เงินสด/Cash   
                &#160;◯เช็ค/Cheque    
                &#160;◯โอนเงิน/Transfer    
                &#160;◯บัตรเครดิต/Credit card
+               </p>
             </span>
          </p>
 
